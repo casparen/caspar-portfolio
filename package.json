@@ -9,6 +9,7 @@
     "animate.css": "^3.5.2",
     "graceful-fs": "^4.1.11",
     "hover.css": "^2.0.2",
+    "minimatch": "^3.0.3",
     "netlify-cli": "^1.1.0",
     "query-string": "^4.2.3",
     "react": "^15.3.2",
