@@ -1,0 +1,137 @@
+.projectWrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+}
+
+
+.projectContainer {
+  padding-top: 11%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+
+
+  /*border: solid pink 2px;*/
+
+}
+
+
+
+.descriptionContainer {
+      padding-left: 5%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  font-family: "Avenir Next";
+  /*border: solid blue 1px;*/
+}
+
+.projectTitle {
+  margin: 0 auto;
+  text-align: left;
+  /*border: solid green 1px;*/
+
+}
+
+.projectName{
+  font-weight:500;
+
+    font-size: 14px;
+}
+
+.projectNumber{
+    font-weight:210;
+}
+
+
+.aboutProject {
+  /*border: solid pink 1px;*/
+  margin: 0 auto;
+  width: 8cm;
+  font-weight:200;
+    line-height: 2;
+    font-size: 10px;
+      text-align:justify;
+      padding-left: 1cm;
+}
+
+.slideshowContainer {
+  padding-right: 5%;
+
+  width: 16.5cm;
+  margin: 0 auto;
+  /*border: solid blue 1px;*/
+     /*-webkit-animation: fadein 2s;*/
+
+}
+
+
+/*@-webkit-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}*/
+
+
+.centerImage {
+  margin: 0 auto;
+  padding-left: 0.1cm;
+  padding-right: 0.1cm;
+
+/*width: 20cm;*/
+  /*border: solid black 2px;*/
+}
+
+.photo {
+  width: 16.5cm;
+  margin: 0 auto;
+
+}
+
+
+.backwardArrow {
+     -webkit-animation: fadein 15s;
+  margin-top: 11.53%;
+
+  /*padding-right: 2cm;*/
+  border-radius: 50%;
+  margin-left: -1.6%;
+  z-index: -1;
+  background-color: grey;
+  /*opacity: 0.1;*/
+  position:fixed;
+  height: 2.25%;
+  width: 1.1%;
+  
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:0.1;
+    }
+}
+
+
+.forwardArrow {
+  -webkit-animation: fadein 15s;
+margin-top: -12.82%;
+
+
+border-radius: 50%;
+margin-left: 43.8%;
+z-index: -1;
+background-color: grey;
+/*opacity: 0.1;*/
+position:fixed;
+height: 2.25%;
+width: 1.1%;
+}

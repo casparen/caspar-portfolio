@@ -1,0 +1,90 @@
+#enno {
+
+font-family: "Avenir Next";
+font-weight: 500;
+line-height: 2;
+font-size: 10px;
+
+}
+
+#about {
+  letter-spacing: 0.8px;
+
+  font-family: "Avenir Next";
+  font-weight:200;
+    line-height: 2;
+    font-size: 10px;
+}
+
+#more{
+  font-family: "Avenir Next";
+  font-weight:300;
+    line-height: 2;
+    font-size: 10px;
+}
+
+.infoContainer {
+  margin: 0 auto;
+  width: 30%;
+  text-align:justify;
+}
+
+
+
+
+.wrapper {
+
+  margin-top: 13%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.profileCss {
+  margin: 0 auto;
+  margin-left: -7cm;
+  width: 12%;
+  height: 12%;
+  /*border-radius: px;*/
+  filter: grayscale(100%);
+}
+
+
+.contact {
+  font-family: "Avenir Next";
+  font-weight:200;
+
+    font-size: 10px;
+}
+
+#number {
+  letter-spacing: 2px;
+}
+
+.contactContainer {
+  /*padding-top: 17%;*/
+  padding-top: 1%;
+  /*padding-top: 95%;*/
+}
+
+
+
+#email {
+  text-decoration: none;
+  color: black
+}
+
+#email:hover {
+  color: red;
+}
+
+#github {
+  text-decoration: none;
+  padding-left: 0.2cm;
+
+}
+
+#github:hover {
+  color: red;
+}

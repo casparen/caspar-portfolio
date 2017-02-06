@@ -1,0 +1,241 @@
+/*@-webkit-keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.hvr-wobble-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-wobble-horizontal:hover, .hvr-wobble-horizontal:focus, .hvr-wobble-horizontal:active {
+  -webkit-animation-name: hvr-wobble-horizontal;
+  animation-name: hvr-wobble-horizontal;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+.hvr-buzz {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}*/
+
+.cover{
+  opacity: 1;
+}
+
+.cover:hover {
+  /*border: solid pink 1px;*/
+  /*opacity: 0.2;*/
+    transition-delay: 2s;
+}
+
+
+
+
+
+.linkProject {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+
+.coverContainer {
+  /*text-align: center;*/
+  /*background-color: pink;
+  z-index: -1;*/
+  /*display: flex;
+  flex-direction: row;*/
+  position: fixed;
+  width: 100%;
+  /*border: solid black 1px;*/
+  /*background-color: pink;*/
+  margin-top: 5.5cm;
+  margin-left: 3%;
+    /*z-index: -1;*/
+  /*animation: fadein 0.s;*/
+   -webkit-animation: fadein 1.2s;
+
+}
+
+
+@-webkit-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+
+
+  img {
+    width: 80%;
+
+
+  }
+  .center {
+    margin-left: -40px;
+    margin-right: -40px;
+    margin: 0 auto;
+
+  }
+  .center .slick-center img {
+    /*margin: 0 auto;*/
+    /*opacity: 0.4;*/
+    /*border:solid pink 1px;*/
+    transform: scale(1);
+    opacity: 1;
+    /*width: 60%;*/
+    /*transform: width 2s, height 2s*/
+    /*transform:scale(0.2);*/
+    /*transform-origin:0 0;*/
+  }
+
+
+
+
+
+  .center img {
+    /*border: solid green 1px;*/
+    /*opacity: 0.8;*/
+    transform: scale(0.7);
+    transition-delay: 0.5s;
+
+      /*transform: width 2s, height 2s*/
+    transition: all 200ms ease;
+
+  }
+
+
+
+.projDescription {
+    visibility: hidden;
+    opacity: 0;
+  transition: opacity .20s ease-in-out;
+  }
+
+
+    .center .slick-center .projDescription {
+      position: relative;
+      /*opacity: 1;*/
+      /*transition: all 20ms ease;*/
+      text-align: center;
+      margin-left: -16%;
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0.5s;
+      font-family: "Avenir Next";
+        font-weight:200;
+      font-weight:450;
+      font-size: 14px;
+      word-spacing: 2px;
+      margin-top: 4.5cm;
+      line-height: 1.8;
+
+    }
+
+        .title {
+              font-weight:400;
+        }
+
+  /*.center .slick-center .projDescription:hover {
+    opacity: 0.4;
+    transition-delay: 0.01s;
+
+  }*/
+
+
+.center .slick-center img:hover {
+  /*opacity: 0.7;*/
+  border-radius: 20px;
+  transition-delay: 2;
+}
+
+
+
+/*.forward {
+
+background-color: pink;
+width: 1cm;
+height: 1cm;
+margin-left: 2cm;
+
+
+}
+
+.backward {
+background-color: pink;
+width: 1cm;
+height: 1cm;
+}*/

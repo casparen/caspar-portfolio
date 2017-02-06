@@ -1,0 +1,155 @@
+
+//teakbench
+import project1pic1 from '../GD/Projects/teakBench/1.png'
+import project1pic2 from '../GD/Projects/teakBench/2.png'
+import project1pic3 from '../GD/Projects/teakBench/3.png'
+import project1pic4 from '../GD/Projects/teakBench/4.png'
+import project1pic5 from '../GD/Projects/teakBench/5.png'
+import project1pic6 from '../GD/Projects/teakBench/6.png'
+
+//carto
+import project2pic1 from '../GD/Projects/carto/1.png'
+import project2pic2 from '../GD/Projects/carto/2.png'
+import project2pic3 from '../GD/Projects/carto/3.png'
+import project2pic4 from '../GD/Projects/carto/4.png'
+
+//gormley
+import project3pic1 from '../GD/Projects/gormley/1.png'
+import project3pic2 from '../GD/Projects/gormley/2.png'
+import project3pic3 from '../GD/Projects/gormley/3.png'
+import project3pic4 from '../GD/Projects/gormley/4.png'
+import project3pic5 from '../GD/Projects/gormley/5.png'
+import project3pic6 from '../GD/Projects/gormley/6.png'
+import project3pic7 from '../GD/Projects/gormley/7.png'
+import project3pic8 from '../GD/Projects/gormley/8.png'
+import project3pic9 from '../GD/Projects/gormley/9.png'
+
+//finearts
+import project4pic1 from '../GD/Projects/fineArts/1.png'
+import project4pic2 from '../GD/Projects/fineArts/2.png'
+import project4pic3 from '../GD/Projects/fineArts/3.png'
+import project4pic4 from '../GD/Projects/fineArts/4.png'
+import project4pic5 from '../GD/Projects/fineArts/5.png'
+import project4pic6 from '../GD/Projects/fineArts/6.png'
+
+
+//processing
+import project5pic1 from '../GD/Projects/processing/1.png'
+import project5pic2 from '../GD/Projects/processing/2.png'
+import project5pic3 from '../GD/Projects/processing/3.png'
+import project5pic4 from '../GD/Projects/processing/4.png'
+import project5pic5 from '../GD/Projects/processing/5.png'
+
+//bobo
+import project6pic1 from '../GD/Projects/bobo/1.png'
+import project6pic2 from '../GD/Projects/bobo/2.png'
+import project6pic3 from '../GD/Projects/bobo/3.png'
+import project6pic4 from '../GD/Projects/bobo/4.png'
+import project6pic5 from '../GD/Projects/bobo/5.png'
+import project6pic6 from '../GD/Projects/bobo/6.png'
+import project6pic7 from '../GD/Projects/bobo/7.png'
+import project6pic8 from '../GD/Projects/bobo/8.png'
+import project6pic9 from '../GD/Projects/bobo/9.png'
+import project6pic10 from '../GD/Projects/bobo/10.png'
+
+//enno
+import project7pic1 from '../GD/Projects/enno/1.jpg'
+import project7pic2 from '../GD/Projects/enno/2.jpg'
+import project7pic3 from '../GD/Projects/enno/3.jpg'
+import project7pic4 from '../GD/Projects/enno/4.jpg'
+import project7pic5 from '../GD/Projects/enno/5.jpg'
+import project7pic6 from '../GD/Projects/enno/6.jpg'
+import project7pic7 from '../GD/Projects/enno/7.jpg'
+import project7pic8 from '../GD/Projects/enno/8.jpg'
+import project7pic9 from '../GD/Projects/enno/9.jpg'
+import project7pic10 from '../GD/Projects/enno/10.jpg'
+import project7pic11 from '../GD/Projects/enno/11.jpg'
+import project7pic12 from '../GD/Projects/enno/12.jpg'
+import project7pic13 from '../GD/Projects/enno/13.jpg'
+import project7pic14 from '../GD/Projects/enno/14.jpg'
+import project7pic15 from '../GD/Projects/enno/15.jpg'
+import project7pic16 from '../GD/Projects/enno/16.jpg'
+
+// import project7pic17 from '../GD/Projects/7/animation.mov'
+
+
+//toy
+import project8pic1 from '../GD/Projects/toy/1.png'
+import project8pic2 from '../GD/Projects/toy/2.png'
+import project8pic3 from '../GD/Projects/toy/3.png'
+import project8pic4 from '../GD/Projects/toy/4.png'
+import project8pic5 from '../GD/Projects/toy/5.png'
+import project8pic6 from '../GD/Projects/toy/6.png'
+import project8pic7 from '../GD/Projects/toy/7.png'
+import project8pic8 from '../GD/Projects/toy/8.png'
+
+
+
+
+const ProjectInfo = {
+  Project1: [{
+    title: "Teak bench",
+    projectNum:"01",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imgSrc: [project1pic1, project1pic2, project1pic3, project1pic4, project1pic5, project1pic6]
+  }],
+
+
+  Project2: [{
+    title: "Catrò",
+    projectNum:"02",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imgSrc: [project2pic1, project2pic2, project2pic3, project2pic4]
+  }],
+
+  Project3: [{
+    title: "Anothony Gormley transposition",
+    projectNum:"03",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imgSrc: [project3pic1, project3pic2, project3pic3, project3pic4, project3pic5, project3pic6, project3pic7, project3pic8, project3pic9]
+  }],
+
+  Project4: [{
+    title: "Fine arts",
+    projectNum:"04",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imgSrc: [project4pic1, project4pic2, project4pic3, project4pic4, project4pic5, project4pic6]
+  }],
+
+  Project5: [{
+    title: "Processing on paper",
+    projectNum:"05",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imgSrc: [project5pic1, project5pic2, project5pic3, project5pic4, project5pic5]
+  }],
+
+  Project6: [{
+    title: "Portable seating",
+    projectNum:"06",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imgSrc: [project6pic1, project6pic2, project6pic3, project6pic4, project6pic5, project6pic6, project6pic7, project6pic8, project6pic9, project6pic10]
+  }],
+
+  Project7: [{
+    title: "enno",
+    projectNum:"07",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imgSrc: [project7pic1, project7pic2, project7pic3, project7pic4, project7pic5, project7pic6, project7pic7, project7pic8, project7pic9, project7pic10, project7pic11, project7pic12, project7pic13, project7pic14, project7pic15, project7pic16]
+  }],
+
+  Project8: [{
+    title: "Portable seating",
+    projectNum:"08",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    imgSrc: [project8pic1, project8pic2, project8pic3, project8pic4, project8pic5, project8pic6, project8pic7, project8pic8]
+  }]
+
+}
+
+
+
+
+
+
+
+module.exports = ProjectInfo;

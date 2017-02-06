@@ -1,0 +1,146 @@
+/*@import url(http://fonts.googleapis.com/css?family=Roboto);*/
+
+#testoo{
+  /*transition: transform 1s;
+    transition: font 0.3s ease;*/
+    transition: transform 0.3s ease-out;
+      /*transform-origin: 0% 0%;*/
+}
+
+.hvr-grow {
+  /*display: inline-block;
+  vertical-align: middle;*/
+  /*color: pink;*/
+  /*transform: font-size(20px);*/
+  /*transition: font-size 20px;*/
+  transform: translateX(-0.01%) translateY(-70%);
+  /*transform-origin: 50% 50%;*/
+  /*transform: scale(2);*/
+  /*transition-duration: 1s;*/
+}
+
+
+@keyframes hvr-wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  33.3% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.hvr-wobble-vertical {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(0.5px) translateZ(0);
+  /*transform: perspective(10px) translateZ(0);*/
+  -webkit-animation-name: hvr-wobble-vertical;
+  animation-name: hvr-wobble-vertical;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  /*-webkit-animation-iteration-count: 1;*/
+  animation-iteration-count: 5;
+}
+
+
+
+
+.navConatiner {
+  /*border: solid pink 2px;*/
+  display: flex;
+  padding-top: 1.2cm;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+}
+
+.logoImg {
+  /*border: solid black 1px;*/
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  margin: 0 auto;
+
+}
+
+
+
+#workNav {
+  /*border: solid black 1px;*/
+
+  display: flex;
+  flex-direction: row;
+  color: black;
+  letter-spacing: 7px;
+   text-transform: uppercase;;
+  text-decoration: none;
+  padding-left: 27%;
+  margin: 0 auto;
+  font-size: 11pt;
+  font-family: "Avenir Next";
+}
+
+
+
+#aboutNav {
+  text-decoration: none;
+
+  color: black;
+  letter-spacing: 7px;
+ text-transform: uppercase;
+  /*border: solid black 1px;*/
+  padding-right: 27%;
+  margin: 0 auto;
+    font-size: 11pt;
+    font-family: "Avenir Next";
+}
+
+
+
+.redO {
+  /*border: solid blue 1px;*/
+  margin: 0 auto;
+  color: black
+}
+
+
+/*.o{
+  border: solid green 1px;
+  display: flex;
+  flex-direction: row;
+}*/
+
+#deactiveO{
+  /*border: solid blue 1px;*/
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.logoContainer {
+  width: 2cm;
+  /*background-color: pink;*/
+}

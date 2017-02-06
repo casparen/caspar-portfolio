@@ -1,0 +1,14 @@
+.linkContainer  {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.routes  {
+  flex-direction: row;
+  font-size: 30px;
+  margin: auto;
+  border: solid black 1px;
+  font-family: Bauhaus 93;
+}

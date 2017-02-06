@@ -1,0 +1,100 @@
+/*.wrapper {
+width: 100%;
+height: 100%;
+position: absolute;
+}*/
+
+
+.coverContainerNew {
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  /*background-color: white;*/
+  /*background-color: #1c1c1c;*/
+  background-color: #e62535;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.shapeContainer {
+  -webkit-animation: fadein 3s;
+
+
+
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+
+.coverLogo {
+/*
+  border: solid pink 1px;*/
+/*margin: 0 auto;*/
+width: 6.5%;
+
+
+}
+
+
+
+#k1{
+    /*border: solid black 2px;*/
+  margin-right:2cm;
+  transform: rotate(-45deg);
+    transition: transform 4s;
+}
+
+#k1:hover {
+      transform: rotate(360deg);
+}
+
+#k2{
+      transition: transform 4s;
+  margin-right: 1.8cm;
+  margin-left: 1.8cm;
+}
+
+#k2:hover {
+      transform: rotate(-360deg);
+}
+
+#k3{
+  transition: transform 3s;
+  margin-left: 1.8cm;
+  /*border: solid black 2px;*/
+  transform: rotate(135deg);
+}
+
+#k3:hover {
+      transform: rotate(360deg);
+}
+
+/*@-webkit-keyframes test {
+    from {background-color: white;}
+    to {background-color: black;}
+}*/
+
+.enter {
+  text-decoration: none;
+  color: white;
+  margin-top: 9cm;
+  position: absolute;
+  font-family: "Avenir Next";
+  font-weight:200;
+    line-height: 2;
+    font-size: 15px;
+    letter-spacing: 15px;
+
+}
+
+.enter:hover {
+    font-weight:300;
+}
