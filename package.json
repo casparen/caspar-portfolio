@@ -1,10 +1,8 @@
 {
   "name": "Caspar_Webside",
-  "homepage": "http://casparen.github.io/portfolio",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "gh-pages": "^0.12.0",
     "react-scripts": "0.7.0"
   },
   "dependencies": {
@@ -21,6 +19,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build"
   }
 }
