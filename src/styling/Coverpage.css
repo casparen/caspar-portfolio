@@ -29,10 +29,10 @@ position: absolute;
   margin: 0 auto;
   /*display: flex;
   flex-direction: row;*/
-  -webkit-animation: fadein 3s;
- -moz-animation:    fadein 3s ; /* Fx 5+ */
-  -o-animation:      fadein 3s ; /* Opera 12+ */
-  animation:         fadein 3s ; /* IE 10+, Fx 29+ */
+  /*-webkit-animation: fadein 3s;
+ -moz-animation:    fadein 3s ;
+  -o-animation:      fadein 3s ;
+  animation:         fadein 3s ; */
 
 
 
@@ -50,7 +50,7 @@ position: absolute;
 /*
   border: solid pink 1px;*/
 /*margin: 0 auto;*/
-width: 6.5%;
+width: 10%;
 }
 
 .coverLogo:hover {
@@ -64,21 +64,24 @@ transform: scale(3,3);
     /*border: solid black 2px;*/
   margin-right:2cm;
   transform: rotate(-45deg);
-    transition: transform 4s;
+    transition: transform 3s;
 }
 
 #k1:hover {
       transform: rotate(360deg);
+
+
 }
 
 #k2{
-      transition: transform 4s;
+      transition: transform 3s;
   margin-right: 1.8cm;
   margin-left: 1.8cm;
 }
 
 #k2:hover {
       transform: rotate(-360deg);
+
 }
 
 #k3{
@@ -89,7 +92,8 @@ transform: scale(3,3);
 }
 
 #k3:hover {
-      transform: rotate(360deg);
+      transform: rotate(460deg);
+
 }
 
 /*@-webkit-keyframes test {
