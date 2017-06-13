@@ -174,8 +174,8 @@ line-height: 2;
 
 .slideShow {
   /*justify-content: space-around;*/
-  padding-top: 5cm;
-  padding-bottom: 0.000001cm;
+  padding-top: 3.2cm;
+  padding-bottom: 3.2cm;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -188,5 +188,5 @@ line-height: 2;
 
 .slideShowPic {
   padding: 0.35cm;
-  width: 30%;
+  width: 20%;
 }

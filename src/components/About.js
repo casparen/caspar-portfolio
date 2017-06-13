@@ -11,6 +11,12 @@ import slide3 from '../GD/aboutSlideShow/3.png'
 import slide4 from '../GD/aboutSlideShow/4.png'
 import slide5 from '../GD/aboutSlideShow/5.png'
 import slide6 from '../GD/aboutSlideShow/6.png'
+import slide7 from '../GD/aboutSlideShow/7.png'
+import slide8 from '../GD/aboutSlideShow/8.png'
+
+
+      // <img  className="slideShowPic" alt="reload" src={slide9}></img>
+// import slide9 from '../GD/aboutSlideShow/9.png'
 
 
 
@@ -38,6 +44,11 @@ export default class About extends Component {
               <img  className="slideShowPic" alt="reload" src={slide4}></img>
               <img  className="slideShowPic" alt="reload" src={slide5}></img>
               <img  className="slideShowPic" alt="reload" src={slide6}></img>
+              <img  className="slideShowPic" alt="reload" src={slide7}></img>
+              <img  className="slideShowPic" alt="reload" src={slide8}></img>
+
+
+
             </div>
 
 
