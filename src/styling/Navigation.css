@@ -2,12 +2,15 @@
 
 #testoo{
   /*transition: transform 1s;
-    transition: font 0.3s ease;*/
-    transition: transform 0.3s ease-out;
+    transition: font 0.3s ease;
+    transition: transform 0.3s ease-out;*/
       /*transform-origin: 0% 0%;*/
 }
 
 .hvr-grow {
+  transition: transform 1s;
+    transition: font 0.3s ease;
+    transition: transform 0.3s ease-out;
   /*display: inline-block;
   vertical-align: middle;*/
   /*color: pink;*/
@@ -20,7 +23,7 @@
 }
 
 
-@keyframes hvr-wobble-vertical {
+/*@keyframes hvr-wobble-vertical {
   16.65% {
     -webkit-transform: translateY(-8px);
     transform: translateY(-8px);
@@ -45,7 +48,7 @@
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-}
+}*/
 .hvr-wobble-vertical {
   display: inline-block;
   vertical-align: middle;
@@ -66,13 +69,17 @@
 
 .navConatiner {
   /*border: solid pink 2px;*/
+
+
+}
+
+.MediaQueryNav {
   display: flex;
   padding-top: 1.2cm;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-
 }
 
 .logoImg {
@@ -81,9 +88,15 @@
   height: 50%;
   margin: 0 auto;
   margin: 0 auto;
-
 }
 
+
+.logoImgSmall {
+  width: 25%;
+  height: 25%;
+  margin: 0 auto;
+  margin: 0 auto;
+}
 
 
 #workNav {
@@ -101,12 +114,25 @@
   font-family: "Avenir Next";
 }
 
+#workNavSmall {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  letter-spacing: 5px;
+   text-transform: uppercase;;
+  text-decoration: none;
+  padding-left:12%;
+  margin: 0 auto;
+  font-size: 6pt;
+  font-family: "Avenir Next";
+}
+
 
 
 #aboutNav {
   text-decoration: none;
 
-  color: black;
+  color: #1c1c1c;
   letter-spacing: 7px;
  text-transform: uppercase;
   /*border: solid black 1px;*/
@@ -116,12 +142,25 @@
     font-family: "Avenir Next";
 }
 
+#aboutNavSmall {
+  text-decoration: none;
+
+  color: #1c1c1c;
+  letter-spacing: 5px;
+ text-transform: uppercase;
+  /*border: solid black 1px;*/
+  padding-right: 12%;
+  margin: 0 auto;
+    font-size: 6pt;
+    font-family: "Avenir Next";
+}
+
 
 
 .redO {
   /*border: solid blue 1px;*/
   margin: 0 auto;
-  color: black
+  color: #1c1c1c;
 }
 
 

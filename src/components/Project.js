@@ -5,42 +5,8 @@ import Slider from 'react-slick'
 import NavBar from './NavBar'
 
 
-// import queryString from 'query-string';
-var SampleNextArrow = React.createClass({
-
-
-  render: function() {
-    const nextStyle = {
-      height: "17px",
-      // backgroundColor: "pink",
-      marginRight:"-1cm",
-      opacity: "0.4",
-      width: "17px",
-      zIndex: "+1",
-      display: 'block',
-      background: 'grey',
-      borderRadius: "100%"
-    }
-    return <div {...this.props} style={nextStyle}></div>;
-  }
-});
-
-var SamplePrevArrow = React.createClass({
-  render: function() {
-    const prevStyle = {
-      height: "17px",
-      opacity: "0.4",
-      width: "18px",
-      textAlign: "center",
-      display: 'block',
-      background: 'grey',
-      borderRadius: "50%"
-    }
-    return (
-      <div {...this.props} style={prevStyle}></div>
-    );
-  }
-});
+import ScrollUp from 'react-scroll-up'
+import  MediaQuery from 'react-responsive';
 
 
 export default class TeakBench extends Component {
@@ -51,7 +17,19 @@ export default class TeakBench extends Component {
     }
   }
 
+  mouseOff(){
+    console.log("out");
+  }
+
+  projectOn(){
+    console.log("in");
+    // console.log(number);
+    console.log(this.refs);
+  }
+
 render(){
+
+
 
     // console.log("in project",this.props.location.query);
 
@@ -59,10 +37,13 @@ render(){
     // console.log(information);
     // console.log(information.imgSrc);
 
-    const imageProcessing = information.imgSrc.map(function(x) {
+    const imageProcessing = information.imgSrc.map(function(x, number) {
+      console.log(number);
       return (
-         <div><img alt="reload" className="photo" src={x} /></div>
-      )
+        //  <div ><img alt="reload" className="photo" src={x} ref={number}></img></div>
+        <div ><img alt="reload" className="photo" src={x}></img></div>
+    )
+
      });
 
 
@@ -91,29 +72,19 @@ render(){
     }
 
 
-    const settings = {
-      className: "centerImage",
-      // arrows: true,
-      dots: false,
-      focusOnSelect: true,
-      swipeToSlide: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      nextArrow: <SampleNextArrow />,
- prevArrow: <SamplePrevArrow />
 
-  };
 
     return (
       <div>
         <NavBar />
           <div className="projectWrapper">
             <div className="projectContainer">
+
+
+
                   <div className="descriptionContainer animated fadeInLeft">
+                    <MediaQuery query='(min-device-width: 1000px)' className="MediaQueryProject">
+
                         <div className="projectTitle">
                             <div className="projectName">
                               {information.title} <br></br>
@@ -125,21 +96,74 @@ render(){
                         <div className="aboutProject">
                           {information.description}
                         </div>
+                      </MediaQuery>
+
                   </div>
 
-                  <div className="slideshowContainer animated fadeInRight">
-                      <Slider {...settings}>
-                          {imageProcessing}
-                      </Slider>
-                  </div>
+
+
+                        <div className="descriptionContainer animated fadeInLeft">
+                            <MediaQuery query='(max-width: 1000px)' className="MediaQueryProject">
+                              <div className="projectTitleSmall">
+                                  <div className="projectNameSmall">
+                                    {information.title} <br></br>
+                                  </div>
+                                  <div className="projectNumberSmall">
+                                    {information.projectNum}
+                                  </div>
+                              </div>
+                              <div className="aboutProjectSmall">
+                                {information.description}
+                              </div>
+                                              </MediaQuery>
+                        </div>
+
+
+
+                <div className="slideshowContainer animated fadeInRight" onClick={this.projectOn.bind(this)}>
+                  {imageProcessing}
+                </div>
+
+
+
+
+
+
             </div>
+
+
           </div>
+
+
+          <h1 id="test" >1</h1>
+          <div className="buttonWrap">
+            <ScrollUp showUnder={800} className="DivupButton">
+              <span className="upButton fadeInRight">UP</span>
+            </ScrollUp>
+          </div>
+
 
       </div>
 
       )
     }
   }
+
+
+
+  // <div className="slideshowContainer animated fadeInRight">
+  //     <Slider {...settings}>
+  //         {imageProcessing}
+  //     </Slider>
+  // </div>
+
+
+
+
+
+
+
+
 
 //                    <div className="backwardArrow animated fadeInRight"></div>
 
@@ -155,3 +179,58 @@ render(){
   //       <div><img src={information.imgSrc[2]} /></div>
   //       <div><img src={information.imgSrc[3]} /></div>
   // </Slider>
+
+
+//   const settings = {
+//     className: "centerImage",
+//     // arrows: true,
+//     dots: false,
+//     focusOnSelect: true,
+//     swipeToSlide: false,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 3000,
+//     nextArrow: <SampleNextArrow />,
+// prevArrow: <SamplePrevArrow />
+//
+// };
+
+// import queryString from 'query-string';
+// var SampleNextArrow = React.createClass({
+//
+//
+//   render: function() {
+//     const nextStyle = {
+//       height: "17px",
+//       // backgroundColor: "pink",
+//       marginRight:"-1cm",
+//       opacity: "0.4",
+//       width: "17px",
+//       zIndex: "+1",
+//       display: 'block',
+//       background: 'grey',
+//       borderRadius: "100%"
+//     }
+//     return <div {...this.props} style={nextStyle}></div>;
+//   }
+// });
+//
+// var SamplePrevArrow = React.createClass({
+//   render: function() {
+//     const prevStyle = {
+//       height: "17px",
+//       opacity: "0.4",
+//       width: "18px",
+//       textAlign: "center",
+//       display: 'block',
+//       background: 'grey',
+//       borderRadius: "50%"
+//     }
+//     return (
+//       <div {...this.props} style={prevStyle}></div>
+//     );
+//   }
+// });
