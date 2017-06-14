@@ -40,7 +40,7 @@ export default class About extends Component {
 
           <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">
             <div className="wrapper animated fadeIn">
-              <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'  duration={2}>
+              <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'  duration={3} offset="180">
                 <img className="profileCss" alt="reload" src={profile}></img>
               </ScrollAnimation>
 
@@ -48,29 +48,27 @@ export default class About extends Component {
                 <div className="infoContainer">
                   <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'  duration={2}>
                     <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
-
                   </ScrollAnimation>
-
                 </div>
 
 
+                  <div className="slideShow">
+                    <img  className="slideShowPic" alt="reload" src={slide1}></img>
+                    <img  className="slideShowPic" alt="reload" src={slide2}></img>
+                    <img  className="slideShowPic" alt="reload" src={slide3}></img>
+                    <img  className="slideShowPic" alt="reload" src={slide4}></img>
+                    <img  className="slideShowPic" alt="reload" src={slide5}></img>
+                    <img  className="slideShowPic" alt="reload" src={slide6}></img>
+                    <img  className="slideShowPic" alt="reload" src={slide7}></img>
+                    <img  className="slideShowPic" alt="reload" src={slide8}></img>
+                  </div>
 
-            <div className="slideShow">
-              <img  className="slideShowPic" alt="reload" src={slide1}></img>
-              <img  className="slideShowPic" alt="reload" src={slide2}></img>
-              <img  className="slideShowPic" alt="reload" src={slide3}></img>
-              <img  className="slideShowPic" alt="reload" src={slide4}></img>
-              <img  className="slideShowPic" alt="reload" src={slide5}></img>
-              <img  className="slideShowPic" alt="reload" src={slide6}></img>
-              <img  className="slideShowPic" alt="reload" src={slide7}></img>
-              <img  className="slideShowPic" alt="reload" src={slide8}></img>
-            </div>
 
               <div className="socialContainer">
                   <a href="https://www.instagram.com/enno_nagel/" className="link"><div href="#" className="fa fa-instagram"></div></a>
                   <a href="https://www.linkedin.com/in/casparnagel" className="link"><div href="#" className="fa fa-linkedin"></div></a>
                   <a href="https://github.com/casparen" className="link"><div href="#" className="fa fa-github"></div></a>
-                  <a href="mailto:casparen@me.com" className="contact link" id="email"><div href="#" className="fa fa-arrow-right"></div></a>
+                  <a href="mailto:casparen@me.com" className="contact link" id="email"><div href="#" className="fa fa-envelope"></div></a>
               </div>
             </div>
           </MediaQuery>
@@ -96,7 +94,7 @@ export default class About extends Component {
                       <a href="https://www.instagram.com/enno_nagel/" className="linkSmall"><div href="#" className="fa fa-instagram"></div></a>
                       <a href="https://www.linkedin.com/in/casparnagel" className="linkSmall"><div href="#" className="fa fa-linkedin"></div></a>
                       <a href="https://github.com/casparen" className="linkSmall"><div href="#" className="fa fa-github"></div></a>
-                      <a href="mailto:casparen@me.com" className="contact linkSmall" id="email"><div href="#" className="fa fa-arrow-right"></div></a>
+                      <a href="mailto:casparen@me.com" className="contact linkSmall" id="email"><div href="#" className="fa fa-envelope"></div></a>
                   </div>
             </div>
           </MediaQuery>
@@ -109,6 +107,21 @@ export default class About extends Component {
 }
 
 
+
+// with fade
+// <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'  duration={2} offset="180">
+//   <div className="slideShow">
+//     <img  className="slideShowPic" alt="reload" src={slide1}></img>
+//     <img  className="slideShowPic" alt="reload" src={slide2}></img>
+//     <img  className="slideShowPic" alt="reload" src={slide3}></img>
+//     <img  className="slideShowPic" alt="reload" src={slide4}></img>
+//     <img  className="slideShowPic" alt="reload" src={slide5}></img>
+//     <img  className="slideShowPic" alt="reload" src={slide6}></img>
+//     <img  className="slideShowPic" alt="reload" src={slide7}></img>
+//     <img  className="slideShowPic" alt="reload" src={slide8}></img>
+//   </div>
+//
+// </ScrollAnimation>
 
 
             // <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">
