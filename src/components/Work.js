@@ -8,7 +8,7 @@ import { browserHistory } from 'react-router';
 //import { browserHistory, Route, Router } from 'react-router';
 // import ResponsiveMixin from 'react-responsive-mixin';
 import  MediaQuery from 'react-responsive';
-
+import Loader from 'react-loader-advanced';
 
 
 
@@ -37,6 +37,13 @@ export default class Work extends Component {
       coverSize: ""
     }
   }
+
+
+
+
+
+
+
 
 
 
@@ -176,15 +183,21 @@ console.log(this.state.coverStatus);
 
 
 
-
+// const spinner = <div class="loader"></div>
 //          <NavBar/>
     return (
       <div>
 
 
+
+
+
+
         <div className="pageWrapper">
           <div className="projectsWrapper">
             <div className="coverContainer">
+
+
                   <MediaQuery query='(min-device-width: 700px)' className="MediaQuery">
                       <div><img alt="reload" style={coverStyling} ref="p1" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p1')} onClick={this.project.bind(this,"p1")} src={cover1}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p2" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p2')} onClick={this.project.bind(this,"p2")} src={cover2}></img><div className="projDescription"></div></div>
@@ -208,7 +221,7 @@ console.log(this.state.coverStatus);
             </div>
           </div>
 
-  
+
         </div>
 
 

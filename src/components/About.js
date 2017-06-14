@@ -15,6 +15,15 @@ import slide7 from '../GD/aboutSlideShow/7.png'
 import slide8 from '../GD/aboutSlideShow/8.png'
 
 
+// import ScrollEffect from 'react-scroll-effects';
+
+import ScrollAnimation from 'react-animate-on-scroll';
+
+
+
+
+  // import { browserHistory } from 'react-router';
+
       // <img  className="slideShowPic" alt="reload" src={slide9}></img>
 // import slide9 from '../GD/aboutSlideShow/9.png'
 
@@ -27,16 +36,25 @@ export default class About extends Component {
       <div>
 
 
+
+
           <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">
             <div className="wrapper animated fadeIn">
+              <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut' offset="200"  duration={2}>
                 <img className="profileCss" alt="reload" src={profile}></img>
-                  <div className="infoContainer">
-                  <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
-                    <div className="contactContainer">
-                      <a href="mailto:casparen@me.com" className="contact" id="email">casparen@me.com</a>
-                      <a href="https://github.com/casparen" className="contact" id="github">github</a>
-                    </div>
-                  </div>
+              </ScrollAnimation>
+
+
+                <div className="infoContainer">
+                  <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'  duration={2}>
+                    <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
+
+                  </ScrollAnimation>
+
+                </div>
+
+
+
             <div className="slideShow">
               <img  className="slideShowPic" alt="reload" src={slide1}></img>
               <img  className="slideShowPic" alt="reload" src={slide2}></img>
@@ -62,10 +80,6 @@ export default class About extends Component {
                 <img className="profileCssSmall" alt="reload" src={profile}></img>
                   <div className="infoContainerSmall">
                   <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
-                    <div className="contactContainerSmall">
-                      <a href="mailto:casparen@me.com" className="contact" id="email">casparen@me.com</a>
-                      <a href="https://github.com/casparen" className="contact" id="github">github</a>
-                    </div>
                   </div>
                   <div className="slideShowSmall">
                     <img  className="slideShowPicSmall" alt="reload" src={slide1}></img>
