@@ -175,7 +175,7 @@ line-height: 2;
 .slideShow {
   /*justify-content: space-around;*/
   padding-top: 3.2cm;
-  padding-bottom: 3.2cm;
+  /*padding-bottom: 3.2cm;*/
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -186,7 +186,88 @@ line-height: 2;
 
 }
 
+.slideShowSmall {
+  /*justify-content: space-around;*/
+  padding-top: 1.5cm;
+  padding-bottom: 1.5cm;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  /*background-color: pink;*/
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 .slideShowPic {
   padding: 0.35cm;
   width: 20%;
+}
+
+
+.slideShowPicSmall {
+  padding: 0.1cm;
+  width: 18%;
+}
+
+
+.socialContainer {
+  /*border: solid pink 1px;*/
+  padding-top: 1.5cm;
+  padding-bottom: 1.5cm;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+}
+
+.socialContainerSmall {
+  /*border: solid pink 1px;*/
+  padding-top: 1.5cm;
+  padding-bottom: 1.5cm;
+  display: flex;
+  flex-direction: row;
+  /*width: 200px;*/
+}
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  z-index: auto;
+  margin: 0 auto;
+  border: solid #1c1c1c 3px;
+  color: #1c1c1c
+}
+
+.fa:hover {
+    opacity: 0.7;
+    border: solid red 3px;
+    color: red;
+
+}
+.link {
+  margin: 0 auto;
+}
+
+.linkSmall {
+
+}
+
+.fa-linkedin {
+
+}
+
+.fa-instagram {
+
+}
+
+.fa-snapchat {
+
 }

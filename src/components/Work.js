@@ -208,11 +208,7 @@ console.log(this.state.coverStatus);
             </div>
           </div>
 
-          <div className="socialContainer">
-            <div href="#" className="fa fa-linkedin"></div>
-            <div href="#" className="fa fa-instagram"></div>
-            <div href="#" className="fa fa-snapchat"></div>
-          </div>
+  
         </div>
 
 

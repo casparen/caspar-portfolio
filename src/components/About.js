@@ -46,12 +46,14 @@ export default class About extends Component {
               <img  className="slideShowPic" alt="reload" src={slide6}></img>
               <img  className="slideShowPic" alt="reload" src={slide7}></img>
               <img  className="slideShowPic" alt="reload" src={slide8}></img>
-
-
-
             </div>
 
-
+              <div className="socialContainer">
+                  <a href="https://www.instagram.com/enno_nagel/" className="link"><div href="#" className="fa fa-instagram"></div></a>
+                  <a href="https://www.linkedin.com/in/casparnagel" className="link"><div href="#" className="fa fa-linkedin"></div></a>
+                  <a href="https://github.com/casparen" className="link"><div href="#" className="fa fa-github"></div></a>
+                  <a href="mailto:casparen@me.com" className="contact link" id="email"><div href="#" className="fa fa-arrow-right"></div></a>
+              </div>
             </div>
           </MediaQuery>
 
@@ -64,6 +66,23 @@ export default class About extends Component {
                       <a href="mailto:casparen@me.com" className="contact" id="email">casparen@me.com</a>
                       <a href="https://github.com/casparen" className="contact" id="github">github</a>
                     </div>
+                  </div>
+                  <div className="slideShowSmall">
+                    <img  className="slideShowPicSmall" alt="reload" src={slide1}></img>
+                    <img  className="slideShowPicSmall" alt="reload" src={slide2}></img>
+                    <img  className="slideShowPicSmall" alt="reload" src={slide3}></img>
+                    <img  className="slideShowPicSmall" alt="reload" src={slide4}></img>
+                    <img  className="slideShowPicSmall" alt="reload" src={slide5}></img>
+                    <img  className="slideShowPicSmall" alt="reload" src={slide6}></img>
+                    <img  className="slideShowPicSmall" alt="reload" src={slide7}></img>
+                    <img  className="slideShowPicSmall" alt="reload" src={slide8}></img>
+                  </div>
+
+                  <div className="socialContainerSmall">
+                      <a href="https://www.instagram.com/enno_nagel/" className="linkSmall"><div href="#" className="fa fa-instagram"></div></a>
+                      <a href="https://www.linkedin.com/in/casparnagel" className="link"><div href="#" className="fa fa-linkedin"></div></a>
+                      <a href="https://github.com/casparen" className="link"><div href="#" className="fa fa-github"></div></a>
+                      <a href="mailto:casparen@me.com" className="contact link" id="email"><div href="#" className="fa fa-arrow-right"></div></a>
                   </div>
             </div>
           </MediaQuery>

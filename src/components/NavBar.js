@@ -86,15 +86,45 @@ const coverpageStatus = {
     return (
       <div>
 
-        <div className="coverContainerNew" style={coverpageStatus}>
-          <div className="wrap">
-            <div className="shapeContainer">
-              <Link to="/work" className="coverLogo" onClick={this.onClickCoverpage.bind(this)}><img className="coverLogo" alt="reload" id="k1" src={key}></img></Link>
-              <Link to="/work" className="coverLogo" onClick={this.onClickCoverpage.bind(this)}><img className="coverLogo" alt="reload" id="k2" src={key}></img></Link>
-              <Link to="/work" className="coverLogo" onClick={this.onClickCoverpage.bind(this)}><img className="coverLogo" alt="reload" id="k3" src={key}></img></Link>
+
+
+
+        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryCover">
+          <div  style={coverpageStatus}>
+            <div className="wrap">
+              <div className="shapeContainer">
+                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k1" src={key}></img></Link>
+                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k2" src={key}></img></Link>
+                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k3" src={key}></img></Link>
+              </div>
             </div>
           </div>
-        </div>
+        </MediaQuery>
+
+
+
+        <MediaQuery query='(max-width: 700px)' className="MediaQueryCover">
+          <div  style={coverpageStatus}>
+            <div className="wrap">
+              <div className="shapeContainerSmall">
+                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k1" src={key}></img></Link>
+                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k2" src={key}></img></Link>
+                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k3" src={key}></img></Link>
+              </div>
+            </div>
+          </div>
+        </MediaQuery>
+
+
+
+
+
+
+
+
+
+
+
 
 
         <div className="navConatiner" style={navigationStatus}>
@@ -103,11 +133,13 @@ const coverpageStatus = {
             <div onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo} className="logoImg"></img></div>
             <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
           </MediaQuery>
+
+
           <MediaQuery query='(max-width: 700px)' className="MediaQueryNav">
             <Link onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')} id="workNavSmall" to='/work' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
-            <Link className="logoContainer" to='coverpage'><img alt="reload" src={Logo} className="logoImgSmall"></img></Link>
+            <Link onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo} className="logoImgSmall"></img></Link>
             <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNavSmall" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
-              </MediaQuery>
+          </MediaQuery>
         </div>
 
 
