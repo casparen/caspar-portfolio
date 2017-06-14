@@ -25,7 +25,7 @@ export default class About extends Component {
   render(){
     return (
       <div>
-        <NavBar />
+
 
           <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">
             <div className="wrapper animated fadeIn">

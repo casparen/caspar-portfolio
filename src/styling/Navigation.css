@@ -87,7 +87,7 @@
   width: 50%;
   height: 50%;
   margin: 0 auto;
-  margin: 0 auto;
+
 }
 
 
@@ -182,4 +182,136 @@
 .logoContainer {
   width: 2cm;
   /*background-color: pink;*/
+}
+
+
+
+
+/*------------------coverpage*/
+
+/*.wrapper {
+width: 100%;
+height: 100%;
+position: absolute;
+}*/
+
+
+.coverContainerNew {
+  display: flex;
+  align-items:center;
+  /*flex-direction: column;*/
+  justify-content: center;
+  position: absolute;
+  /*background-color: white;*/
+  /*background-color: #1c1c1c;*/
+  background-color: #e62535;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/*.splashphotos {
+  background-size: cover;
+  z-index: -1;
+}*/
+
+.shapeContainer {
+  margin: 0 auto;
+  /*display: flex;
+  flex-direction: row;*/
+  /*-webkit-animation: fadein 3s;
+ -moz-animation:    fadein 3s ;
+  -o-animation:      fadein 3s ;
+  animation:         fadein 3s ; */
+
+
+
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+
+.coverLogo {
+/*
+  border: solid pink 1px;*/
+/*margin: 0 auto;*/
+width: 10%;
+}
+
+.coverLogo:hover {
+transform: scale(3,3);
+
+}
+
+
+
+#k1{
+    /*border: solid black 2px;*/
+  margin-right:2cm;
+  transform: rotate(-45deg);
+    transition: transform 3s;
+}
+
+#k1:hover {
+      transform: rotate(360deg);
+
+
+}
+
+#k2{
+      transition: transform 3s;
+  margin-right: 1.8cm;
+  margin-left: 1.8cm;
+}
+
+#k2:hover {
+      transform: rotate(-360deg);
+
+}
+
+#k3{
+  transition: transform 3s;
+  margin-left: 1.8cm;
+  /*border: solid black 2px;*/
+  transform: rotate(135deg);
+}
+
+#k3:hover {
+      transform: rotate(460deg);
+
+}
+
+/*@-webkit-keyframes test {
+    from {background-color: white;}
+    to {background-color: black;}
+}*/
+
+
+.wrap {
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+}
+
+.enter {
+  /*border: solid pink 1px;*/
+  z-index: -1;
+  text-decoration: none;
+  color: white;
+  padding-top: 5cm;
+  position: absolute;
+  font-family: "Bauhaus 93";
+  font-weight:200;
+    line-height: 2;
+    font-size: 50px;
+    letter-spacing: 45px;
+}
+
+.enter:hover {
+    font-weight:300;
 }

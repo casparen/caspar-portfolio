@@ -16,17 +16,19 @@ import Project from './components/Project.js'
 
 ReactDOM.render(
 <Router history={browserHistory}>
-  <Route path="/" component={App}>
-    <Route path='/coverpage' component={Coverpage} />
+    <Route path="/" component={App}>
     <Route path="/about" component={About}/>
     <Route path="/work" component={Work} />
     <Route path='/work/:project' component={Project} />
-
-
   </Route>
 </Router>
 , document.getElementById('root')
 );
+
+//      <Route path='/coverpage' component={Coverpage} />
+
+
+
 
 
 //    <Route path="/TeakBench" component={TeakBench} />

@@ -76,7 +76,7 @@ render(){
 
     return (
       <div>
-        <NavBar />
+    
           <div className="projectWrapper">
             <div className="projectContainer">
 

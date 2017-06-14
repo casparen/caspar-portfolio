@@ -177,10 +177,10 @@ console.log(this.state.coverStatus);
 
 
 
-
+//          <NavBar/>
     return (
       <div>
-          <NavBar/>
+
 
         <div className="pageWrapper">
           <div className="projectsWrapper">
