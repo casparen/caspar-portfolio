@@ -40,7 +40,7 @@ export default class About extends Component {
 
           <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">
             <div className="wrapper animated fadeIn">
-              <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut' offset="200"  duration={2}>
+              <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'  duration={2}>
                 <img className="profileCss" alt="reload" src={profile}></img>
               </ScrollAnimation>
 
@@ -94,9 +94,9 @@ export default class About extends Component {
 
                   <div className="socialContainerSmall">
                       <a href="https://www.instagram.com/enno_nagel/" className="linkSmall"><div href="#" className="fa fa-instagram"></div></a>
-                      <a href="https://www.linkedin.com/in/casparnagel" className="link"><div href="#" className="fa fa-linkedin"></div></a>
-                      <a href="https://github.com/casparen" className="link"><div href="#" className="fa fa-github"></div></a>
-                      <a href="mailto:casparen@me.com" className="contact link" id="email"><div href="#" className="fa fa-arrow-right"></div></a>
+                      <a href="https://www.linkedin.com/in/casparnagel" className="linkSmall"><div href="#" className="fa fa-linkedin"></div></a>
+                      <a href="https://github.com/casparen" className="linkSmall"><div href="#" className="fa fa-github"></div></a>
+                      <a href="mailto:casparen@me.com" className="contact linkSmall" id="email"><div href="#" className="fa fa-arrow-right"></div></a>
                   </div>
             </div>
           </MediaQuery>

@@ -228,10 +228,14 @@ line-height: 2;
 
 .socialContainerSmall {
   /*border: solid pink 1px;*/
-  padding-top: 1.5cm;
+  width: 200px;
+  /*padding-top: 1.5cm;*/
   padding-bottom: 1.5cm;
+  justify-content: center;
+  /*align-content: center;*/
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   /*width: 200px;*/
 }
 
@@ -258,6 +262,10 @@ line-height: 2;
 }
 .link {
   margin: 0 auto;
+}
+
+.linkSmall {
+  padding: 0.1cm;
 }
 
 .linkSmall {
