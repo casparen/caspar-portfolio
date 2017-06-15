@@ -71,20 +71,18 @@ render(){
       visibility: this.state.gdStatus
     }
 
+//              <MediaQuery query='(min-device-width: 1000px)' className="MediaQueryProject">
 
+  //     </MediaQuery>
 
 
     return (
       <div>
-    
+
+        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryProject">
           <div className="projectWrapper">
             <div className="projectContainer">
-
-
-
                   <div className="descriptionContainer animated fadeInLeft">
-                    <MediaQuery query='(min-device-width: 1000px)' className="MediaQueryProject">
-
                         <div className="projectTitle">
                             <div className="projectName">
                               {information.title} <br></br>
@@ -96,46 +94,46 @@ render(){
                         <div className="aboutProject">
                           {information.description}
                         </div>
-                      </MediaQuery>
-
                   </div>
-
-
-
-                        <div className="descriptionContainer animated fadeInLeft">
-                            <MediaQuery query='(max-width: 1000px)' className="MediaQueryProject">
-                              <div className="projectTitleSmall">
-                                  <div className="projectNameSmall">
-                                    {information.title} <br></br>
-                                  </div>
-                                  <div className="projectNumberSmall">
-                                    {information.projectNum}
-                                  </div>
-                              </div>
-                              <div className="aboutProjectSmall">
-                                {information.description}
-                              </div>
-                                              </MediaQuery>
-                        </div>
-
-
-
                 <div className="slideshowContainer animated fadeInRight" onClick={this.projectOn.bind(this)}>
                   {imageProcessing}
                 </div>
-
-
-
-
-
-
             </div>
-
-
           </div>
+       </MediaQuery>
 
 
-          <h1 id="test" >1</h1>
+
+
+       <MediaQuery query='(max-width: 700px)' className="MediaQueryProject">
+         <div className="projectWrapperSmall">
+           <div className="projectContainerSmall">
+                 <div className="descriptionContainerSmall animated fadeInLeft">
+                       <div className="projectTitleSmall">
+                           <div className="projectNameSmall">
+                             {information.title} <br></br>
+                           </div>
+                           <div className="projectNumberSmall">
+                             {information.projectNum}
+                           </div>
+                       </div>
+                       <div className="aboutProjectSmall">
+                         {information.description}
+                       </div>
+                 </div>
+               <div className="slideshowContainerSmall animated fadeInRight" onClick={this.projectOn.bind(this)}>
+                 {imageProcessing}
+               </div>
+           </div>
+         </div>
+      </MediaQuery>
+
+
+
+
+
+
+
           <div className="buttonWrap">
             <ScrollUp showUnder={800} className="DivupButton">
               <span className="upButton fadeInRight">UP</span>
@@ -148,6 +146,107 @@ render(){
       )
     }
   }
+
+
+
+  //test
+            // <div className="projectWrapper">
+            //   <div className="projectContainer">
+            //
+            //
+            //         <div className="descriptionContainer animated fadeInLeft">
+            //           <MediaQuery query='(min-device-width: 1000px)' className="MediaQueryProject">
+            //
+            //               <div className="projectTitle">
+            //                   <div className="projectName">
+            //                     {information.title} <br></br>
+            //                   </div>
+            //                   <div className="projectNumber">
+            //                     {information.projectNum}
+            //                   </div>
+            //               </div>
+            //               <div className="aboutProject">
+            //                 {information.description}
+            //               </div>
+            //             </MediaQuery>
+            //
+            //         </div>
+            //
+            //
+            //
+            //               <div className="descriptionContainer animated fadeInLeft">
+            //                   <MediaQuery query='(max-width: 1000px)' className="MediaQueryProject">
+            //                     <div className="projectTitleSmall">
+            //                         <div className="projectNameSmall">
+            //                           {information.title} <br></br>
+            //                         </div>
+            //                         <div className="projectNumberSmall">
+            //                           {information.projectNum}
+            //                         </div>
+            //                     </div>
+            //                     <div className="aboutProjectSmall">
+            //                       {information.description}
+            //                     </div>
+            //                                     </MediaQuery>
+            //               </div>
+            //
+            //
+            //
+            //
+            //
+            //
+            //       <div className="slideshowContainer animated fadeInRight" onClick={this.projectOn.bind(this)}>
+            //         {imageProcessing}
+            //       </div>
+            //
+            //
+            //
+            //
+            //
+            //
+            //   </div>
+            //
+            //
+            // </div>
+            //
+            //
+            // <h1 id="test" >1</h1>
+            // <div className="buttonWrap">
+            //   <ScrollUp showUnder={800} className="DivupButton">
+            //     <span className="upButton fadeInRight">UP</span>
+            //   </ScrollUp>
+            // </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

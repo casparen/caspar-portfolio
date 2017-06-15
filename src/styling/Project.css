@@ -14,6 +14,8 @@
   /*border: solid blue 2px;*/
 
 }
+
+
 .upButton {
   font-family: "Avenir Next";
   font-size: 15px;
@@ -48,11 +50,23 @@
   margin: 0 auto;
   justify-content: center;
 
-
   /*border: solid pink 2px;*/
-
 }
 
+
+.projectContainerSmall {
+  /*padding-top: 11%;
+  padding-left: 5%;*/
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+
+  align-items: center;
+    /*border: solid green 4px;*/
+      padding-top: 1.5cm;
+}
 
 
 .descriptionContainer {
@@ -68,6 +82,23 @@ flex-direction: row;
   /*border: solid blue 1px;*/
 }
 
+.descriptionContainerSmall {
+  /*position: fixed;*/
+  margin: 0 auto;
+
+      /*padding-left: 10%;*/
+/*margin: 0 auto;*/
+
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+  font-family: "Avenir Next";
+  /*border: solid blue 4px;*/
+  width: 87%;
+}
+
 .projectTitle {
   margin: 0 auto;
   text-align: left;
@@ -79,7 +110,7 @@ flex-direction: row;
 .projectTitleSmall {
   margin: 0 auto;
   text-align: left;
-  width: 0.5cm;
+  /*width: 1cm;*/
   /*border: solid green 1px;*/
 
 }
@@ -90,18 +121,20 @@ flex-direction: row;
     font-size: 14px;
 }
 
+.projectNameSmall{
+    font-weight:400;
+  font-size: 8px;
+}
+
 .projectNumber{
     font-weight:210;
 }
 
-.projectNameSmall{
-    font-weight:250;
-  font-size: 7px;
-}
+
 
 .projectNumberSmall{
-    font-weight:205;
-      font-size: 7px;
+    font-weight:105;
+      font-size: 9px;
 }
 
 
@@ -120,12 +153,12 @@ flex-direction: row;
 .aboutProjectSmall {
   /*border: solid pink 1px;*/
   margin: 0 auto;
-  width: 2cm;
+  width: 3.5cm;
   font-weight:200;
     line-height: 2;
-    font-size: 4px;
+    font-size: 5px;
       text-align:justify;
-      padding-left: 0.6cm;
+      /*padding-left: 0.2cm;*/
 }
 
 
@@ -149,7 +182,8 @@ flex-direction: row;
 
 .slideshowContainerSmall {
   margin: 0 auto;
-  padding-left: 30%;
+  padding-top: 1cm;
+  padding-bottom: 0.4cm;
 }
 
 
@@ -192,7 +226,7 @@ padding-top: 0.4cm;
 .photo:hover {
   /*padding-bottom: 2cm;
   padding-top: 2cm;*/
- 
+
 
   margin: 0 auto;
 
