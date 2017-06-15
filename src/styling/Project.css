@@ -1,6 +1,6 @@
 .MediaQueryProject {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0 auto;
 }
 
@@ -16,26 +16,49 @@
 }
 
 
-.upButton {
-  font-family: "Avenir Next";
-  font-size: 15px;
-  color: #ed2024;
-  /*opacity: 0.8;*/
-  /*background-color: #dddddd;
-  border-radius: 50%;*/
+.fa {
+  /*padding: 20px;*/
+  font-size: 30px;
+  /*padding-right: 300px;*/
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  z-index: auto;
+  margin: 0 auto;
+  /*border: solid #1c1c1c 3px;*/
+  color: #1c1c1c
 }
+
+.fa:hover {
+    opacity: 0.7;
+    /*border: solid red 3px;*/
+    color: red;
+
+}
+
+
+
+
+
 
 .buttonWrap {
-  background-color: #dddddd;
-  /*border-radius: 50%;
-  border: solid pink 1px;*/
-  padding-right: 10cm;
+border: solid pink 1px;
 }
 
-.upButton:hover {
-    opacity: 0.7;
-
+.ScrollUpButton__Container {
+  padding-top: 1cm;
+  /*border: solid blue 2px;*/
+  /*text-align: right;*/
+  /*width: 2cm;*/
 }
+
+.ScrollUpButton__ContainerSmall {
+    /*padding-top: 1cm;*/
+}
+
+
+
 
 #test {
   visibility: hidden;
@@ -86,7 +109,7 @@ flex-direction: row;
   /*position: fixed;*/
   margin: 0 auto;
 
-      /*padding-left: 10%;*/
+
 /*margin: 0 auto;*/
 
 
@@ -175,6 +198,7 @@ align-content: center;
   /*height: 16.5cm;*/
   margin: 0 auto;
   padding-left: 40%;
+  padding-bottom: 1.2%;
   /*border: solid blue 1px;*/
      /*-webkit-animation: fadein 2s;*/
 

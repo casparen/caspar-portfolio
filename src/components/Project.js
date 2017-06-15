@@ -4,8 +4,11 @@ import '../styling/Project.css'
 import Slider from 'react-slick'
 import NavBar from './NavBar'
 
-
-import ScrollUp from 'react-scroll-up'
+// import ScrollUp from 'react-scroll-up'
+//        <ScrollUp showUnder={800} className="DivupButton">
+        //  <span className="upButton">UP</span>
+      //  </ScrollUp>
+import ScrollUpButton from "react-scroll-up-button";
 import  MediaQuery from 'react-responsive';
 
 
@@ -79,7 +82,10 @@ render(){
     return (
       <div>
 
-        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryProject">
+
+
+
+                <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject">
           <div className="projectWrapper">
             <div className="projectContainer">
                   <div className="descriptionContainer animated fadeInLeft">
@@ -100,12 +106,29 @@ render(){
                 </div>
             </div>
           </div>
+
+
+
+              <ScrollUpButton StopPosition={0}
+                    TransitionBtnPosition={150}
+                    EasingType='easeOutCubic'
+                    AnimationDuration={1000}
+                    ContainerClassName='ScrollUpButton__Container'
+                    TransitionClassName='ScrollUpButton__Toggled'>
+
+                <h1><div className="fa fa-angle-double-up"></div></h1>
+              </ScrollUpButton>
+
+
+
+
+
        </MediaQuery>
 
 
 
 
-       <MediaQuery query='(max-width: 700px)' className="MediaQueryProject">
+       <MediaQuery query='(max-width: 800px)' className="MediaQueryProject">
          <div className="projectWrapperSmall">
            <div className="projectContainerSmall">
                  <div className="descriptionContainerSmall animated fadeInLeft">
@@ -126,6 +149,16 @@ render(){
                </div>
            </div>
          </div>
+
+         <ScrollUpButton StopPosition={0}
+               TransitionBtnPosition={150}
+               EasingType='easeOutCubic'
+               AnimationDuration={1000}
+               ContainerClassName='ScrollUpButton__ContainerSmall'
+               TransitionClassName='ScrollUpButton__Toggled'>
+
+           <h1><div className="fa fa-angle-double-up"></div></h1>
+         </ScrollUpButton>
       </MediaQuery>
 
 
@@ -134,11 +167,8 @@ render(){
 
 
 
-          <div className="buttonWrap">
-            <ScrollUp showUnder={800} className="DivupButton">
-              <span className="upButton fadeInRight">UP</span>
-            </ScrollUp>
-          </div>
+
+
 
 
       </div>

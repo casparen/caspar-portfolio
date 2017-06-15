@@ -47,11 +47,11 @@ export default class NavBar extends Component {
 
   onOut(linkChoice){
     if(linkChoice === 'work'){
-      this.setState({navStatusWork: ""})
+      this.setState({navStatusWork: "hvr-shrink"})
 
     }
     else {
-      this.setState({navStatusAbout: ""})
+      this.setState({navStatusAbout: "hvr-shrink"})
 
     }
   }

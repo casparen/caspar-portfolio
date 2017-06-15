@@ -13,7 +13,24 @@
   flex-direction: column;
   flex-wrap: wrap;
 
+/*scroll-snap-destination: 400px 600px;*/
+
 }
+
+.bg-black {
+border: solid blue 2px;
+}
+
+
+.wrapper {
+/*border: solid blue 2px;*/
+/*width: 10%;*/
+  /*scroll-snap-type: mandatory;
+scroll-snap-destination: 0% 100%;
+scroll-snap-points-x: repeat(100%);
+scroll-snap-align:*/
+}
+
 
 .MediaQueryAboutSmall {
   /*margin: 0 auto;
@@ -73,14 +90,16 @@ line-height: 2;
 }
 
 .infoContainer {
-  /*border: solid blue 2px;*/
+
   margin: 0 auto;
-  padding-top: 3cm;
+  padding-top: 5cm;
   padding-bottom: 1cm;
 
   width: 51%;
   text-align:justify;
       font-size: 12px;
+
+
 }
 
 
@@ -178,7 +197,7 @@ line-height: 2;
 
 .slideShow {
   /*justify-content: space-around;*/
-  padding-top: 3.2cm;
+  padding-top: 1.5cm;
   /*padding-bottom: 3.2cm;*/
   display: flex;
   flex-direction: row;
@@ -250,16 +269,24 @@ line-height: 2;
   border-radius: 50%;
   z-index: auto;
   margin: 0 auto;
-  border: solid #1c1c1c 3px;
+  /*border: solid #1c1c1c 3px;*/
   color: #1c1c1c
 }
 
-.fa:hover {
-    opacity: 0.7;
-    border: solid red 3px;
-    color: red;
-
+.circleAbout {
+    border: solid #1c1c1c 3px;
 }
+
+.circleAbout:hover {
+  opacity: 0.7;
+  border: solid red 3px;
+  color: red;
+}
+
+/*.fa:hover {
+
+
+}*/
 .link {
   margin: 0 auto;
 }
@@ -268,18 +295,9 @@ line-height: 2;
   padding: 0.1cm;
 }
 
-.linkSmall {
 
-}
 
-.fa-linkedin {
-
-}
-
-.fa-instagram {
-
-}
-
-.fa-snapchat {
-
+.blogTitleContainer {
+  margin: 0 auto;
+  padding-top: 25%;
 }
