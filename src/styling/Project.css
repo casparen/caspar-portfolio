@@ -6,8 +6,8 @@
 
 
 .projectWrapper {
-  width: 100%;
-  height: 100%;
+  /*width: 100%;
+  height: 100%;*/
   margin: 0 auto;
   /*display: flex;
   flex-direction: column;*/
@@ -42,12 +42,9 @@
 
 
 
-.buttonWrap {
-border: solid pink 1px;
-}
 
 .ScrollUpButton__Container {
-  padding-top: 1cm;
+  padding-top: 20px;
   /*border: solid blue 2px;*/
   /*text-align: right;*/
   /*width: 2cm;*/
@@ -56,7 +53,6 @@ border: solid pink 1px;
 .ScrollUpButton__ContainerSmall {
     /*padding-top: 1cm;*/
 }
-
 
 
 
@@ -322,4 +318,60 @@ background-color: grey;
 position:fixed;
 height: 2.25%;
 width: 1.1%;
+}
+
+
+
+.slideTest {
+  margin: 0 auto;
+  width: 100%;
+  /*border: solid green 2px;*/
+}
+
+
+
+.slideTestWrapper {
+  padding-top: 200px;
+  /*position: fixed;*/
+  margin: 0 auto;
+  /*margin: 0 auto;*/
+/*padding: 40px;*/
+/*border: solid pink 1px;*/
+width: 80%;
+
+
+/*color: #333;*/
+display: flex;
+align-items: center;
+
+background: white;
+z-index: 1;
+flex-direction: row;
+/*background: #419be0;*/
+}
+.button {
+  margin: 0 auto;
+}
+
+
+.slideTestContainer {
+
+  margin: 0 auto;
+  width: 74%;
+
+  /*border: solid green 3px;*/
+}
+
+
+.fa-angle-left {
+  margin: 0 auto;
+
+}
+.buttonContainer {
+  width: 20%;
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  /*border: solid blue 3px;*/
 }

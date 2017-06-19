@@ -23,6 +23,9 @@ import cover5 from '../GD/covers/5.png'
 import cover6 from '../GD/covers/6.png'
 import cover7 from '../GD/covers/7.png'
 import cover8 from '../GD/covers/8.png'
+import cover9 from '../GD/covers/9.png'
+import cover10 from '../GD/covers/10.png'
+import cover11 from '../GD/covers/11.png'
 
 
 //make object a string and then sent it through query
@@ -63,7 +66,7 @@ project(projectRef){
   const status = ""
   console.log("hallo");
   // typeof projectRef;
-  console.log(this.refs);
+  console.log("project ref:", this.refs);
 
   if(projectRef === "p1"){
     this.status =  this.refs.p1.parentNode.className
@@ -97,6 +100,10 @@ project(projectRef){
   else if(projectRef === "p8"){
     this.status =  this.refs.p8.parentNode.className
     this.projectInfoString = JSON.stringify(ProjectInfo.Project8[0]);
+  }
+  else if(projectRef === "p9"){
+    this.status =  this.refs.p9.parentNode.className
+    this.projectInfoString = JSON.stringify(ProjectInfo.Project9[0]);
   }
   //
   //
@@ -163,7 +170,7 @@ console.log(this.state.coverStatus);
       margin: '0 auto',
       paddingTop: '12px',
 
-      width: '250px'
+      width: '300px'
       // width: this.state.coverSize
 
     }
@@ -185,29 +192,40 @@ console.log(this.state.coverStatus);
 
 // const spinner = <div class="loader"></div>
 //          <NavBar/>
+
+
+
+//IIMPORT REARANGE THE COVERS ON BOTH MEDIA QUESRIES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// <div><img alt="reload" style={coverStyling} ref="p10" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p10')} onClick={this.project.bind(this,"p10")} src={cover10}></img><div className="projDescription"></div></div>
+// <div><img alt="reload" style={coverStyling} ref="p11" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p11')} onClick={this.project.bind(this,"p11")} src={cover11}></img><div className="projDescription"></div></div>
+
     return (
       <div>
-
-
-
-
-
 
         <div className="pageWrapper">
           <div className="projectsWrapper">
             <div className="coverContainer">
 
 
+
                   <MediaQuery query='(min-device-width: 700px)' className="MediaQuery">
+
+
+
+
+
+                      <div><img alt="reload" style={coverStyling} ref="p9" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p9')} onClick={this.project.bind(this,"p9")} src={cover9}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p1" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p1')} onClick={this.project.bind(this,"p1")} src={cover1}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p2" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p2')} onClick={this.project.bind(this,"p2")} src={cover2}></img><div className="projDescription"></div></div>
-                      <div><img alt="reload" style={coverStyling} ref="p3" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p3')} onClick={this.project.bind(this,"p3")} src={cover3}></img><div className="projDescription"></div></div>
-                      <div><img alt="reload" style={coverStyling} ref="p4" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p4')} onClick={this.project.bind(this,"p4")} src={cover4}></img><div className="projDescription"></div></div>
-                      <div><img alt="reload" style={coverStyling} ref="p5" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p5')} onClick={this.project.bind(this,"p5")} src={cover5}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p6" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p6')} onClick={this.project.bind(this,"p6")} src={cover6}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p7" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p7')} onClick={this.project.bind(this,"p7")} src={cover7}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p8" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p8')} onClick={this.project.bind(this,"p8")} src={cover8}></img><div className="projDescription"></div></div>
-                </MediaQuery>
+                      <div><img alt="reload" style={coverStyling} ref="p4" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p4')} onClick={this.project.bind(this,"p4")} src={cover4}></img><div className="projDescription"></div></div>
+                      <div><img alt="reload" style={coverStyling} ref="p5" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p5')} onClick={this.project.bind(this,"p5")} src={cover5}></img><div className="projDescription"></div></div>
+                      <div><img alt="reload" style={coverStyling} ref="p3" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p3')} onClick={this.project.bind(this,"p3")} src={cover3}></img><div className="projDescription"></div></div>
+                  </MediaQuery>
+
                 <MediaQuery query='(max-width: 700px)' className="MediaQuery">
                   <div><img alt="reload" style={coverStylingMedium} ref="p1" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p1')} onClick={this.project.bind(this,"p1")} src={cover1}></img><div className="projDescription"></div></div>
                     <div><img alt="reload" style={coverStylingMedium} ref="p2" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p2')} onClick={this.project.bind(this,"p2")} src={cover2}></img><div className="projDescription"></div></div>

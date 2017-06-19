@@ -84,12 +84,31 @@ import project8pic7 from '../GD/Projects/toy/7.png'
 import project8pic8 from '../GD/Projects/toy/8.png'
 
 
+//cspBike
+import project9pic1 from '../GD/Projects/cspBike/1.png'
+import project9pic2 from '../GD/Projects/cspBike/2.png'
+import project9pic3 from '../GD/Projects/cspBike/3.png'
+import project9pic4 from '../GD/Projects/cspBike/4.png'
+import project9pic5 from '../GD/Projects/cspBike/5.png'
+import project9pic6 from '../GD/Projects/cspBike/6.png'
+import project9pic7 from '../GD/Projects/cspBike/7.png'
+
+//cspBike
+import project9Processpic1 from '../GD/Projects/cspBike/process/1.png';
+import project9Processpic2 from '../GD/Projects/cspBike/process/2.png';
+import project9Processpic3 from '../GD/Projects/cspBike/process/3.png';
+
+
+
+
+
 
 
 const ProjectInfo = {
   Project1: [{
     title: "Teak bench",
     projectNum:"01",
+    process: "no",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     imgSrc: [project1pic1, project1pic2, project1pic3, project1pic4, project1pic5, project1pic6]
   }],
@@ -138,11 +157,21 @@ const ProjectInfo = {
   }],
 
   Project8: [{
-    title: "Portable seating",
+    title: "toddlers ride on",
     projectNum:"08",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
     imgSrc: [project8pic1, project8pic2, project8pic3, project8pic4, project8pic5, project8pic6, project8pic7, project8pic8]
-  }]
+  }],
+
+    Project9: [{
+      title: "CSP motorised vehicel",
+      projectNum:"09",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      imgSrc: [project9pic1, project9pic2, project9pic3, project9pic4, project9pic5, project9pic6, project9pic7],
+      process: "yes",
+      imgSrcProcess: [project9Processpic1, project9Processpic2, project9Processpic3]
+    }]
 
 }
 

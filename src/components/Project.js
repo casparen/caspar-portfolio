@@ -10,15 +10,49 @@ import NavBar from './NavBar'
       //  </ScrollUp>
 import ScrollUpButton from "react-scroll-up-button";
 import  MediaQuery from 'react-responsive';
+import ScrollAnimation from 'react-animate-on-scroll';
+
+
+
+
+
+
+
+
+
+import one from '../GD/Projects/cspBike/1.png'
+// import two from '../GD/Projects/cspBike/2.png'
+import two from '../GD/Projects/teakBench/6.png'
+
+import three from '../GD/Projects/cspBike/3.png'
+
+
+
+
+
+
+
 
 
 export default class TeakBench extends Component {
   constructor(props){
     super();
     this.state = {
-      gdStatus: "hidden"
+      gdStatus: "hidden",
+      slideShowStatus:"",
+      information: null
     }
+//     this.next = this.next.bind(this)
+// this.previous = this.previous.bind(this)
   }
+
+
+  next() {
+  this.slider.slickNext()
+}
+previous() {
+  this.slider.slickPrev()
+}
 
   mouseOff(){
     console.log("out");
@@ -30,23 +64,72 @@ export default class TeakBench extends Component {
     console.log(this.refs);
   }
 
+
+
+
+
+slideShowRender(){
+  const infromation1 = JSON.parse(this.props.location.query.test)
+  console.log("process phototoosososos");
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    fade: true,
+    slidesToScroll: 1
+  };
+
+  if (infromation1.process === "yes"){
+    console.log("process yes");
+    // this.slideShowRender()
+    return (
+          <div className="slideTestWrapper">
+            <div className='fa fa-angle-left' onClick={this.previous.bind(this)}></div>
+            <div className="slideTestContainer">
+              <Slider ref={c => this.slider = c } {...settings}>
+              {  infromation1.imgSrcProcess.map(function(y, num) {
+                  return (
+                    <div><img className="slideTest" src={y}></img></div>
+
+                  )
+                 })
+               }
+              </Slider>
+            </div>
+            <div className='fa fa-angle-right' onClick={this.next.bind(this)}></div>
+          </div>
+    )
+  }
+
+
+
+}
+
+
+
+
+
+
 render(){
 
 
 
     // console.log("in project",this.props.location.query);
 
-    const information = JSON.parse(this.props.location.query.test)
-    // console.log(information);
-    // console.log(information.imgSrc);
+    const infromation2 = JSON.parse(this.props.location.query.test)
 
-    const imageProcessing = information.imgSrc.map(function(x, number) {
-      console.log(number);
+    // console.log("this is the infro", information);
+    // console.log("haoooooo", information.imgSrcProcess);
+    console.log("halooooooooo", infromation2);
+
+    const imageProcessing = infromation2.imgSrc.map(function(x, number) {
+      console.log(x);
+      console.log(infromation2.projectNum);
       return (
         //  <div ><img alt="reload" className="photo" src={x} ref={number}></img></div>
-        <div ><img alt="reload" className="photo" src={x}></img></div>
-    )
-
+        <div><img alt="reload" className="photo" src={x}></img></div>
+      )
      });
 
 
@@ -57,72 +140,68 @@ render(){
     //    console.log("gd stuff");
     //  }
 
-    //  const SamplePrevArrow = function () {
-    //    return (
-    //      <div  style={{background: 'red'}}></div>
-    //    )
-    //  }
-     //
-    //  const SampleNextArrow = function () {
-    //    return (
-    //      <div  style={{background: 'red'}}></div>
-    //    )
-    //  }
+
+
+    const slideStyle = {
+      visibility: this.state.slideShowStatus
+    }
 
     const posterPresentation = {
       color: "blue",
       visibility: this.state.gdStatus
     }
 
+
 //              <MediaQuery query='(min-device-width: 1000px)' className="MediaQueryProject">
 
   //     </MediaQuery>
+            // <div className="buttonContainer">
+            //     <div className='fa fa-angle-left' onClick={this.previous.bind(this)}></div>
+            //     <div className='fa fa-angle-right' onClick={this.next.bind(this)}></div>
+            // </div>
+
 
 
     return (
       <div>
-
-
-
-
-                <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject">
+        <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject">
           <div className="projectWrapper">
             <div className="projectContainer">
                   <div className="descriptionContainer animated fadeInLeft">
                         <div className="projectTitle">
                             <div className="projectName">
-                              {information.title} <br></br>
+                              {infromation2.title} <br></br>
                             </div>
                             <div className="projectNumber">
-                              {information.projectNum}
+                              {infromation2.projectNum}
                             </div>
                         </div>
                         <div className="aboutProject">
-                          {information.description}
+                          {infromation2.description}
                         </div>
                   </div>
-                <div className="slideshowContainer animated fadeInRight" onClick={this.projectOn.bind(this)}>
+                <div className="slideshowContainer animated fadeInRight" >
                   {imageProcessing}
                 </div>
+
             </div>
           </div>
+
+
+            {this.slideShowRender()}
+
+
 
 
 
               <ScrollUpButton StopPosition={0}
                     TransitionBtnPosition={150}
                     EasingType='easeOutCubic'
-                    AnimationDuration={1000}
+                    AnimationDuration={800}
                     ContainerClassName='ScrollUpButton__Container'
                     TransitionClassName='ScrollUpButton__Toggled'>
-
                 <h1><div className="fa fa-angle-double-up"></div></h1>
               </ScrollUpButton>
-
-
-
-
-
        </MediaQuery>
 
 
@@ -134,14 +213,14 @@ render(){
                  <div className="descriptionContainerSmall animated fadeInLeft">
                        <div className="projectTitleSmall">
                            <div className="projectNameSmall">
-                             {information.title} <br></br>
+                             {infromation2.title} <br></br>
                            </div>
                            <div className="projectNumberSmall">
-                             {information.projectNum}
+                             {infromation2.projectNum}
                            </div>
                        </div>
                        <div className="aboutProjectSmall">
-                         {information.description}
+                         {infromation2.description}
                        </div>
                  </div>
                <div className="slideshowContainerSmall animated fadeInRight" onClick={this.projectOn.bind(this)}>
