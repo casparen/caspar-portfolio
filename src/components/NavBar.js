@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router'
-
-import Logo from '../GD/logo.png'
 import '../styling/Navigation.css'
-import  MediaQuery from 'react-responsive';
-import Coverpage from './Coverpage.js'
+// import Coverpage from './Coverpage.js'
+import Logo from '../GD/logo.png'
 
+//Plug ins
+import  MediaQuery from 'react-responsive';
+//rewrite rezie by my self!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//Cover symbols
 import key from '../GD/key2.png'
-import eins from '../GD/Covertest/1.png'
-import zwei from '../GD/Covertest/2.png'
-import drei from '../GD/Covertest/3.png'
+// import eins from '../GD/Covertest/1.png'
+// import zwei from '../GD/Covertest/2.png'
+// import drei from '../GD/Covertest/3.png'
 
 
 
@@ -25,8 +28,32 @@ export default class NavBar extends Component {
       navStatusWork: "",
       navStatusAbout: "",
       navStatus: 'hidden',
-      coverStatus: 'visible'
+      coverStatus: 'visible',
+        currentPosition: 0
     }
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
+  }
+
+  updateWindowDimensions() {
+  const scrollYInfo = window.scrollY
+  const scrollYInfoDivided = scrollYInfo
+    this.setState({currentPosition: scrollYInfoDivided})
+console.log(this.state.currentPosition);
+  }
+
+
+  componentDidMount() {
+
+    console.log("hiiiii");
+    this.updateWindowDimensions();
+    // window.addEventListener('resize', this.updateWindowDimensions);
+      window.addEventListener('scroll', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+    window.removeEventListener('scroll', this.updateWindowDimensions);
   }
 
   onHover(linkChoice){
@@ -70,7 +97,16 @@ export default class NavBar extends Component {
           coverStatus: 'visible'})
     }
 
+    loadingStatus(){
+      console.log("this is in navbar", this.props);
+      //git rm --cached template11.psd template10Process.psd template11ProcessSquare.psd template10ProcessSquare.psd
+      //git rm --cached src/GD/Projects/rigitChair/template11.psd
+    }
+
   render(){
+
+    this.loadingStatus()
+
     const navigationStatus = {
       visibility: this.state.navStatus
     }
@@ -81,6 +117,11 @@ const coverpageStatus = {
 
 }
 
+
+  const logoRoatate = {
+    //  transform: ,
+    //  transform: 'translate(0,'+ this.state.currentPosition + 'px)' + '' + 'rotate(-' + this.state.currentPosition +   'deg)'
+  }
 
 
     return (
@@ -130,7 +171,7 @@ const coverpageStatus = {
         <div className="navConatiner" style={navigationStatus}>
           <MediaQuery query='(min-device-width: 700px)' className="MediaQueryNav">
             <Link onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')} id="workNav" to='/work' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
-            <div onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo} className="logoImg"></img></div>
+            <div onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo}  className="logoImg" style={logoRoatate}></img></div>
             <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
           </MediaQuery>
 

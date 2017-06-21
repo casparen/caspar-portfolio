@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;*/
   /*border: solid pink 1px;*/
-  width: 90%;
+  width: 100%;
   /*margin-top: 13%;*/
   margin: 0 auto;
   padding-top: 3cm;
@@ -18,7 +18,7 @@
 }
 
 .bg-black {
-border: solid blue 2px;
+/*border: solid blue 2px;*/
 }
 
 
@@ -57,6 +57,7 @@ scroll-snap-align:*/
 font-family: "Avenir Next";
 font-weight: 500;
 line-height: 2;
+margin: 0 auto;
 /*font-size: 10px;*/
 
 }
@@ -74,6 +75,10 @@ line-height: 2;
   font-family: "Avenir Next";
   font-weight:200;
     line-height: 2;
+    margin: 0 auto;
+
+
+/*border: solid green 2px;*/
     /*font-size: 10px;*/
 }
 
@@ -93,15 +98,51 @@ line-height: 2;
     /*font-size: 10px;*/
 }
 
-.infoContainer {
+#infoContainer {
+
+
+  -vendor-animation-duration: 3s;
+  -vendor-animation-delay: 2s;
+  /*-vendor-animation-iteration-count: infinite;*/
 
   margin: 0 auto;
-  padding-top: 5cm;
-  padding-bottom: 1cm;
+  /*padding-top: 5cm;*/
+  /*padding-bottom: 1cm;*/
 
-  width: 51%;
+display: flex;
+justify-content: center;
+align-content: center;
+  width: 54%;
   text-align:justify;
-      font-size: 12px;
+      font-size: 14px;
+color: black;
+
+/*border: solid blue 2px;*/
+
+}
+
+.infoWrapper {
+  margin-top: 200px;
+  padding-top:100px;
+  padding-bottom:100px;
+  /*height: 500px;*/
+  /*border: solid green 2px;*/
+  /*background: black;*/
+  /*background-image:
+    linear-gradient(
+      to right,
+      black, grey
+    );*/
+
+    /*background-image:
+      linear-gradient(
+        to right,
+        red, #f06d06
+      );*/
+  display: flex;
+  justify-content: center;
+  opacity: 0.8;
+  z-index: -1;
 
 
 }
@@ -124,7 +165,7 @@ line-height: 2;
   margin: 0 auto;
 
   width: 25%;
-  /*border: solid blue 1px;*/
+  /*border: solid blue 5px;*/
   /*height: 300px;*/
   /*border-radius: px;*/
   filter: grayscale(100%);
@@ -201,15 +242,29 @@ line-height: 2;
 
 .slideShow {
   /*justify-content: space-around;*/
-  padding-top: 300px;
+
+  /*padding-top: 350px;*/
   /*padding-bottom: 3.2cm;*/
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 90%;
-  /*background-color: pink;*/
+  width: 80%;
   align-items: center;
+  /*border: solid pink 2px;*/
   justify-content: center;
+
+}
+
+.slideShowWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+  margin: 0 auto;
+  width: 100%;
+  /*background-color: red;*/
+  /*opacity: 0.8;*/
+  z-index: -1;
+  /*border: solid black 2px*/
 
 }
 
@@ -258,7 +313,7 @@ line-height: 2;
   /*align-content: center;*/
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   /*width: 200px;*/
 }
 
@@ -289,6 +344,7 @@ line-height: 2;
   /*opacity: 0.7;*/
   /*border: solid red 3px;*/
   color: red;
+  color:   #e62535;
 }
 
 /*.fa:hover {

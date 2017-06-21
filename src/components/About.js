@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar';
+// import NavBar from './NavBar';
 import '../styling/About.css'
 import profile from '../GD/profile.png'
-import  MediaQuery from 'react-responsive';
-import Deck from 'react-slide-deck';
+// import { browserHistory } from 'react-router';
 
+
+//Blog photos
 import slide1 from '../GD/aboutSlideShow/1.png'
 import slide2 from '../GD/aboutSlideShow/2.png'
 import slide3 from '../GD/aboutSlideShow/3.png'
@@ -15,17 +16,11 @@ import slide7 from '../GD/aboutSlideShow/7.png'
 import slide8 from '../GD/aboutSlideShow/8.png'
 
 
+//Plug ins
+import  MediaQuery from 'react-responsive';
+// import Deck from 'react-slide-deck';
 // import ScrollEffect from 'react-scroll-effects';
-
-import ScrollAnimation from 'react-animate-on-scroll';
-
-
-
-
-  // import { browserHistory } from 'react-router';
-
-      // <img  className="slideShowPic" alt="reload" src={slide9}></img>
-// import slide9 from '../GD/aboutSlideShow/9.png'
+// import ScrollAnimation from 'react-animate-on-scroll';
 
 
 
@@ -33,46 +28,87 @@ import ScrollAnimation from 'react-animate-on-scroll';
 export default class About extends Component {
   constructor(props) {
   super(props);
-  this.state = {current: 0, horizontal: true, swipe: true, factor: 0.3, loop: true};
+  this.state = {current: 0,
+                horizontal: true,
+                swipe: true,
+                factor: 0.3,
+                loop: true,
+                scrollStatus: true,
+                currentPosition: 0,
+                slideShowStatus:''
+
+  };
+  this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 }
 
-change(event) {
-  let target = event.target;
-  let index = Array.prototype.indexOf.call(target.parentElement.children, target);
+// change(event) {
+//   let target = event.target;
+//   let index = Array.prototype.indexOf.call(target.parentElement.children, target);
+//
+//   this.setState({
+//     current: index
+//   });
+// }
+// onSwitchStarted({prev: current, current: next}) {
+//   console.log(`started to switch from ${current} to ${next}`);
+// }
+// onSwitching(progress, deck) {
+//   console.log(`switching on progress.`);
+//   console.log(progress, deck.state.distance);
+// }
+// onSwitchDone({prev, current}) {
+//   console.log(`switch finished, current slide index: ${current}`);
+// }
+updateWindowDimensions() {
+    const scrollPosition = window.scrollY
+    const scrollPositionDivided = scrollPosition / 800
+      this.setState({currentPosition: scrollPositionDivided})
 
-  this.setState({
-    current: index
-  });
+
+      console.log('scroll position', scrollPosition);
+      if (scrollPosition > 650){
+        console.log("now fade in");
+        this.setState({slideShowStatus:'animated fadeInUp'})
+      }
+      // else {
+      //   this.setState({slideShowStatus: ''})
+      // }
+
 }
-onSwitchStarted({prev: current, current: next}) {
-  console.log(`started to switch from ${current} to ${next}`);
+
+
+componentDidMount() {
+  console.log("hiiiii");
+  this.updateWindowDimensions();
+  // window.addEventListener('resize', this.updateWindowDimensions);
+    window.addEventListener('scroll', this.updateWindowDimensions);
 }
-onSwitching(progress, deck) {
-  console.log(`switching on progress.`);
-  console.log(progress, deck.state.distance);
+
+componentWillUnmount() {
+  window.removeEventListener('resize', this.updateWindowDimensions);
+  window.removeEventListener('scroll', this.updateWindowDimensions);
 }
-onSwitchDone({prev, current}) {
-  console.log(`switch finished, current slide index: ${current}`);
-}
+
+
 
 
 
 
   render(){
-    const currentSlide = {
-      backgroundColor: "pink",
-      width: "100%"
-    }
+    // const currentSlide = {
+    //   backgroundColor: "pink",
+    //   width: "100%"
+    // }
 
 
-    const slideClasses = {
-  current: this.currentSlide, // will be concat to className for current slide when it finished entering
-  // entering: styles.currentSlideEntering, // will be concat to className for current slide during its entering
-  // prev: styles.prevSlide, // ...
-  // leaving: styles.prevSlideLeaving, //...
-  // before: styles.before, //
-  // after: styles.after //
-};
+//     const slideClasses = {
+//   current: this.currentSlide, // will be concat to className for current slide when it finished entering
+//   // entering: styles.currentSlideEntering, // will be concat to className for current slide during its entering
+//   // prev: styles.prevSlide, // ...
+//   // leaving: styles.prevSlideLeaving, //...
+//   // before: styles.before, //
+//   // after: styles.after //
+// };
 
 
 
@@ -91,33 +127,45 @@ onSwitchDone({prev, current}) {
 //     <h1>Whats happening?</h1>
 // </div>
 
+//              <ScrollAnimation animateIn='fadeInLeft' animateOut='fadeOut'  duration={1.2} >
+
+const fadeInAbout = {
+  // transform: 'translate(' +  this.state.scrollStatus + 'px' + ', 0px)'
+  opacity: this.state.currentPosition
+}
+
+//                <div id='infoContainer' className={this.state.scrollStatus} style={fadeLeft}>
+
+// console.log(fadeLeft.transform);
     const iconSmall = {
       fontSize: "24px"
     }
     return (
       <div >
-        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout animated fadeIn">
+        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">
 
           <div className="wrapper">
-              <img className="profileCss" alt="reload" src={profile}></img>
-
-
-              <div className="infoContainer">
-                  <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
+              <img className="profileCss animated fadeIn" alt="reload" src={profile}></img>
+              <div className="infoWrapper">
+                <div id='infoContainer' style={fadeInAbout}>
+                    <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
+                </div>
               </div>
 
+                  <div className={"slideShowWrapper" + ' ' + this.state.slideShowStatus}>
+                      <div className="slideShow">
+                        <img  className="slideShowPic" alt="reload" src={slide1}></img>
+                        <img  className="slideShowPic" alt="reload" src={slide2}></img>
+                        <img  className="slideShowPic" alt="reload" src={slide3}></img>
+                        <img  className="slideShowPic" alt="reload" src={slide4}></img>
+                        <img  className="slideShowPic" alt="reload" src={slide5}></img>
+                        <img  className="slideShowPic" alt="reload" src={slide6}></img>
+                        <img  className="slideShowPic" alt="reload" src={slide7}></img>
+                        <img  className="slideShowPic" alt="reload" src={slide8}></img>
+                      </div>
+                  </div>
 
 
-                <div className="slideShow">
-                  <img  className="slideShowPic" alt="reload" src={slide1}></img>
-                  <img  className="slideShowPic" alt="reload" src={slide2}></img>
-                  <img  className="slideShowPic" alt="reload" src={slide3}></img>
-                  <img  className="slideShowPic" alt="reload" src={slide4}></img>
-                  <img  className="slideShowPic" alt="reload" src={slide5}></img>
-                  <img  className="slideShowPic" alt="reload" src={slide6}></img>
-                  <img  className="slideShowPic" alt="reload" src={slide7}></img>
-                  <img  className="slideShowPic" alt="reload" src={slide8}></img>
-                </div>
 
 
             <div className="socialContainer">

@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar'
+import ProjectInfo from './ProjectInfo.js'
+// import NavBar from './NavBar'
 import '../styling/Work.css'
-// import {Link} from 'react-router'
-import Slider from 'react-slick'
-// import queryString from 'query-string';
 import { browserHistory } from 'react-router';
-//import { browserHistory, Route, Router } from 'react-router';
+// import {Link} from 'react-router'
+
+//Plug ins
 // import ResponsiveMixin from 'react-responsive-mixin';
 import  MediaQuery from 'react-responsive';
-import Loader from 'react-loader-advanced';
+// import Loader from 'react-loader-advanced';
+// import Slider from 'react-slick'
+// import queryString from 'query-string';
 
 
-
-
-import ProjectInfo from './ProjectInfo.js'
-
+//Cover photos
 import cover1 from '../GD/covers/1.png'
 import cover2 from '../GD/covers/2.png'
 import cover3 from '../GD/covers/3.png'
@@ -64,9 +63,9 @@ project(projectRef){
   this.next(projectRef)
   const projectInfoString = ""
   const status = ""
-  console.log("hallo");
+  // console.log("hallo");
   // typeof projectRef;
-  console.log("project ref:", this.refs);
+  // console.log("project ref:", this.refs);
 
   if(projectRef === "p1"){
     this.status =  this.refs.p1.parentNode.className
@@ -104,6 +103,14 @@ project(projectRef){
   else if(projectRef === "p9"){
     this.status =  this.refs.p9.parentNode.className
     this.projectInfoString = JSON.stringify(ProjectInfo.Project9[0]);
+  }
+  else if(projectRef === "p10"){
+    this.status =  this.refs.p10.parentNode.className
+    this.projectInfoString = JSON.stringify(ProjectInfo.Project10[0]);
+  }
+  else if(projectRef === "p11"){
+    this.status =  this.refs.p11.parentNode.className
+    this.projectInfoString = JSON.stringify(ProjectInfo.Project11[0]);
   }
   //
   //
@@ -154,9 +161,37 @@ mouseOut(){
   // this.setState({coverStatus: ""})
 }
 
+// updateWindowDimensions() {
+//   // console.log(window.innerWidth);
+//   // console.log(window.innerHeight);
+//   console.log(document.body.scrollTop);
+//
+// // console.log(document.body.scrollHeight);
+//   // if(window.innerHeight != 2000){
+//   //   componentDidUpdate()
+//   // }
+// }
+//
+//
+// componentDidMount() {
+//   console.log("hiiiii");
+//   this.updateWindowDimensions();
+//   // window.addEventListener('resize', this.updateWindowDimensions);
+//     window.addEventListener('scroll', this.updateWindowDimensions);
+// }
+//
+// componentWillUnmount() {
+//   window.removeEventListener('resize', this.updateWindowDimensions);
+//   window.removeEventListener('scroll', this.updateWindowDimensions);
+// }
 
+handleImageLoaded(){
+  // console.log("page loaded");
+  // have the logog spining while loading
+}
 
   render(){
+// console.log(document.body.scrollHeight);
     // console.log("in work", ProjectInfo);
     // console.log("testooo", JSON.stringify(obj));
 console.log(this.state.coverStatus);
@@ -169,8 +204,7 @@ console.log(this.state.coverStatus);
     // border: 'solid pink 5px',
       margin: '0 auto',
       paddingTop: '12px',
-
-      width: '300px'
+      width: '250px'
       // width: this.state.coverSize
 
     }
@@ -203,7 +237,7 @@ console.log(this.state.coverStatus);
     return (
       <div>
 
-        <div className="pageWrapper">
+        <div className="pageWrapper"  onLoad={this.handleImageLoaded.bind(this)}>
           <div className="projectsWrapper">
             <div className="coverContainer">
 
@@ -214,12 +248,13 @@ console.log(this.state.coverStatus);
 
 
 
-
+                    <div><img alt="reload" style={coverStyling} ref="p10" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p10')} onClick={this.project.bind(this,"p10")} src={cover10}></img><div className="projDescription"></div></div>
+                    <div><img alt="reload" style={coverStyling} ref="p11" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p11')} onClick={this.project.bind(this,"p11")} src={cover11}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p9" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p9')} onClick={this.project.bind(this,"p9")} src={cover9}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p1" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p1')} onClick={this.project.bind(this,"p1")} src={cover1}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p2" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p2')} onClick={this.project.bind(this,"p2")} src={cover2}></img><div className="projDescription"></div></div>
-                      <div><img alt="reload" style={coverStyling} ref="p6" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p6')} onClick={this.project.bind(this,"p6")} src={cover6}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p7" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p7')} onClick={this.project.bind(this,"p7")} src={cover7}></img><div className="projDescription"></div></div>
+                      <div><img alt="reload" style={coverStyling} ref="p6" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p6')} onClick={this.project.bind(this,"p6")} src={cover6}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p8" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p8')} onClick={this.project.bind(this,"p8")} src={cover8}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p4" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p4')} onClick={this.project.bind(this,"p4")} src={cover4}></img><div className="projDescription"></div></div>
                       <div><img alt="reload" style={coverStyling} ref="p5" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p5')} onClick={this.project.bind(this,"p5")} src={cover5}></img><div className="projDescription"></div></div>

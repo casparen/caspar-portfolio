@@ -104,9 +104,11 @@
 
 .logoImg {
   /*border: solid black 1px;*/
+  /*position: fixed;*/
   width: 50%;
   height: 50%;
   margin: 0 auto;
+  z-index: -3
 
 }
 

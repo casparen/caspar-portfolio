@@ -1,36 +1,16 @@
 import React, {Component} from 'react'
 // import {Link} from 'react-router'
 import '../styling/Project.css'
-import Slider from 'react-slick'
-import NavBar from './NavBar'
 
+// import NavBar from './NavBar'
+
+
+//Plug ins
 // import ScrollUp from 'react-scroll-up'
-//        <ScrollUp showUnder={800} className="DivupButton">
-        //  <span className="upButton">UP</span>
-      //  </ScrollUp>
 import ScrollUpButton from "react-scroll-up-button";
 import  MediaQuery from 'react-responsive';
-import ScrollAnimation from 'react-animate-on-scroll';
-
-
-
-
-
-
-
-
-
-import one from '../GD/Projects/cspBike/1.png'
-// import two from '../GD/Projects/cspBike/2.png'
-import two from '../GD/Projects/teakBench/6.png'
-
-import three from '../GD/Projects/cspBike/3.png'
-
-
-
-
-
-
+// import ScrollAnimation from 'react-animate-on-scroll';
+// import Slider from 'react-slick'
 
 
 
@@ -40,10 +20,13 @@ export default class TeakBench extends Component {
     this.state = {
       gdStatus: "hidden",
       slideShowStatus:"",
-      information: null
+      information: null,
+      currentPositionProcess: 0
     }
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
+this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
   }
 
 
@@ -64,54 +47,98 @@ previous() {
     console.log(this.refs);
   }
 
+  updateWindowDimensions(event) {
+  const offSet = window.scrollY
+  const offSetDevided = offSet / 1600
+    this.setState({currentPositionProcess: offSetDevided})
+
+console.log(this.state.currentPositionProcess);
+
+// console.log("scroll position", offSet);
+// console.log("window height", document.documentElement.scrollHeight);
+// console.log("window height", document.scrollHeight);
+// console.log(event.target.scrollHeight);
+}
+
+
+  componentDidMount() {
+    this.updateWindowDimensions(event);
+      window.addEventListener('scroll', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+    window.removeEventListener('scroll', this.updateWindowDimensions);
+  }
+
+
 
 
 
 
 slideShowRender(){
-  const infromation1 = JSON.parse(this.props.location.query.test)
-  console.log("process phototoosososos");
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    fade: true,
-    slidesToScroll: 1
-  };
+        const infromation1 = JSON.parse(this.props.location.query.test)
+        // console.log("process phototoosososos");
+        // const settings = {
+        //   dots: false,
+        //   infinite: true,
+        //   speed: 500,
+        //   slidesToShow: 1,
+        //   lazyLoad: true,
+        //   // fade: true,
+        //   slidesToScroll: 1,
+        //   currentPosition: 0
+        // };
 
-  if (infromation1.process === "yes"){
-    console.log("process yes");
-    // this.slideShowRender()
-    return (
-          <div className="slideTestWrapper">
-            <div className='fa fa-angle-left' onClick={this.previous.bind(this)}></div>
-            <div className="slideTestContainer">
-              <Slider ref={c => this.slider = c } {...settings}>
-              {  infromation1.imgSrcProcess.map(function(y, num) {
-                  return (
-                    <div><img className="slideTest" src={y}></img></div>
+        const fadeInProcess = {
+          // transform: 'translate(' +  this.state.scrollStatus + 'px' + ', 0px)'
+          opacity: this.state.currentPositionProcess
+          // filter:'blur(' + this.state.currentPositionProcess + ')'
+        }
 
-                  )
-                 })
-               }
-              </Slider>
-            </div>
-            <div className='fa fa-angle-right' onClick={this.next.bind(this)}></div>
-          </div>
-    )
-  }
-
-
-
+        if (infromation1.process === "yes"){
+          // console.log("process yes");
+          // this.slideShowRender()
+          return (
+                  <div className="slideTestWrapper">
+                    <div className="slideTestContainer" style={fadeInProcess}>
+                      {  infromation1.imgSrcProcess.map(function(y, num) {
+                          return (
+                            <div className="slideCover"><img className="slideTest " src={y} key={num} alt='loading'></img></div>
+                          )
+                         })
+                       }
+                    </div>
+                  </div>
+                )
+        }
 }
 
+
+//slideSHow!!!!
+// <div className="slideTestWrapper">
+//   <div className='fa fa-angle-left' onClick={this.previous.bind(this)}></div>
+//   <div className="slideTestContainer">
+//     <Slider ref={c => this.slider = c } {...settings}>
+//     {  infromation1.imgSrcProcess.map(function(y, num) {
+//         return (
+//           <div><img className="slideTest" src={y}></img></div>
+//
+//         )
+//        })
+//      }
+//     </Slider>
+//   </div>
+//   <div className='fa fa-angle-right' onClick={this.next.bind(this)}></div>
+// </div>
 
 
 
 
 
 render(){
+
+  console.log("this is refs",this.refs.content);
 
 
 
@@ -121,14 +148,15 @@ render(){
 
     // console.log("this is the infro", information);
     // console.log("haoooooo", information.imgSrcProcess);
-    console.log("halooooooooo", infromation2);
+    // console.log("halooooooooo", infromation2);
 
     const imageProcessing = infromation2.imgSrc.map(function(x, number) {
-      console.log(x);
-      console.log(infromation2.projectNum);
+      // console.log("x", x);
+      // console.log("nuber", number);
+      // console.log(infromation2.projectNum);
       return (
         //  <div ><img alt="reload" className="photo" src={x} ref={number}></img></div>
-        <div><img alt="reload" className="photo" src={x}></img></div>
+        <div><img key={number}alt="reload" className="photo" src={x}></img></div>
       )
      });
 
@@ -142,14 +170,15 @@ render(){
 
 
 
-    const slideStyle = {
-      visibility: this.state.slideShowStatus
-    }
+    // const slideStyle = {
+    //   visibility: this.state.slideShowStatus
+    // }
 
-    const posterPresentation = {
-      color: "blue",
-      visibility: this.state.gdStatus
-    }
+
+    // const posterPresentation = {
+    //   color: "blue",
+    //   visibility: this.state.gdStatus
+    // }
 
 
 //              <MediaQuery query='(min-device-width: 1000px)' className="MediaQueryProject">
@@ -164,7 +193,7 @@ render(){
 
     return (
       <div>
-        <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject">
+        <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject" ref='content'>
           <div className="projectWrapper">
             <div className="projectContainer">
                   <div className="descriptionContainer animated fadeInLeft">
@@ -183,9 +212,10 @@ render(){
                 <div className="slideshowContainer animated fadeInRight" >
                   {imageProcessing}
                 </div>
+              </div>
 
             </div>
-          </div>
+
 
 
             {this.slideShowRender()}

@@ -93,12 +93,52 @@ import project9pic5 from '../GD/Projects/cspBike/5.png'
 import project9pic6 from '../GD/Projects/cspBike/6.png'
 import project9pic7 from '../GD/Projects/cspBike/7.png'
 
-//cspBike
-import project9Processpic1 from '../GD/Projects/cspBike/process/1.png';
-import project9Processpic2 from '../GD/Projects/cspBike/process/2.png';
-import project9Processpic3 from '../GD/Projects/cspBike/process/3.png';
+      //process
+      import project9Processpic1 from '../GD/Projects/cspBike/process/1.png';
+      import project9Processpic2 from '../GD/Projects/cspBike/process/2.png';
+      import project9Processpic3 from '../GD/Projects/cspBike/process/3.png';
 
 
+//softChair
+import project10pic1 from '../GD/Projects/softChair/1.png';
+import project10pic2 from '../GD/Projects/softChair/2.png';
+import project10pic3 from '../GD/Projects/softChair/3.png';
+
+      //process
+      import project10Processpic1 from '../GD/Projects/softChair/process/1.png';
+      import project10Processpic2 from '../GD/Projects/softChair/process/2.png';
+      import project10Processpic3 from '../GD/Projects/softChair/process/3.png';
+      import project10Processpic4 from '../GD/Projects/softChair/process/4.png';
+      import project10Processpic5 from '../GD/Projects/softChair/process/5.png';
+      import project10Processpic6 from '../GD/Projects/softChair/process/6.png';
+      import project10Processpic7 from '../GD/Projects/softChair/process/7.png';
+      import project10Processpic8 from '../GD/Projects/softChair/process/8.png';
+      import project10Processpic9 from '../GD/Projects/softChair/process/9.png';
+      import project10Processpic10 from '../GD/Projects/softChair/process/10.png';
+      import project10Processpic11 from '../GD/Projects/softChair/process/11.png';
+      import project10Processpic12 from '../GD/Projects/softChair/process/12.png';
+
+
+//rigit chair
+import project11pic1 from '../GD/Projects/rigitChair/1.png';
+import project11pic2 from '../GD/Projects/rigitChair/2.png';
+import project11pic3 from '../GD/Projects/rigitChair/3.png';
+import project11pic4 from '../GD/Projects/rigitChair/4.png';
+import project11pic5 from '../GD/Projects/rigitChair/5.png';
+
+      //process
+      import project11Processpic1 from '../GD/Projects/rigitChair/process/1.png';
+      import project11Processpic2 from '../GD/Projects/rigitChair/process/2.png';
+      import project11Processpic3 from '../GD/Projects/rigitChair/process/3.png';
+      import project11Processpic4 from '../GD/Projects/rigitChair/process/4.png';
+      import project11Processpic5 from '../GD/Projects/rigitChair/process/5.png';
+      import project11Processpic6 from '../GD/Projects/rigitChair/process/6.png';
+      import project11Processpic7 from '../GD/Projects/rigitChair/process/7.png';
+      import project11Processpic8 from '../GD/Projects/rigitChair/process/8.png';
+      import project11Processpic9 from '../GD/Projects/rigitChair/process/9.png';
+      import project11Processpic10 from '../GD/Projects/rigitChair/process/10.png';
+      import project11Processpic11 from '../GD/Projects/rigitChair/process/11.png';
+      import project11Processpic12 from '../GD/Projects/rigitChair/process/12.png';
 
 
 
@@ -165,12 +205,30 @@ const ProjectInfo = {
   }],
 
     Project9: [{
-      title: "CSP motorised vehicel",
+      title: "CSP motorbike",
       projectNum:"09",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       imgSrc: [project9pic1, project9pic2, project9pic3, project9pic4, project9pic5, project9pic6, project9pic7],
       process: "yes",
       imgSrcProcess: [project9Processpic1, project9Processpic2, project9Processpic3]
+    }],
+
+    Project10: [{
+      title: "soft chair",
+      projectNum:"10",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      imgSrc: [project10pic1, project10pic2, project10pic3],
+      process: "yes",
+      imgSrcProcess: [project10Processpic1, project10Processpic2, project10Processpic3, project10Processpic4, project10Processpic5, project10Processpic6, project10Processpic7, project10Processpic8, project10Processpic9, project10Processpic10, project10Processpic11, project10Processpic12]
+    }],
+
+    Project11: [{
+      title: "rigit chair",
+      projectNum:"11",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      imgSrc: [project11pic1, project11pic2, project11pic3, project11pic4, project11pic5],
+      process: "yes",
+      imgSrcProcess: [project11Processpic1, project11Processpic2, project11Processpic3, project11Processpic4, project11Processpic5, project11Processpic6, project11Processpic7, project11Processpic8, project11Processpic9, project11Processpic10, project11Processpic11, project11Processpic12]
     }]
 
 }

@@ -8,7 +8,8 @@ import './styling/index.css';
 //Components
 import App from './components/App.js';
 import About from './components/About.js'
-import Coverpage from './components/Coverpage.js'
+// import Coverpage from './components/Coverpage.js'
+//  <Route path='/coverpage' component={Coverpage} />
 import Work from './components/Work.js'
 import Project from './components/Project.js'
 
@@ -25,7 +26,7 @@ ReactDOM.render(
 , document.getElementById('root')
 );
 
-//      <Route path='/coverpage' component={Coverpage} />
+
 
 
 
