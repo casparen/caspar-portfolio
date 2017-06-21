@@ -126,13 +126,15 @@ console.log(this.state.currentPosition);
 //     }
 
 shouldComponentUpdate(nextProps, nextState, event) {
+  // console.log("next props"nextProps);
+  // console.log("this.props", this.props);
   console.log(event);
    return shallowCompare(this, nextProps, nextState);
  }
 
   render(){
 
-console.log(shallowCompare);
+// console.log(shallowCompare);
 if(shallowCompare){
   console.log("true");
 }
