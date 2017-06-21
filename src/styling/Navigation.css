@@ -108,9 +108,33 @@
   width: 50%;
   height: 50%;
   margin: 0 auto;
-  z-index: -3
+  z-index: -3;
+  animation-name: logoSpin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 
 }
+
+/*@keyframes logoSpin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}*/
+
+/*@keyframes logoAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1000deg);
+  }
+}*/
+
+
 
 
 .logoImgSmall {

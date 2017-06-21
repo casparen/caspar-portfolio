@@ -3,6 +3,7 @@ import {Link} from 'react-router'
 import '../styling/Navigation.css'
 // import Coverpage from './Coverpage.js'
 import Logo from '../GD/logo.png'
+import shallowCompare from 'react-addons-shallow-compare';
 
 //Plug ins
 import  MediaQuery from 'react-responsive';
@@ -97,16 +98,48 @@ console.log(this.state.currentPosition);
           coverStatus: 'visible'})
     }
 
-    loadingStatus(){
-      console.log("this is in navbar", this.props);
-      //git rm --cached template11.psd template10Process.psd template11ProcessSquare.psd template10ProcessSquare.psd
-      //git rm --cached src/GD/Projects/rigitChair/template11.psd
-    }
+    // loadingStatus(){
+    //   // console.log("this is in navbar", this.props);
+    // }
+
+    // componentWillReceiveProps(nextProps, event){
+    //
+    //
+    // // console.log(event);
+    // // if(this.props === nextProps){
+    // //   console.log("lol");
+    // // }
+    // }
+
+
+
+
+//     shouldComponentUpdate(nextProps, nextState){
+//       console.log("nextProps",nextProps);
+//       console.log("this.props", this.props);
+//
+//       if (nextProps == this.props){
+//
+// console.log("im the pappa");
+//       }
+//       return true
+//     }
+
+shouldComponentUpdate(nextProps, nextState, event) {
+  console.log(event);
+   return shallowCompare(this, nextProps, nextState);
+ }
 
   render(){
 
-    this.loadingStatus()
+console.log(shallowCompare);
+if(shallowCompare){
+  console.log("true");
+}
 
+else {
+  console.log("flae");
+}
     const navigationStatus = {
       visibility: this.state.navStatus
     }

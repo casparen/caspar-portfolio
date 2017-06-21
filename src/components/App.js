@@ -11,17 +11,35 @@ export default class App extends Component {
 constructor(){
   super();
   this.state = {
-    loadingStatus: ''
+    loadingStatus: 0,
+    componentCounter: 0
   }
 }
 
-handleImageLoaded(){
-  console.log("page loaded");
-  this.setState({loadingStatus: 'loaded'})
+handleImageLoaded(event){
+
+
+  // console.log("In APP page loaded");
+
+ // this.setState({loadingStatus: this.state.loadingStatus + 1})
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+console.log("DOM fully loaded and parsed");
+console.log(event);
+});
+
+
+// console.log(event);
+//3 11 9
+// if(this.state.componentCounter > 7){
+//     console.log("IN apppp page loaded");
+// }
+
   // have the logog spining while loading
 }
 
   render() {
+
 
     return (
       <div className="App">

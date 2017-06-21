@@ -36,7 +36,8 @@ export default class Work extends Component {
     // this.previous = this.previous.bind(this)
     this.state = {
       coverStatus: "",
-      coverSize: ""
+      coverSize: "",
+      componentCounter: 0
     }
   }
 
@@ -185,8 +186,8 @@ mouseOut(){
 //   window.removeEventListener('scroll', this.updateWindowDimensions);
 // }
 
-handleImageLoaded(){
-  // console.log("page loaded");
+handleImageLoaded(event){
+
   // have the logog spining while loading
 }
 
