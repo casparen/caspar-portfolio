@@ -21,12 +21,12 @@ handleImageLoaded(event){
 
   // console.log("In APP page loaded");
 
- // this.setState({loadingStatus: this.state.loadingStatus + 1})
+ this.setState({loadingStatus: this.state.loadingStatus + 1})
+//
+//   document.addEventListener("DOMContentLoaded", function(event) {
+// console.log("DOM fully loaded and parsed");
+// console.log(event);
 
-  document.addEventListener("DOMContentLoaded", function(event) {
-console.log("DOM fully loaded and parsed");
-console.log(event);
-});
 
 
 // console.log(event);

@@ -44,7 +44,7 @@ console.log(this.state.currentPosition);
   }
 
 
-  componentDidMount() {
+  componentDidMount(nextProps) {
 
     console.log("hiiiii");
     this.updateWindowDimensions();
@@ -125,23 +125,29 @@ console.log(this.state.currentPosition);
 //       return true
 //     }
 
-shouldComponentUpdate(nextProps, nextState, event) {
-  // console.log("next props"nextProps);
-  // console.log("this.props", this.props);
-  console.log(event);
-   return shallowCompare(this, nextProps, nextState);
- }
+// shouldComponentUpdate(nextProps, nextState, event) {
+//   // console.log("next props"nextProps);
+//   // console.log("this.props", this.props);
+//   console.log(event);
+//    return shallowCompare(this, nextProps, nextState);
+//  }
+
+// componentWillUpdate(nextProps){
+// console.log("this.props", this.props);
+// console.log("nextProps", nextProps);
+// }
+//
+// componentDidUpdate(prevProps, prevState) {
+//   console.log("prevProps:", prevProps);
+//   console.log("this.props IN DID UPDTE", this.props);
+// }
+
+
 
   render(){
 
 // console.log(shallowCompare);
-if(shallowCompare){
-  console.log("true");
-}
 
-else {
-  console.log("flae");
-}
     const navigationStatus = {
       visibility: this.state.navStatus
     }

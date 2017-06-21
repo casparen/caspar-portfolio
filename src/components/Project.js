@@ -104,7 +104,7 @@ slideShowRender(){
                     <div className="slideTestContainer" style={fadeInProcess}>
                       {  infromation1.imgSrcProcess.map(function(y, num) {
                           return (
-                            <div className="slideCover"><img className="slideTest " src={y} key={num} alt='loading'></img></div>
+                            <div key={num} className="slideCover"><img className="slideTest " src={y}  alt='loading'></img></div>
                           )
                          })
                        }
@@ -154,9 +154,11 @@ render(){
       // console.log("x", x);
       // console.log("nuber", number);
       // console.log(infromation2.projectNum);
+      console.log(number);
+      // console.log(number.toString());
       return (
         //  <div ><img alt="reload" className="photo" src={x} ref={number}></img></div>
-        <div><img key={number}alt="reload" className="photo" src={x}></img></div>
+        <div key={number}><img alt="reload" className="photo" src={x}></img></div>
       )
      });
 

@@ -42,17 +42,8 @@ export default class Work extends Component {
   }
 
 
-
-
-
-
-
-
-
-
 next(projectRef){
 // console.log("fire");
-// console.log(projectRef);
 // console.log(this.refs.p2.parentNode.className);
   if(projectRef === "p2" && this.refs.p2.parentNode.className === 'slick-slide slick-active') {
   console.log("next");
@@ -117,6 +108,7 @@ project(projectRef){
   //
     // if(this.status === "slick-slide slick-active slick-center"){
       console.log("approved");
+      console.log("AAAAAAA", this.projectInfoString);
       browserHistory.push({
           pathname: '/work/' + projectRef,
           query: {test: this.projectInfoString
