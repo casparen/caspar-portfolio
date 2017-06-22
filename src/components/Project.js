@@ -21,12 +21,23 @@ export default class TeakBench extends Component {
       gdStatus: "hidden",
       slideShowStatus:"",
       information: null,
-      currentPositionProcess: 0
+      currentPositionProcess: 0,
+      coverFadeInLeft: '',
+      coverFadeInRight: ''
     }
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
 this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
+  }
+
+  componentDidMount(){
+
+    const cc = this
+    setTimeout(function(){
+    cc.setState({coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
+    console.log("fade innnn");
+  }, 2000);
   }
 
 
@@ -198,7 +209,7 @@ render(){
         <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject" ref='content'>
           <div className="projectWrapper">
             <div className="projectContainer">
-                  <div className="descriptionContainer animated fadeInLeft">
+                  <div className={"descriptionContainer" + ' ' + this.state.coverFadeInLeft}>
                         <div className="projectTitle">
                             <div className="projectName">
                               {infromation2.title} <br></br>
@@ -211,7 +222,7 @@ render(){
                           {infromation2.description}
                         </div>
                   </div>
-                <div className="slideshowContainer animated fadeInRight" >
+                <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
                   {imageProcessing}
                 </div>
               </div>

@@ -123,19 +123,40 @@
   margin: 0 auto;
   z-index: -3;
   animation-name: logoSpin;
-    animation-duration: 4000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-duration: 2000ms;
+    transform-origin: center;
+
+    /*animation-iteration-count: infinite;
+    animation-timing-function: linear;*/
+
 }
 
-@keyframes logoSpin {
+/*@keyframes logoSpin {
     from {
-        transform:rotate(0deg);
+        transform:rotateZ(0deg)  translate(0px,0px) ;
+    }
+
+    50%  {
+        transform:rotateZ(180deg) translate(0px,-100px) ;
     }
     to {
-        transform:rotate(360deg);
+       transform:rotateZ(360deg) translate(0px,0px)   ;
     }
+}*/
+
+@keyframes logoSpin {
+  0%, 100% {
+    transform: translate(0px,0px) rotate(0deg);
+    /*color: red;*/
+  }
+  35% {
+    transform: translate(0px,250px) rotate(560deg);
+    /*color: green;*/
+  }
 }
+
+
+
 
 /*@keyframes logoAnimation {
   from {
