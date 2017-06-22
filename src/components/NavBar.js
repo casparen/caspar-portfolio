@@ -30,7 +30,8 @@ export default class NavBar extends Component {
       navStatusAbout: "",
       navStatus: 'hidden',
       coverStatus: 'visible',
-        currentPosition: 0
+        currentPosition: 0,
+        nextPropsState: 0
     }
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
@@ -114,35 +115,42 @@ console.log(this.state.currentPosition);
 
 
 
-//     shouldComponentUpdate(nextProps, nextState){
-//       console.log("nextProps",nextProps);
-//       console.log("this.props", this.props);
-//
-//       if (nextProps == this.props){
-//
-// console.log("im the pappa");
-//       }
-//       return true
-//     }
+shouldComponentUpdate(nextProps, nextState, event) {
+  // console.log("next props"nextProps);
+  // console.log("this.props", this.props);
+  // console.log(event);
+   return shallowCompare(this, nextProps, nextState);
+ }
 
-// shouldComponentUpdate(nextProps, nextState, event) {
-//   // console.log("next props"nextProps);
-//   // console.log("this.props", this.props);
-//   console.log(event);
-//    return shallowCompare(this, nextProps, nextState);
-//  }
-
-// componentWillUpdate(nextProps){
+componentWillUpdate(nextProps){
+  this.setState({nextPropsState: nextProps})
+  // const counter = 0
 // console.log("this.props", this.props);
-// console.log("nextProps", nextProps);
-// }
-//
-// componentDidUpdate(prevProps, prevState) {
-//   console.log("prevProps:", prevProps);
-//   console.log("this.props IN DID UPDTE", this.props);
-// }
+// if(nextProps + 1 != )
+console.log("nextProps", nextProps);
+
+}
+
+componentDidUpdate(prevProps, prevState, event) {
+  console.log("prevProps:", prevProps);
+  console.log("this.props", this.props);
+
+  if (this.props + 2 != this.state.nextPropsState){
+    console.log("lololol");
+  }
+  // console.log("this.props IN DID UPDTE", this.props);
+  // console.log(event);
+  // if(this.props == nextProps){
+  //   console.log("lolol");
+  // }
 
 
+
+
+}
+
+
+//if prop + 1 is not = to nrxt prop them....
 
   render(){
 
