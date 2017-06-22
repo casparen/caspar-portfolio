@@ -140,6 +140,11 @@ const fadeInAbout = {
     const iconSmall = {
       fontSize: "24px"
     }
+
+
+    //PUL IMAGEA FROM MY ACTUAL INSTAGRAM AND SELCT RANDOM ONNESSSSSSSSSS!!!!!!!!
+    //animate it so it keeps changing while lookng at the screen
+
     return (
       <div >
         <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">

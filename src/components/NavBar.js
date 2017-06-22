@@ -31,9 +31,11 @@ export default class NavBar extends Component {
       navStatus: 'hidden',
       coverStatus: 'visible',
         currentPosition: 0,
-        nextPropsState: 0
+        nextPropsState: 0,
+        logoSpinningStatus: 'logoImg'
     }
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
 
   }
 
@@ -41,26 +43,26 @@ export default class NavBar extends Component {
   const scrollYInfo = window.scrollY
   const scrollYInfoDivided = scrollYInfo
     this.setState({currentPosition: scrollYInfoDivided})
-console.log(this.state.currentPosition);
+// console.log(this.state.currentPosition);
   }
 
 
-  componentDidMount(nextProps) {
-
-    console.log("hiiiii");
-    this.updateWindowDimensions();
-    // window.addEventListener('resize', this.updateWindowDimensions);
-      window.addEventListener('scroll', this.updateWindowDimensions);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-    window.removeEventListener('scroll', this.updateWindowDimensions);
-  }
+  // componentDidMount(nextProps) {
+  //
+  //   // console.log("hiiiii");
+  //   this.updateWindowDimensions();
+  //   // window.addEventListener('resize', this.updateWindowDimensions);
+  //     window.addEventListener('scroll', this.updateWindowDimensions);
+  // }
+  //
+  // componentWillUnmount() {
+  //   window.removeEventListener('resize', this.updateWindowDimensions);
+  //   window.removeEventListener('scroll', this.updateWindowDimensions);
+  // }
 
   onHover(linkChoice){
-    console.log("hover");
-    console.log(linkChoice);
+    // console.log("hover");
+    // console.log(linkChoice);
 
     if(linkChoice === 'work'){
       this.setState({navStatusWork: "hvr-grow"})
@@ -86,7 +88,7 @@ console.log(this.state.currentPosition);
   }
 
   onClickCoverpage (){
-    console.log("coverpage click");
+    // console.log("coverpage click");
     this.setState({
         navStatus: 'visible',
         coverStatus: 'hidden'})
@@ -115,44 +117,57 @@ console.log(this.state.currentPosition);
 
 
 
-shouldComponentUpdate(nextProps, nextState, event) {
-  // console.log("next props"nextProps);
-  // console.log("this.props", this.props);
-  // console.log(event);
-   return shallowCompare(this, nextProps, nextState);
- }
-
-componentWillUpdate(nextProps){
-  this.setState({nextPropsState: nextProps})
-  // const counter = 0
-// console.log("this.props", this.props);
-// if(nextProps + 1 != )
-console.log("nextProps", nextProps);
-
-}
-
-componentDidUpdate(prevProps, prevState, event) {
-  console.log("prevProps:", prevProps);
-  console.log("this.props", this.props);
-
-  if (this.props + 2 != this.state.nextPropsState){
-    console.log("lololol");
-  }
+// shouldComponentUpdate(nextProps, nextState, event) {
+//   // console.log("next props"nextProps);
+//   // console.log("this.props", this.props);
+//   // console.log(event);
+//    return shallowCompare(this, nextProps, nextState);
+//  }
+//
+// componentWillUpdate(nextProps){
+//   this.setState({nextPropsState: nextProps})
+//   // const counter = 0
+// // console.log("this.props", this.props);
+// // if(nextProps + 1 != )
+// // console.log("nextProps", nextProps);
+//
+// }
+//
+// componentDidUpdate(prevProps, prevState, event) {
+//   // console.log("prevProps:", prevProps);
+//   // console.log("this.props", this.props);
+//
+//   if (this.props + 2 != this.state.nextPropsState){
+//     // console.log("lololol");
+//   }
   // console.log("this.props IN DID UPDTE", this.props);
   // console.log(event);
   // if(this.props == nextProps){
   //   console.log("lolol");
   // }
 
+// }
 
+componentWillUpdate(){
 
+  console.log(this.props.props);
 
+  // if(this.props == 'show'){
+  //   this.setState({logoSpinningStatus: 'logoImgSpinning'})
+  // }
+  // else {
+  //   this.setState({logoSpinningStatus: 'logoImg'})
+  //
+  // }
 }
 
 
 //if prop + 1 is not = to nrxt prop them....
 
   render(){
+
+
+
 
 // console.log(shallowCompare);
 
@@ -220,7 +235,7 @@ const coverpageStatus = {
         <div className="navConatiner" style={navigationStatus}>
           <MediaQuery query='(min-device-width: 700px)' className="MediaQueryNav">
             <Link onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')} id="workNav" to='/work' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
-            <div onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo}  className="logoImg" style={logoRoatate}></img></div>
+            <div onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo}  className={this.props.props} style={logoRoatate}></img></div>
             <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
           </MediaQuery>
 
