@@ -57,7 +57,7 @@ next(projectRef){
 // console.log("fire");
 // console.log(this.refs.p2.parentNode.className);
   if(projectRef === "p2" && this.refs.p2.parentNode.className === 'slick-slide slick-active') {
-  console.log("next");
+  // console.log("next");
   this.Slider.slickNext()
 }
 }
@@ -118,8 +118,8 @@ project(projectRef){
   //
   //
     // if(this.status === "slick-slide slick-active slick-center"){
-      console.log("approved");
-      console.log("AAAAAAA", this.projectInfoString);
+      // console.log("approved");
+      // console.log("Project Info", this.projectInfoString);
       browserHistory.push({
           pathname: '/work/' + projectRef,
           query: {test: this.projectInfoString
@@ -195,7 +195,7 @@ mouseOut(){
 // console.log(document.body.scrollHeight);
     // console.log("in work", ProjectInfo);
     // console.log("testooo", JSON.stringify(obj));
-console.log(this.state.coverStatus);
+// console.log(this.state.coverStatus);
 
 //idea: give the viewer the options to see the slides for ID stuff or CS
 

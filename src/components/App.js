@@ -46,11 +46,12 @@ constructor(){
 
 
       handleImageLoaded(){
-        console.log("lol");
+      console.log("hide Page");
         this.setState({appRender: 'hidden', spinnerStatus: 'logoImgSpinning'})
             const cc = this
             setTimeout(function(){
             cc.setState({appRender: 'visible',spinnerStatus: 'logoImg'})
+            console.log("show Page");
 
           }, 2000);
         // console.log("In APP page loaded");

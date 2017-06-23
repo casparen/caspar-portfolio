@@ -144,18 +144,21 @@
     }
 }*/
 
+
 @keyframes logoSpin {
   0%, 100% {
-    transform: translate(0px,0px) rotate(0deg);
+    transform: translate(0px,0px) rotate(0deg) ;
     /*color: red;*/
   }
   35% {
-    transform: translate(0px,250px) rotate(560deg);
+    transform: translate(0px,270px) rotate(560deg) ;
     /*color: green;*/
   }
 }
 
 
+/*scale(1, 1)
+scale(2, 2)*/
 
 
 /*@keyframes logoAnimation {

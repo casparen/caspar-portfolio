@@ -35,10 +35,21 @@ export default class About extends Component {
                 loop: true,
                 scrollStatus: true,
                 currentPosition: 0,
-                slideShowStatus:''
-
+                slideShowStatus:'',
+                socialStatus: '',
+                aboutFadeIn: ''
   };
   this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+}
+
+
+componentWillUpdate(){
+
+  const cc = this
+  setTimeout(function(){
+  cc.setState({aboutFadeIn: 'animated fadeIn'})
+  console.log("fade innnn");
+}, 2000);
 }
 
 // change(event) {
@@ -69,6 +80,11 @@ updateWindowDimensions() {
       if (scrollPosition > 650){
         console.log("now fade in");
         this.setState({slideShowStatus:'animated fadeInUp'})
+      }
+
+      if (scrollPosition > 1100){
+        console.log("now fade in");
+        this.setState({socialStatus:'animated fadeInUp'})
       }
       // else {
       //   this.setState({slideShowStatus: ''})
@@ -150,7 +166,7 @@ const fadeInAbout = {
         <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">
 
           <div className="wrapper">
-              <img className="profileCss animated fadeIn" alt="reload" src={profile}></img>
+              <img className={"profileCss" + ' ' + this.state.aboutFadeIn} alt="reload" src={profile}></img>
               <div className="infoWrapper">
                 <div id='infoContainer' style={fadeInAbout}>
                     <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
@@ -173,7 +189,7 @@ const fadeInAbout = {
 
 
 
-            <div className="socialContainer">
+            <div className={"socialContainer" + ' ' + this.state.socialStatus}>
                 <a href="https://www.instagram.com/enno_nagel/" className="link hvr-bounce-in"><div href="#" className="fa fa-instagram circleAbout"></div></a>
                 <a href="https://www.linkedin.com/in/casparnagel" className="link hvr-bounce-in"><div href="#" className="fa fa-linkedin circleAbout"></div></a>
                 <a href="https://github.com/casparen" className="link hvr-bounce-in "><div href="#" className="fa fa-github"></div></a>

@@ -23,7 +23,8 @@ export default class TeakBench extends Component {
       information: null,
       currentPositionProcess: 0,
       coverFadeInLeft: '',
-      coverFadeInRight: ''
+      coverFadeInRight: '',
+      pageStatus: 'hidden'
     }
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
@@ -31,11 +32,11 @@ this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
   }
 
-  componentDidMount(){
-
+  componentWillUpdate(){
+console.log("This is did mount in project.js");
     const cc = this
     setTimeout(function(){
-    cc.setState({coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
+    cc.setState({pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
     console.log("fade innnn");
   }, 2000);
   }
@@ -49,13 +50,13 @@ previous() {
 }
 
   mouseOff(){
-    console.log("out");
+    // console.log("out");
   }
 
   projectOn(){
-    console.log("in");
+    // console.log("in");
     // console.log(number);
-    console.log(this.refs);
+    // console.log(this.refs);
   }
 
   updateWindowDimensions(event) {
@@ -63,7 +64,7 @@ previous() {
   const offSetDevided = offSet / 1600
     this.setState({currentPositionProcess: offSetDevided})
 
-console.log(this.state.currentPositionProcess);
+// console.log(this.state.currentPositionProcess);
 
 // console.log("scroll position", offSet);
 // console.log("window height", document.documentElement.scrollHeight);
@@ -115,7 +116,7 @@ slideShowRender(){
                     <div className="slideTestContainer" style={fadeInProcess}>
                       {  infromation1.imgSrcProcess.map(function(y, num) {
                           return (
-                            <div key={num} className="slideCover"><img className="slideTest " src={y}  alt='loading'></img></div>
+                            <div key={num} ><img className="slideTest " src={y}  alt='loading'></img></div>
                           )
                          })
                        }
@@ -149,7 +150,7 @@ slideShowRender(){
 
 render(){
 
-  console.log("this is refs",this.refs.content);
+  // console.log("this is refs",this.refs.content);
 
 
 
@@ -165,13 +166,17 @@ render(){
       // console.log("x", x);
       // console.log("nuber", number);
       // console.log(infromation2.projectNum);
-      console.log(number);
+      // console.log(number);
       // console.log(number.toString());
       return (
         //  <div ><img alt="reload" className="photo" src={x} ref={number}></img></div>
         <div key={number}><img alt="reload" className="photo" src={x}></img></div>
       )
      });
+
+     const pageLoadingStatus = {
+       visibility: this.state.pageStatus
+     }
 
 
     //  console.log(information.projectNum);
@@ -202,10 +207,10 @@ render(){
             //     <div className='fa fa-angle-right' onClick={this.next.bind(this)}></div>
             // </div>
 
-
+//FOR THE GD BOOK, use a slide show to show the digital book
 
     return (
-      <div>
+      <div style={pageLoadingStatus}>
         <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject" ref='content'>
           <div className="projectWrapper">
             <div className="projectContainer">
