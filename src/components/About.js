@@ -43,12 +43,12 @@ export default class About extends Component {
 }
 
 
-componentWillUpdate(){
+componentDidUpdate(){
 
   const cc = this
   setTimeout(function(){
   cc.setState({aboutFadeIn: 'animated fadeIn'})
-  console.log("fade innnn");
+  // console.log("fade innnn");
 }, 2000);
 }
 

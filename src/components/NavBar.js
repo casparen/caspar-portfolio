@@ -150,7 +150,7 @@ export default class NavBar extends Component {
 
 componentWillUpdate(){
 
-  console.log("THis is nav", this.props.props);
+  // console.log("THis is nav", this.props.props);
 
   // if(this.props == 'show'){
   //   this.setState({logoSpinningStatus: 'logoImgSpinning'})

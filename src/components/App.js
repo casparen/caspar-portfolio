@@ -46,12 +46,12 @@ constructor(){
 
 
       handleImageLoaded(){
-      console.log("hide Page");
+      // console.log("hide Page");
         this.setState({appRender: 'hidden', spinnerStatus: 'logoImgSpinning'})
             const cc = this
             setTimeout(function(){
             cc.setState({appRender: 'visible',spinnerStatus: 'logoImg'})
-            console.log("show Page");
+            // console.log("show Page");
 
           }, 2000);
         // console.log("In APP page loaded");
@@ -75,6 +75,7 @@ constructor(){
 //props={this.state.loadingStatus}
   render() {
 
+    // console.log("window height", document.body.scrollHeight);
 
   const renderStatusApp = {
       visibility: this.state.appRender

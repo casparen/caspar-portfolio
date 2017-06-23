@@ -29,15 +29,17 @@ export default class TeakBench extends Component {
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
 this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+console.log("window height - 750", document.body.scrollHeight - 750);
+console.log("window height", document.body.scrollHeight);
 
   }
 
   componentWillUpdate(){
-console.log("This is did mount in project.js");
+// console.log("This is did mount in project.js");
     const cc = this
     setTimeout(function(){
     cc.setState({pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
-    console.log("fade innnn");
+    // console.log("fade innnn");
   }, 2000);
   }
 
@@ -66,7 +68,8 @@ previous() {
 
 // console.log(this.state.currentPositionProcess);
 
-// console.log("scroll position", offSet);
+
+console.log("scroll position", offSet);
 // console.log("window height", document.documentElement.scrollHeight);
 // console.log("window height", document.scrollHeight);
 // console.log(event.target.scrollHeight);
