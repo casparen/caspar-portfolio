@@ -29,8 +29,8 @@ export default class TeakBench extends Component {
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
 this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-console.log("window height - 750", document.body.scrollHeight - 750);
-console.log("window height", document.body.scrollHeight);
+// console.log("window height - 750", document.body.scrollHeight - 750);
+// console.log("window height", document.body.scrollHeight);
 
   }
 
@@ -62,10 +62,19 @@ previous() {
   }
 
   updateWindowDimensions(event) {
+    const infromation3 = JSON.parse(this.props.location.query.test)
+    // console.log('scroll offset form porject', infromation3.scrollOffset);
+    // console.log("parse", parseInt(infromation3.scrollOffset));
+//infromation3.scrollOffset
+
   const offSet = window.scrollY
-  const offSetDevided = offSet / 1600
+  const offSetDevided = offSet / parseInt(infromation3.scrollOffset)
     this.setState({currentPositionProcess: offSetDevided})
 
+
+//1500 soft chair
+//3200 csp
+// 2400 rigit chair
 // console.log(this.state.currentPositionProcess);
 
 
@@ -115,8 +124,8 @@ slideShowRender(){
           // console.log("process yes");
           // this.slideShowRender()
           return (
-                  <div className="slideTestWrapper">
-                    <div className="slideTestContainer" style={fadeInProcess}>
+                  <div className="slideTestWrapper" style={fadeInProcess}>
+                    <div className="slideTestContainer" >
                       {  infromation1.imgSrcProcess.map(function(y, num) {
                           return (
                             <div key={num} ><img className="slideTest " src={y}  alt='loading'></img></div>

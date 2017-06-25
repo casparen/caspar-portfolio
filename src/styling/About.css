@@ -265,7 +265,9 @@ color: black;
   /*opacity: 0.8;*/
   z-index: -1;
   /*border: solid black 2px*/
-
+animation-duration: 1.7s;
+/*-vendor-animation-delay: 5s;
+-vendor-animation-iteration-count: infinite;*/
 }
 
 .slideShowSmall {
@@ -302,7 +304,11 @@ color: black;
   display: flex;
   flex-direction: row;
   width: 500px;
+  animation-duration: 1.7s;
+
 }
+
+
 
 .socialContainerSmall {
   /*border: solid pink 1px;*/

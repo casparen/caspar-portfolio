@@ -97,7 +97,15 @@ import project9pic7 from '../GD/Projects/cspBike/7.png'
       import project9Processpic1 from '../GD/Projects/cspBike/process/1.png';
       import project9Processpic2 from '../GD/Projects/cspBike/process/2.png';
       import project9Processpic3 from '../GD/Projects/cspBike/process/3.png';
-
+      import project9Processpic4 from '../GD/Projects/cspBike/process/4.png';
+      import project9Processpic5 from '../GD/Projects/cspBike/process/5.png';
+      import project9Processpic6 from '../GD/Projects/cspBike/process/6.png';
+      import project9Processpic7 from '../GD/Projects/cspBike/process/7.png';
+      import project9Processpic8 from '../GD/Projects/cspBike/process/8.png';
+      import project9Processpic9 from '../GD/Projects/cspBike/process/9.png';
+      import project9Processpic10 from '../GD/Projects/cspBike/process/10.png';
+      import project9Processpic11 from '../GD/Projects/cspBike/process/11.png';
+      import project9Processpic12 from '../GD/Projects/cspBike/process/12.png';
 
 //softChair
 import project10pic1 from '../GD/Projects/softChair/1.png';
@@ -210,7 +218,8 @@ const ProjectInfo = {
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       imgSrc: [project9pic1, project9pic2, project9pic3, project9pic4, project9pic5, project9pic6, project9pic7],
       process: "yes",
-      imgSrcProcess: [project9Processpic1, project9Processpic2, project9Processpic3]
+      scrollOffset: '2750',
+      imgSrcProcess: [project9Processpic1, project9Processpic2, project9Processpic3, project9Processpic4, project9Processpic5, project9Processpic6, project9Processpic7, project9Processpic8, project9Processpic9, project9Processpic10, project9Processpic11, project9Processpic12]
     }],
 
     Project10: [{
@@ -219,6 +228,7 @@ const ProjectInfo = {
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       imgSrc: [project10pic1, project10pic2, project10pic3],
       process: "yes",
+      scrollOffset: '1400',
       imgSrcProcess: [project10Processpic1, project10Processpic2, project10Processpic3, project10Processpic4, project10Processpic5, project10Processpic6, project10Processpic7, project10Processpic8, project10Processpic9, project10Processpic10, project10Processpic11, project10Processpic12]
     }],
 
@@ -228,6 +238,7 @@ const ProjectInfo = {
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       imgSrc: [project11pic1, project11pic2, project11pic3, project11pic4, project11pic5],
       process: "yes",
+      scrollOffset: '2000',
       imgSrcProcess: [project11Processpic1, project11Processpic2, project11Processpic3, project11Processpic4, project11Processpic5, project11Processpic6, project11Processpic7, project11Processpic8, project11Processpic9, project11Processpic10, project11Processpic11, project11Processpic12]
     }]
 
