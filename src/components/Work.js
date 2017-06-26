@@ -267,10 +267,10 @@ mouseOut(projectRef){
     // var obj = {};
     var obj = {projectTitleStatusState: 'hidden'};
 
-  obj[titleContainer] = 'animated zoomOut'
+  obj[titleContainer] = 'animated fadeOut'
   obj[projectRef] = "coverStatus";
     obj[projectContainer] = 'coverContainerNoHover'
-    obj[titleStatus]  = 'titelHidden' + projectRef
+    obj[titleStatus]  = ''
 
   this.setState(obj)
   console.log(projectRef);
