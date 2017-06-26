@@ -39,6 +39,7 @@ export default class Work extends Component {
       coverSize: "",
       componentCounter: 0,
       titleTest: 'hidden',
+      pageStatus: 'hidden',
       // coverFadeIn: '',
       // coverOpacity: 1,
       // border:'',
@@ -76,7 +77,7 @@ componentDidMount(){
 
   const cc = this
   setTimeout(function(){
-  cc.setState({coverFadeIn: 'animated fadeIn'})
+  cc.setState({coverFadeIn: 'animated fadeIn', pageStatus: 'visible'})
   console.log("fade innnn");
 }, 2000);
 }
@@ -159,6 +160,7 @@ project(projectRef){
       })
     // }
   }
+//    obj[projectContainer] = 'coverHoverContainer animated pulse'
 
   projectHover (projectRef){
     this.setState({titleTest: 'visible'})
@@ -168,7 +170,7 @@ project(projectRef){
     // // var obj = {p1Container: "coverHoverTest"};
     var obj = {};
     obj[projectRef] = projectRef;
-    obj[projectContainer] = 'coverHoverContainer animated pulse'
+    obj[projectContainer] = 'coverHoverContainer'
     this.setState(obj)
     //
     console.log(obj);
@@ -304,6 +306,10 @@ const coverStylingP10 = {
 
 
 
+    const workLoadingStatus = {
+      visibility: this.state.pageStatus
+    }
+
 // const spinner = <div class="loader"></div>
 //          <NavBar/>
 
@@ -322,7 +328,7 @@ const coverStylingP10 = {
         <div className={"pageWrapper" + ' ' + this.state.workFadeOut}>
           <div className="projectsWrapper">
             <div className="coverContainer">
-                  <MediaQuery query='(min-device-width: 700px)' className={"MediaQuery" + ' ' + this.state.coverFadeIn}>
+                  <MediaQuery query='(min-device-width: 700px)' className={"MediaQuery" + ' ' + this.state.coverFadeIn} style={workLoadingStatus}>
 
 <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p10')} onMouseOver={this.projectHover.bind(this, 'p10')}>
   <div className={this.state.p10Container} ><img alt="reload" style={coverStyling} ref="p10" className={this.state.p10}  onClick={this.project.bind(this,"p10")} src={cover10}></img><div></div><div className="imgContainer"></div></div>
