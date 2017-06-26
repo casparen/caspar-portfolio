@@ -145,7 +145,7 @@
   flex-direction: row;
   flex-wrap: wrap;
 
-  width: 81%;
+  width: 80%;
 }
 
 .projectsWrapper {
@@ -196,7 +196,7 @@
   /*z-index: -100;*/
   /*visibility: visible;*/
   /*transform: scale(1, 1);*/
-    transition: transform 2s;
+    transition: transform 1s;
       /*border: solid white 2px;*/
 
      /*transition: opacity 0.25s ease-in-out;*/
@@ -207,7 +207,8 @@
 
 
 .p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10, .p11, .p12 {
-
+    /*filter: blur(1.2px);*/
+    /*filter: blur(10px);*/
   /*transition: all .5s;*/
   /*background: black;*/
   /*transition: opacity 1s ease-in-out;*/
@@ -260,8 +261,8 @@ transition: transform 2s;
   /*margin-top: 12px;*/
     /*border: solid white 2px;*/
 /*background: white;*/
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   display: flex;
   margin: 0 auto;
   /*border: solid white 2px;*/
@@ -269,7 +270,7 @@ transition: transform 2s;
 
       /*animation-duration: 1s;
       animation-iteration-count: infinite;*/
-       transition: 2s linear;
+       transition: 1s ;
   overflow: hidden;
       /*padding: 12px;*/
 
@@ -279,20 +280,21 @@ transition: transform 2s;
 }
 
 .coverHoverContainer {
+
   /*transform: rotate(-360deg);*/
    /*transition: 1s linear;*/
     overflow: hidden;
     /*animation-duration: 1s;
          transition: 1s linear;*/
-         transform: scale(0.9, 0.9);
-       transition: transform 2s;
+         /*transform: scale(0.9, 0.9);
+       transition: transform 2s;*/
     /*animation-iteration-count: infinite;*/
   /*filter: blur(2px);*/
 /*z-index: -11;*/
   /*opacity: 0.8;*/
   /*visibility: visible;*/
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   display: flex;
 
 
@@ -311,6 +313,8 @@ transition: transform 2s;
   padding: 15px;
   margin: 0 auto;
   display: flex;
+  z-index:51;
+
   /*border: solid black 2px;*/
 }
 
@@ -330,11 +334,72 @@ transition: transform 2s;
     /*transition-delay: 2s;*/
 }
 
-.imgContainer:hover {
 
+.titleWrapper {
+  /*position: absolute;
+  margin: 0 auto;*/
+  /*border: solid blue 2px;*/
+  /*display: flex;
+
+
+    width: 220px;
+    height: 220px;
+    /*border: solid blue 2px;*/
+
+position:absolute;
+display: flex;
 }
 
 
+.titelHiddenp1, .titelHiddenp2, .titelHiddenp3, .titelHiddenp4, .titelHiddenp5, .titelHiddenp6, .titelHiddenp7, .titelHiddenp8, .titelHiddenp9, .titelHiddenp10, .titelHiddenp11, .titelHiddenp12  {
+  visibility: hidden;
+}
+
+
+.titelVisiblep1, .titelVisiblep2, .titelVisiblep3, .titelVisiblep4, .titelVisiblep5, .titelVisiblep6, .titelVisiblep7, .titelVisiblep8, .titelVisiblep9, .titelVisiblep10,.titelVisiblep11, .titelVisiblep12    {
+  visibility: visible;
+  /*border: solid blue 2px;*/
+}
+
+.titleContainer {
+  margin: 0 auto;
+  position: absolute;
+  margin: 0 auto;
+  width: 220px;
+  height: 220px;
+  z-index: 1;
+  background: white;
+  display: flex;
+
+}
+
+.hoverTitleContainer {
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  margin: 0 auto;
+  width: 250px;
+  height: 250px;
+  z-index: 1;
+  background: white;
+  color: black;
+  display: flex;
+
+
+}
+
+.hoverTitle {
+  letter-spacing: 7px;
+  font-size: 11pt;
+  font-family: "Avenir Next";
+   text-transform: uppercase;;
+   font-weight: 500;
+   line-height: 2;
+  display: flex;
+  align-items: center;
+  /*border: solid pink 2px;*/
+  margin: 0 auto;
+}
 
 
 

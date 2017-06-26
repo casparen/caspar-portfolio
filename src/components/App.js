@@ -52,7 +52,7 @@ constructor(){
             setTimeout(function(){
             cc.setState({appRender: 'visible',spinnerStatus: 'logoImg'})
             console.log("show Page");
-          }, 2000);
+          }, 3000);
         // console.log("In APP page loaded");
       //  this.setState({loadingStatus: this.state.loadingStatus + 1})
        // this.setState({counter1: this.state.counter1 + 1})

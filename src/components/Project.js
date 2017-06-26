@@ -40,7 +40,7 @@ this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     setTimeout(function(){
     cc.setState({pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
     // console.log("fade innnn");
-  }, 2000);
+  }, 3000);
   }
 
 

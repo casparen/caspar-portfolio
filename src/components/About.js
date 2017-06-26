@@ -49,7 +49,7 @@ componentDidUpdate(){
   setTimeout(function(){
   cc.setState({aboutFadeIn: 'animated fadeIn'})
   // console.log("fade innnn");
-}, 2000);
+}, 3000);
 }
 
 // change(event) {
