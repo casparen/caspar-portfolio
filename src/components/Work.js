@@ -42,6 +42,7 @@ export default class Work extends Component {
       // coverFadeIn: '',
       // coverOpacity: 1,
       // border:'',
+      workFadeOut: '',
       projectRef: '',
       p1: 'coverStatus',
         p1Container: 'coverContainerNoHover',
@@ -92,6 +93,7 @@ next(projectRef){
 }
 
 project(projectRef){
+  // this.setState({workFadeOut: 'animated fadeOutDown'})
   this.next(projectRef)
   const projectInfoString = ""
   const status = ""
@@ -166,7 +168,7 @@ project(projectRef){
     // // var obj = {p1Container: "coverHoverTest"};
     var obj = {};
     obj[projectRef] = projectRef;
-    obj[projectContainer] = 'coverHoverContainer'
+    obj[projectContainer] = 'coverHoverContainer animated pulse'
     this.setState(obj)
     //
     console.log(obj);
@@ -312,10 +314,12 @@ const coverStylingP10 = {
 //                      <div><img alt="reload" style={coverStyling} ref="p3" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p3')} onClick={this.project.bind(this,"p3")} src={cover3}></img><div className="projDescription"></div></div>
 //className={'coverStatus'}
 //coverStyling
+//          <MediaQuery query='(min-device-width: 700px)' className={"MediaQuery" + ' ' + this.state.coverFadeIn}>
+
     return (
       <div>
 
-        <div className="pageWrapper">
+        <div className={"pageWrapper" + ' ' + this.state.workFadeOut}>
           <div className="projectsWrapper">
             <div className="coverContainer">
                   <MediaQuery query='(min-device-width: 700px)' className={"MediaQuery" + ' ' + this.state.coverFadeIn}>

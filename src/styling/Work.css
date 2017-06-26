@@ -212,7 +212,8 @@
   /*transition: opacity 1s ease-in-out;*/
   /*filter: alpha(opacity=50);*/
       /*transform: scale(0, 0);*/
-        opacity: 0.7;
+
+        opacity: 0.6;
     animation-name: coverAnimation;
         animation-duration: 2000ms;
         /*zoom:4px;*/
@@ -259,15 +260,20 @@
   height: 250px;
   display: flex;
   margin: 0 auto;
-  border: solid white 2px;
+  /*border: solid white 2px;*/
     background: red;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+
 /*z-index: -1;*/
   /*z-index: 99;*/
   /*border: solid brown 2px;*/
 }
 
 .coverHoverContainer {
-  /*filter: blur(1.2px);*/
+    animation-duration: 1s;
+    /*animation-iteration-count: infinite;*/
+  /*filter: blur(2px);*/
 /*z-index: -11;*/
   /*opacity: 0.8;*/
   /*visibility: visible;*/
@@ -279,9 +285,8 @@
 
   margin: 0 auto;
   /*z-index: 99;*/
-  border: solid white 2px;
+  /*border: solid white 2px;*/
   background: red;
-  /*radial-gradient: (circle, yellow, #009966, purple);*/
 }
 
 

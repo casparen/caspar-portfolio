@@ -360,9 +360,10 @@ transform: scale(3,3);
 
 #k1:hover {
       transform: rotate(360deg);
-
-
 }
+
+
+
 
 #k2{
       transition: transform 3s;
@@ -371,9 +372,13 @@ transform: scale(3,3);
 }
 
 #k2:hover {
-      transform: rotate(-360deg);
+      transform: rotate(-360deg) ;
 
 }
+
+/*scale(80,80);*/
+
+
 
 #k3{
   transition: transform 3s;
