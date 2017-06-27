@@ -371,10 +371,13 @@ const coverStylingP10 = {
 
     return (
       <div>
+        <div className="underConstructionContainer"><h1 className="underConstruction">under construciton</h1></div>
 
         <div className={"pageWrapper" + ' ' + this.state.workFadeOut}>
           <div className="projectsWrapper">
             <div className="coverContainer">
+
+
                   <MediaQuery query='(min-device-width: 700px)' className={"MediaQuery" + ' ' + this.state.coverFadeIn} style={workLoadingStatus}>
 
 <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p10')} onMouseOver={this.projectHover.bind(this, 'p10')}>
@@ -429,7 +432,6 @@ const coverStylingP10 = {
   <div className={this.state.p5Container}><div className="titleWrapper" onClick={this.project.bind(this,"p5")}> <div className={"titleContainer" + ' ' + this.state.p5titleContainer + ' ' + this.state.titleStatusp5}><h1 className="hoverTitle">processing on paper</h1></div></div><img alt="reload" style={coverStyling} ref="p5" className={this.state.p5}  src={cover5}></img><div className="projDescription"></div></div>
 </div>
                   </MediaQuery>
-<h1 className="underConstruction">under construciton</h1>
 
 
                 <MediaQuery query='(max-width: 700px)' className="MediaQuery">
