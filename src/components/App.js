@@ -43,9 +43,11 @@ constructor(){
 //     // cc.stateReset()
 //     }, 4000);
 // }
+// handleImageLoaded(){
+//
+// }
 
-
-      handleImageLoaded(){
+    handleImageLoaded(){
       console.log("hide Page");
         this.setState({appRender: 'hidden', spinnerStatus: 'logoImgSpinning'})
             const cc = this
