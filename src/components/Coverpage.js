@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router'
 import '../styling/Coverpage.css'
+import { browserHistory } from 'react-router';
 
 import Slider from 'react-slick'
 import  MediaQuery from 'react-responsive';
@@ -19,7 +20,8 @@ export default class CoverPage extends Component {
 constructor(){
   super();
   this.state = {
-    visibility:""
+    visibility:"",
+    pageFade: ''
 
   }
 }
@@ -31,6 +33,14 @@ constructor(){
 
 onClickCoverpage (){
   // console.log("coverpage click");
+      this.setState({pageFade: 'animated fadeOut'})
+  setTimeout(function(){
+
+    browserHistory.push({
+        pathname: '/work'
+    })
+}, 1000);
+
 
 }
 
@@ -60,14 +70,15 @@ onClickCoverpage (){
 
 
 
+//            <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryCover animated slideInDown"  + ' ' + this.state.pageFade}>
 
     return (
           <div>
-            <MediaQuery query='(min-device-width: 700px)' className="MediaQueryCover">
+            <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryCover"  + ' ' + this.state.pageFade}>
               <div  >
                 <div className="wrap">
                   <div className="shapeContainer">
-                    <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k2" src={key}></img></Link>
+                    <div  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k2" src={key}></img></div>
                   </div>
                 </div>
               </div>

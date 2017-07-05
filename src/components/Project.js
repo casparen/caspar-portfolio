@@ -177,7 +177,7 @@ render(){
 
     const infromation2 = JSON.parse(this.props.location.query.test)
 
-    // console.log("this is the infro", information);
+    console.log("this is the infro", infromation2);
     // console.log("haoooooo", information.imgSrcProcess);
     // console.log("halooooooooo", infromation2);
 

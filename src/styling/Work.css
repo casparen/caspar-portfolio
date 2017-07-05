@@ -265,6 +265,8 @@ transition: transform 2s;
   height: 225px;
   display: flex;
   margin: 0 auto;
+  overflow: hidden;
+  display: flex;
   /*border: solid white 2px;*/
     /*background: red;*/
 
@@ -291,7 +293,6 @@ transition: transform 2s;
     /*animation-iteration-count: infinite;*/
   /*filter: blur(2px);*/
 /*z-index: -11;*/
-  /*opacity: 0.8;*/
   /*visibility: visible;*/
   width: 225px;
   height: 225px;
@@ -365,8 +366,10 @@ display: flex;*/
   margin: 0 auto;
   position: absolute;
   margin: 0 auto;
-  width: 225px;
-  height: 225px;
+  /*width: 210px;
+  height: 210px;*/
+  width: 226px;
+  height: 226px;
   z-index: 1;
   background: white;
   /*opacity: 0.6;*/
@@ -375,6 +378,7 @@ display: flex;*/
 }
 
 .hoverTitleContainer {
+
   justify-content: center;
   align-content: center;
   position: absolute;
@@ -385,8 +389,8 @@ display: flex;*/
   background: white;
   color: black;
 
-  width: 210px;
-  height: 210px;
+  width: 226px;
+  height: 226px;
   z-index: 1;
 
   display: flex;
@@ -396,15 +400,20 @@ display: flex;*/
 
 .hoverTitle {
   letter-spacing: 7px;
-  font-size: 11pt;
+  font-size: 10pt;
   font-family: "Avenir Next";
+  /*font-family: "bauhaus93";*/
+
    text-transform: uppercase;;
+   color: black;
    font-weight: 500;
-   line-height: 2;
+   /*line-height: 2;*/
   display: flex;
   align-items: center;
   /*border: solid pink 2px;*/
   margin: 0 auto;
+  padding: 2px;
+  /*opacity: 0.6;*/
 }
 
 .underConstructionContainer {
