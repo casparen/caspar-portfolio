@@ -3,6 +3,8 @@ import {Link} from 'react-router'
 import '../styling/Coverpage.css'
 
 import Slider from 'react-slick'
+import  MediaQuery from 'react-responsive';
+
 // import logoWhite from '../GD/logoWhite.png'
 // import abstractWhite from '../GD/abstractWhite.png'
 // import abstractRed from '../GD/abstractRed.png'
@@ -18,11 +20,17 @@ constructor(){
   super();
   this.state = {
     visibility:""
+
   }
 }
-onClick(){
-  console.log("click!!!");
-  this.setState({visibility: "hidden"})
+// onClick(){
+//   console.log("click!!!");
+//   this.setState({visibility: "hidden"})
+//
+// }
+
+onClickCoverpage (){
+  // console.log("coverpage click");
 
 }
 
@@ -51,20 +59,56 @@ onClick(){
 
 
 
-    return (
 
-<div className="coverContainerNew">
-  <div className="wrap">
-    <div className="shapeContainer">
-      <Link to="/work" className="coverLogo" onClick={this.onClick.bind(this)}><img className="coverLogo" alt="reload" id="k1" src={key}></img></Link>
-      <Link to="/work" className="coverLogo"><img className="coverLogo" alt="reload" id="k2" src={key}></img></Link>
-      <Link to="/work" className="coverLogo"><img className="coverLogo" alt="reload" id="k3" src={key}></img></Link>
-    </div>
-  </div>
-</div>
+
+    return (
+          <div>
+            <MediaQuery query='(min-device-width: 700px)' className="MediaQueryCover">
+              <div  >
+                <div className="wrap">
+                  <div className="shapeContainer">
+                    <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k2" src={key}></img></Link>
+                  </div>
+                </div>
+              </div>
+            </MediaQuery>
+
+
+
+            <MediaQuery query='(max-width: 700px)' className="MediaQueryCover">
+              <div  >
+                <div className="wrap">
+                  <div className="shapeContainerSmall">
+                    <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k1" src={key}></img></Link>
+                    <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k2" src={key}></img></Link>
+                    <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k3" src={key}></img></Link>
+                  </div>
+                </div>
+              </div>
+            </MediaQuery>
+          </div>
+
     )
   }
 }
+
+
+
+
+
+
+// <div className="coverContainerNew">
+//   <div className="wrap">
+//     <div className="shapeContainer">
+//       <Link to="/work" className="coverLogo" onClick={this.onClick.bind(this)}><img className="coverLogo" alt="reload" id="k1" src={key}></img></Link>
+//       <Link to="/work" className="coverLogo"><img className="coverLogo" alt="reload" id="k2" src={key}></img></Link>
+//       <Link to="/work" className="coverLogo"><img className="coverLogo" alt="reload" id="k3" src={key}></img></Link>
+//     </div>
+//   </div>
+// </div>
+
+
+
 
 
 // <img className="coverLogo" alt="reload" id="k1" src={key}></img>

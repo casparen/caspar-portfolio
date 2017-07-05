@@ -10,7 +10,7 @@ import  MediaQuery from 'react-responsive';
 //rewrite rezie by my self!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //Cover symbols
-import key from '../GD/key2.png'
+// import key from '../GD/key2.png'
 // import eins from '../GD/Covertest/1.png'
 // import zwei from '../GD/Covertest/2.png'
 // import drei from '../GD/Covertest/3.png'
@@ -47,13 +47,15 @@ export default class NavBar extends Component {
   }
 
 
-  // componentDidMount(nextProps) {
-  //
-  //   // console.log("hiiiii");
-  //   this.updateWindowDimensions();
-  //   // window.addEventListener('resize', this.updateWindowDimensions);
-  //     window.addEventListener('scroll', this.updateWindowDimensions);
-  // }
+  componentDidMount(nextProps) {
+    console.log(this.props.loaderStatus);
+    // console.log(typeof(this.props.loaderStatus));
+    console.log("start loader now Nav Bar");
+    // console.log("hiiiii");
+    // this.updateWindowDimensions();
+    // // window.addEventListener('resize', this.updateWindowDimensions);
+    //   window.addEventListener('scroll', this.updateWindowDimensions);
+  }
   //
   // componentWillUnmount() {
   //   window.removeEventListener('resize', this.updateWindowDimensions);
@@ -87,12 +89,6 @@ export default class NavBar extends Component {
     }
   }
 
-  onClickCoverpage (){
-    // console.log("coverpage click");
-    this.setState({
-        navStatus: 'visible',
-        coverStatus: 'hidden'})
-  }
 
 
     onClickNav (){
@@ -171,15 +167,9 @@ componentWillUpdate(){
 
 // console.log(shallowCompare);
 
-    const navigationStatus = {
-      visibility: this.state.navStatus
-    }
 
 
-const coverpageStatus = {
-  visibility: this.state.coverStatus
 
-}
 
 
   const logoRoatate = {
@@ -192,50 +182,10 @@ const coverpageStatus = {
 
     return (
       <div>
-
-
-
-
-        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryCover">
-          <div  style={coverpageStatus}>
-            <div className="wrap">
-              <div className="shapeContainer">
-                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k2" src={key}></img></Link>
-              </div>
-            </div>
-          </div>
-        </MediaQuery>
-
-
-
-        <MediaQuery query='(max-width: 700px)' className="MediaQueryCover">
-          <div  style={coverpageStatus}>
-            <div className="wrap">
-              <div className="shapeContainerSmall">
-                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k1" src={key}></img></Link>
-                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k2" src={key}></img></Link>
-                <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbolSmall" alt="reload" id="k3" src={key}></img></Link>
-              </div>
-            </div>
-          </div>
-        </MediaQuery>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div className="navConatiner" style={navigationStatus}>
+        <div className="navConatiner">
           <MediaQuery query='(min-device-width: 700px)' className="MediaQueryNav">
             <Link onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')} id="workNav" to='/work' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
-            <div onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo}  className={this.props.props} style={logoRoatate}></img></div>
+            <Link onClick={this.onClickNav.bind(this)} className="logoContainer" to='/'><img alt="reload" src={Logo}  className={this.props.loaderStatus} style={logoRoatate}></img></Link>
             <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
           </MediaQuery>
 
@@ -246,10 +196,6 @@ const coverpageStatus = {
             <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNavSmall" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
           </MediaQuery>
         </div>
-
-
-
-
       </div>
 
 

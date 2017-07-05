@@ -8,7 +8,7 @@ import './styling/index.css';
 //Components
 import App from './components/App.js';
 import About from './components/About.js'
-// import Coverpage from './components/Coverpage.js'
+import Coverpage from './components/Coverpage.js'
 //  <Route path='/coverpage' component={Coverpage} />
 import Work from './components/Work.js'
 import Project from './components/Project.js'
@@ -17,7 +17,8 @@ import Project from './components/Project.js'
 
 ReactDOM.render(
 <Router history={browserHistory}>
-    <Route path="/" component={App}>
+    <Route path="/app" component={App}>
+    <Route path="/" component={Coverpage}/>
     <Route path="/about" component={About}/>
     <Route path="/work" component={Work} />
     <Route path='/work/:project' component={Project} />

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ProjectInfo from './ProjectInfo.js'
-// import NavBar from './NavBar'
+import NavBar from './NavBar'
 import '../styling/Work.css'
 import { browserHistory } from 'react-router';
 // import {Link} from 'react-router'
@@ -14,17 +14,17 @@ import  MediaQuery from 'react-responsive';
 
 
 //Cover photos
-import cover1 from '../GD/covers/1.png'
-import cover2 from '../GD/covers/2.png'
-import cover3 from '../GD/covers/3.png'
-import cover4 from '../GD/covers/4.png'
-import cover5 from '../GD/covers/5.png'
-import cover6 from '../GD/covers/6.png'
-import cover7 from '../GD/covers/7.png'
-import cover8 from '../GD/covers/8.png'
-import cover9 from '../GD/covers/9.png'
-import cover10 from '../GD/covers/10.png'
-import cover11 from '../GD/covers/11.png'
+import cover1 from '../GD/covers/1.jpg'
+import cover2 from '../GD/covers/2.jpg'
+import cover3 from '../GD/covers/3.jpg'
+import cover4 from '../GD/covers/4.jpg'
+import cover5 from '../GD/covers/5.jpg'
+import cover6 from '../GD/covers/6.jpg'
+import cover7 from '../GD/covers/7.jpg'
+import cover8 from '../GD/covers/8.jpg'
+import cover9 from '../GD/covers/9.jpg'
+import cover10 from '../GD/covers/10.jpg'
+import cover11 from '../GD/covers/11.jpg'
 
 
 //make object a string and then sent it through query
@@ -37,6 +37,7 @@ export default class Work extends Component {
     this.state = {
       coverStatus: "",
       coverSize: "",
+      spinnerStatus: 'logoImg',
       componentCounter: 0,
       titleTest: 'hidden',
       pageStatus: 'hidden',
@@ -100,12 +101,13 @@ export default class Work extends Component {
   }
 
 componentDidMount(){
-
+console.log("work mounting, and spinner will be activated");
+this.setState({spinnerStatus:'logoImgSpinning'})
   const cc = this
   setTimeout(function(){
-  cc.setState({coverFadeIn: 'animated fadeIn', pageStatus: 'visible'})
-  console.log("fade innnn");
-}, 3000);
+  cc.setState({coverFadeIn: 'animated fadeIn', pageStatus: 'visible', spinnerStatus:'logoImg'})
+  console.log("spinner will be deactivated");
+}, 1500);
 }
 
 
@@ -205,7 +207,7 @@ project(projectRef){
 
     this.setState(obj)
     //
-    console.log(obj);
+    // console.log(obj);
 
 
 
@@ -273,7 +275,7 @@ mouseOut(projectRef){
     obj[titleStatus]  = ''
 
   this.setState(obj)
-  console.log(projectRef);
+  // console.log(projectRef);
 }
 
 // updateWindowDimensions() {
@@ -371,6 +373,8 @@ const coverStylingP10 = {
 
     return (
       <div>
+
+      <NavBar  loaderStatus={this.state.spinnerStatus}/>
         <div className="underConstructionContainer"><h1 className="underConstruction">under construciton</h1></div>
 
         <div className={"pageWrapper" + ' ' + this.state.workFadeOut}>

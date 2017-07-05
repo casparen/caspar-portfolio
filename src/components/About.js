@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import NavBar from './NavBar';
+import NavBar from './NavBar';
 import '../styling/About.css'
 import profile from '../GD/profile.png'
 // import { browserHistory } from 'react-router';
@@ -29,6 +29,8 @@ export default class About extends Component {
   constructor(props) {
   super(props);
   this.state = {current: 0,
+                spinnerStatus: 'logoImg',
+                pageStatus: 'hidden',
                 horizontal: true,
                 swipe: true,
                 factor: 0.3,
@@ -43,14 +45,14 @@ export default class About extends Component {
 }
 
 
-componentDidUpdate(){
-
-  const cc = this
-  setTimeout(function(){
-  cc.setState({aboutFadeIn: 'animated fadeIn'})
-  // console.log("fade innnn");
-}, 3000);
-}
+// componentDidUpdate(){
+//
+//   const cc = this
+//   setTimeout(function(){
+//   cc.setState({aboutFadeIn: 'animated fadeIn'})
+//   // console.log("fade innnn");
+// }, 1500);
+// }
 
 // change(event) {
 //   let target = event.target;
@@ -94,10 +96,17 @@ updateWindowDimensions() {
 
 
 componentDidMount() {
-  console.log("hiiiii");
+  // console.log("about mounting, and spinner will be activated");
+  this.setState({spinnerStatus:'logoImgSpinning'})
   this.updateWindowDimensions();
   // window.addEventListener('resize', this.updateWindowDimensions);
     window.addEventListener('scroll', this.updateWindowDimensions);
+
+    const cc = this
+    setTimeout(function(){
+    cc.setState({spinnerStatus:'logoImg', aboutFadeIn: 'animated fadeIn', pageStatus: 'visible'})
+    // console.log("spinner will be deactivated");
+  }, 1500);
 }
 
 componentWillUnmount() {
@@ -157,13 +166,18 @@ const fadeInAbout = {
       fontSize: "24px"
     }
 
+    const pageLoadingStatus = {
+      visibility: this.state.pageStatus
+    }
+
 
     //PUL IMAGEA FROM MY ACTUAL INSTAGRAM AND SELCT RANDOM ONNESSSSSSSSSS!!!!!!!!
     //animate it so it keeps changing while lookng at the screen
 
     return (
       <div >
-        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout">
+        <NavBar  loaderStatus={this.state.spinnerStatus}/>
+        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout" style={pageLoadingStatus}>
 
           <div className="wrapper">
               <img className={"profileCss" + ' ' + this.state.aboutFadeIn} alt="reload" src={profile}></img>

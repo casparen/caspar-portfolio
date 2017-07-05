@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 // import {Link} from 'react-router'
 import '../styling/Project.css'
-
-// import NavBar from './NavBar'
+import NavBar from './NavBar'
 
 
 //Plug ins
@@ -19,6 +18,7 @@ export default class TeakBench extends Component {
     super();
     this.state = {
       gdStatus: "hidden",
+      spinnerStatus: 'logoImg',
       slideShowStatus:"",
       information: null,
       currentPositionProcess: 0,
@@ -34,14 +34,14 @@ this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
   }
 
-  componentWillUpdate(){
-// console.log("This is did mount in project.js");
-    const cc = this
-    setTimeout(function(){
-    cc.setState({pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
-    // console.log("fade innnn");
-  }, 3000);
-  }
+//   componentWillUpdate(){
+// // console.log("This is did mount in project.js");
+//     const cc = this
+//     setTimeout(function(){
+//     cc.setState({pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
+//     // console.log("fade innnn");
+//   }, 3000);
+//   }
 
 
   next() {
@@ -88,6 +88,13 @@ console.log("scroll position", offSet);
   componentDidMount() {
     this.updateWindowDimensions(event);
       window.addEventListener('scroll', this.updateWindowDimensions);
+
+      this.setState({spinnerStatus:'logoImgSpinning'})
+        const cc = this
+        setTimeout(function(){
+        cc.setState({spinnerStatus:'logoImg', pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
+        console.log("spinner will be deactivated");
+      }, 1500);
   }
 
   componentWillUnmount() {
@@ -222,7 +229,11 @@ render(){
 //FOR THE GD BOOK, use a slide show to show the digital book
 
     return (
+<div>
+  <NavBar  loaderStatus={this.state.spinnerStatus}/>
+
       <div style={pageLoadingStatus}>
+
         <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject" ref='content'>
           <div className="projectWrapper">
             <div className="projectContainer">
@@ -309,6 +320,8 @@ render(){
 
 
 
+
+      </div>
 
       </div>
 

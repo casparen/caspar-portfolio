@@ -86,11 +86,19 @@ constructor(){
 
     return (
       <div className="App">
-        <NavBar  props={this.state.spinnerStatus}/>
-        <div style={renderStatusApp} onLoad={this.handleImageLoaded.bind(this)}>
+
+
           {this.props.children}
-        </div>
+  
       </div>
     );
   }
 }
+
+
+// <div className="App">
+//   <NavBar  props={this.state.spinnerStatus}/>
+//   <div style={renderStatusApp} onLoad={this.handleImageLoaded.bind(this)}>
+//     {this.props.children}
+//   </div>
+// </div>
