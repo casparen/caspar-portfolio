@@ -284,46 +284,30 @@ filter: blur(5px);
 
 
 
-.backwardArrow {
-     -webkit-animation: fadein 15s;
+/*.backwardArrow {
   margin-top: 11.53%;
-
-  /*padding-right: 2cm;*/
   border-radius: 50%;
   margin-left: -1.6%;
   z-index: -1;
   background-color: grey;
-  /*opacity: 0.1;*/
   position:fixed;
   height: 2.25%;
   width: 1.1%;
-
-}
-
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:0.1;
-    }
-}
+}*/
 
 
-.forwardArrow {
+
+/*.forwardArrow {
   -webkit-animation: fadein 15s;
 margin-top: -12.82%;
-
-
 border-radius: 50%;
 margin-left: 43.8%;
 z-index: -1;
 background-color: grey;
-/*opacity: 0.1;*/
 position:fixed;
 height: 2.25%;
 width: 1.1%;
-}
+}*/
 
 
 

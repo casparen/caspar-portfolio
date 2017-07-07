@@ -17,14 +17,20 @@
   /*transform: font-size(20px);*/
   /*transition: font-size 20px;*/
   transform: translateX(-0.01%) translateY(-70%);
+  -webkit-transform: translateX(-0.01%) translateY(-70%);
+
   /*transform-origin: 50% 50%;*/
   /*transform: scale(2);*/
   transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+
 }
 
 .hvr-shrink {
   /*transform: translateX(-0%) translateY(-0%);*/
   transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+
 }
 
 
@@ -113,6 +119,10 @@
     animation-duration: 1500ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+        -webkit-animation-duration: 1500ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
 }
 
 .logoImgSpinning {
@@ -123,7 +133,10 @@
   margin: 0 auto;
   z-index: -3;
   animation-name: logoSpin;
+  -webkit-animation-name: logoSpin;
+
     animation-duration: 1500ms;
+    -webkit-animation-duration: 1500ms;
     transform-origin: center;
 
     /*animation-iteration-count: infinite;
@@ -146,6 +159,18 @@
 
 
 @keyframes logoSpin {
+  0%, 100% {
+    transform: translate(0px,0px) rotate(0deg);
+
+
+  }
+  50% {
+    transform: translate(0px,270px) rotate(360deg);
+
+  }
+}
+
+@-webkit-keyframes logoSpin {
   0%, 100% {
     transform: translate(0px,0px) rotate(0deg);
 
