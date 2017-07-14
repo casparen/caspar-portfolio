@@ -32,10 +32,10 @@ constructor(){
 // }
 
 onClickCoverpage (){
-  // console.log("coverpage click");
-      this.setState({pageFade: 'animated fadeOut'})
-  setTimeout(function(){
 
+      this.setState({pageFade: 'animated fadeOut'})
+  console.log(this.state.pageFade);
+  setTimeout(function(){
     browserHistory.push({
         pathname: '/work'
     })
@@ -74,7 +74,7 @@ onClickCoverpage (){
 
     return (
           <div>
-            <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryCover"  + ' ' + this.state.pageFade}>
+            <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryCover animated fadeIn"  + ' ' + this.state.pageFade}>
               <div  >
                 <div className="wrap">
                   <div className="shapeContainer">

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router'
+import { browserHistory } from 'react-router';
+
 import '../styling/Navigation.css'
 // import Coverpage from './Coverpage.js'
 import Logo from '../GD/logo.png'
@@ -23,6 +25,7 @@ export default class NavBar extends Component {
   constructor(){
     super();
     this.state = {
+      navSlideOut: '',
       aboutStatus: false,
       workStatus: false,
       workActive: "work",
@@ -92,9 +95,42 @@ export default class NavBar extends Component {
 
 
     onClickNav (){
-      this.setState({
-          navStatus: 'hidden',
-          coverStatus: 'visible'})
+      console.log("click nav");
+      console.log(this.props);
+      // this.setState({
+      //     navStatus: 'hidden',
+      //     coverStatus: 'visible'})
+          // this.props.navLogoStatus('HIiiiiiii');
+
+        this.props.navLogoStatus(this.logoClick());
+        // this.setState({navSlideOut: 'animated slideOutDown'})
+
+        //needs a time out
+
+        const cc = this
+        setTimeout(function(){
+          browserHistory.push({
+              pathname: '/'
+          })
+
+      }, 1000);
+
+
+
+
+
+
+
+
+  // this.props.navLogoStatus(this.logoClick(ss));
+
+  // this.logoClick()
+    }
+
+
+    logoClick() {
+    // console.log(ss);
+      return "now"
     }
 
     // loadingStatus(){
@@ -145,7 +181,8 @@ export default class NavBar extends Component {
 // }
 
 componentWillUpdate(){
-
+  // console.log(this.props);
+// this.props.navLogoStatus(this.appColor(weatherData));
   // console.log("THis is nav", this.props.props);
 
   // if(this.props == 'show'){
@@ -180,12 +217,15 @@ componentWillUpdate(){
   // <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k2" src={key}></img></Link>
   // <Link to="/work"  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className="symbol" alt="reload" id="k3" src={key}></img></Link>
 
+
+//            <Link onClick={this.onClickNav.bind(this)} className="logoContainer" to='/'><img alt="reload" src={Logo}  className={this.props.loaderStatus} style={logoRoatate}></img></Link>
+
     return (
       <div>
         <div className="navConatiner">
-          <MediaQuery query='(min-device-width: 700px)' className="MediaQueryNav">
+          <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryNav" + ' ' + this.state.navSlideOut}>
             <Link onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')} id="workNav" to='/work' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
-            <Link onClick={this.onClickNav.bind(this)} className="logoContainer" to='/'><img alt="reload" src={Logo}  className={this.props.loaderStatus} style={logoRoatate}></img></Link>
+            <div onClick={this.onClickNav.bind(this)} className="logoContainer" ><img alt="reload" src={Logo}  className={this.props.loaderStatus} style={logoRoatate}></img></div>
             <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
           </MediaQuery>
 

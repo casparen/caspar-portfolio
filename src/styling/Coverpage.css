@@ -8,25 +8,27 @@ position: absolute;
 
 
 /*.slideOutUp {
+  margin: 0 auto;
+  border: solid blue 2px;
   animation-name: slideOut;
   animation-duration: 1500ms;
 }
 
 @keyframes slideOut {
     from {
-      transform: translate(100px,0px);
+      transform: translate(0px,100px);
     }
     to   {
-      transform: translate(0px,-1000px);
+      transform: translate(100px,-1000px);
     }
-}
+}*/
 
 
 
 
 
 
-.slideInDown {
+/*.slideInDown {
   animation-name: slideIn;
   animation-duration: 1500ms;
 

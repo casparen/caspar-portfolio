@@ -304,6 +304,15 @@ mouseOut(projectRef){
 
 // eval("const" + projectRef + "= {opacity: 0.5, margin: 0 auto, padding: 12px, width: 250px}");
 
+navStatus(status) {
+
+  if(status === 'now'){
+    console.log("slide down now");
+    this.setState({workFadeOut: 'animated fadeOut'})
+  }
+
+}
+
   render(){
 
 
@@ -372,12 +381,14 @@ const coverStylingP10 = {
 //          <MediaQuery query='(min-device-width: 700px)' className={"MediaQuery" + ' ' + this.state.coverFadeIn}>
 
     return (
-      <div>
+      <div className={this.state.workFadeOut}>
 
-      <NavBar  loaderStatus={this.state.spinnerStatus}/>
-        <div className="underConstructionContainer"><h1 className="underConstruction">under construciton</h1></div>
+      <NavBar  loaderStatus={this.state.spinnerStatus} navLogoStatus={this.navStatus.bind(this)}/>
 
-        <div className={"pageWrapper" + ' ' + this.state.workFadeOut}>
+
+    <div className="underConstructionContainer"><h1 className="underConstruction">under construciton</h1></div>
+
+        <div className="pageWrapper">
           <div className="projectsWrapper">
             <div className="coverContainer">
 
