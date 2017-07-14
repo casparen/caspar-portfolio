@@ -202,6 +202,7 @@ isEmpty(obj, projectRef) {
   const imgSrcArray = parsedObj.imgSrc
   console.log(imgSrcArray.length);
     if(imgSrcArray.length > 1){
+      // console.log(parsedObj);
       console.log("push");
       browserHistory.push({
           pathname: '/work/' + projectRef,
@@ -220,7 +221,7 @@ isEmpty(obj, projectRef) {
     //         console.log("false");
     // }
     // return true;
-    console.log("true");
+    // console.log("true");
 }
 
   projectHover (projectRef){

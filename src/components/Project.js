@@ -24,7 +24,14 @@ export default class TeakBench extends Component {
       currentPositionProcess: 0,
       coverFadeInLeft: '',
       coverFadeInRight: '',
-      pageStatus: 'hidden'
+      pageStatus: 'hidden',
+      title: '',
+      projectNum: '',
+      description: '',
+      imgSrc: '',
+      imgSrcProcess: ''
+
+
     }
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
@@ -78,7 +85,7 @@ previous() {
 // console.log(this.state.currentPositionProcess);
 
 
-console.log("scroll position", offSet);
+// console.log("scroll position", offSet);
 // console.log("window height", document.documentElement.scrollHeight);
 // console.log("window height", document.scrollHeight);
 // console.log(event.target.scrollHeight);
@@ -97,10 +104,11 @@ console.log("scroll position", offSet);
       }, 1500);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-    window.removeEventListener('scroll', this.updateWindowDimensions);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('resize', this.updateWindowDimensions);
+  //   window.removeEventListener('scroll', this.updateWindowDimensions);
+  // }
+
 
 
 
@@ -108,6 +116,7 @@ console.log("scroll position", offSet);
 
 
 slideShowRender(){
+
         const infromation1 = JSON.parse(this.props.location.query.test)
         // console.log("process phototoosososos");
         // const settings = {
@@ -127,13 +136,14 @@ slideShowRender(){
           // filter:'blur(' + this.state.currentPositionProcess + ')'
         }
 
+
         if (infromation1.process === "yes"){
           // console.log("process yes");
           // this.slideShowRender()
           return (
                   <div className="slideTestWrapper" style={fadeInProcess}>
                     <div className="slideTestContainer" >
-                      {  infromation1.imgSrcProcess.map(function(y, num) {
+                      {  this.state.imgSrcProcess.map(function(y, num) {
                           return (
                             <div key={num} ><img className="slideTest " src={y}  alt='loading'></img></div>
                           )
@@ -143,6 +153,21 @@ slideShowRender(){
                   </div>
                 )
         }
+}
+
+imgRender(){
+
+  return (
+    <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
+      { this.state.imgSrc.map(function(x, number) {
+         return (
+           <div key={number}><img alt="reload" className="photo" src={x}></img></div>
+         )
+        })
+      }
+    </div>
+  )
+
 }
 
 
@@ -163,35 +188,28 @@ slideShowRender(){
 //   <div className='fa fa-angle-right' onClick={this.next.bind(this)}></div>
 // </div>
 
-
-
+componentWillMount(){
+  const projectInfo = JSON.parse(this.props.location.query.test)
+  // this.imgRender()
+  console.log("this is in project", projectInfo);
+  this.setState({  title: projectInfo.title,
+                    projectNum: projectInfo.projectNum,
+                    description: projectInfo.description,
+                    imgSrc: projectInfo.imgSrc,
+                    imgSrcProcess: projectInfo.imgSrcProcess
+                })
+}
 
 
 render(){
 
   // console.log("this is refs",this.refs.content);
-
+  // console.log(this.state.imgSrc);
 
 
     // console.log("in project",this.props.location.query);
 
-    const infromation2 = JSON.parse(this.props.location.query.test)
 
-    // console.log("this is the infro", infromation2);
-    // console.log("haoooooo", information.imgSrcProcess);
-    // console.log("halooooooooo", infromation2);
-
-    const imageProcessing = infromation2.imgSrc.map(function(x, number) {
-      // console.log("x", x);
-      // console.log("nuber", number);
-      // console.log(infromation2.projectNum);
-      // console.log(number);
-      // console.log(number.toString());
-      return (
-        //  <div ><img alt="reload" className="photo" src={x} ref={number}></img></div>
-        <div key={number}><img alt="reload" className="photo" src={x}></img></div>
-      )
-     });
 
      const pageLoadingStatus = {
        visibility: this.state.pageStatus
@@ -228,6 +246,8 @@ render(){
 
 //FOR THE GD BOOK, use a slide show to show the digital book
 
+
+
     return (
 <div>
   <NavBar  loaderStatus={this.state.spinnerStatus}/>
@@ -240,29 +260,21 @@ render(){
                   <div className={"descriptionContainer" + ' ' + this.state.coverFadeInLeft}>
                         <div className="projectTitle">
                             <div className="projectName">
-                              {infromation2.title} <br></br>
+                              {this.state.title} <br></br>
                             </div>
                             <div className="projectNumber">
-                              {infromation2.projectNum}
+                              {this.state.projectNum}
                             </div>
                         </div>
                         <div className="aboutProject">
-                          {infromation2.description}
+                          {this.state.description}
                         </div>
                   </div>
-                <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
-                  {imageProcessing}
-                </div>
+
               </div>
-
+                {this.imgRender()}
             </div>
-
-
-
             {this.slideShowRender()}
-
-
-
 
 
               <ScrollUpButton StopPosition={0}
@@ -278,38 +290,6 @@ render(){
 
 
 
-       <MediaQuery query='(max-width: 800px)' className="MediaQueryProject">
-         <div className="projectWrapperSmall">
-           <div className="projectContainerSmall">
-                 <div className="descriptionContainerSmall animated fadeInLeft">
-                       <div className="projectTitleSmall">
-                           <div className="projectNameSmall">
-                             {infromation2.title} <br></br>
-                           </div>
-                           <div className="projectNumberSmall">
-                             {infromation2.projectNum}
-                           </div>
-                       </div>
-                       <div className="aboutProjectSmall">
-                         {infromation2.description}
-                       </div>
-                 </div>
-               <div className="slideshowContainerSmall animated fadeInRight" onClick={this.projectOn.bind(this)}>
-                 {imageProcessing}
-               </div>
-           </div>
-         </div>
-
-         <ScrollUpButton StopPosition={0}
-               TransitionBtnPosition={150}
-               EasingType='easeOutCubic'
-               AnimationDuration={1000}
-               ContainerClassName='ScrollUpButton__ContainerSmall'
-               TransitionClassName='ScrollUpButton__Toggled'>
-
-           <h1><div className="fa fa-angle-double-up"></div></h1>
-         </ScrollUpButton>
-      </MediaQuery>
 
 
 
@@ -328,6 +308,87 @@ render(){
       )
     }
   }
+
+
+ //  <MediaQuery query='(max-width: 800px)' className="MediaQueryProject">
+ //    <div className="projectWrapperSmall">
+ //      <div className="projectContainerSmall">
+ //            <div className="descriptionContainerSmall animated fadeInLeft">
+ //                  <div className="projectTitleSmall">
+ //                      <div className="projectNameSmall">
+ //                        {infromation2.title} <br></br>
+ //                      </div>
+ //                      <div className="projectNumberSmall">
+ //                        {infromation2.projectNum}
+ //                      </div>
+ //                  </div>
+ //                  <div className="aboutProjectSmall">
+ //                    {infromation2.description}
+ //                  </div>
+ //            </div>
+ //          <div className="slideshowContainerSmall animated fadeInRight" onClick={this.projectOn.bind(this)}>
+ //            {imageProcessing}
+ //          </div>
+ //      </div>
+ //    </div>
+ //
+ //    <ScrollUpButton StopPosition={0}
+ //          TransitionBtnPosition={150}
+ //          EasingType='easeOutCubic'
+ //          AnimationDuration={1000}
+ //          ContainerClassName='ScrollUpButton__ContainerSmall'
+ //          TransitionClassName='ScrollUpButton__Toggled'>
+ //
+ //      <h1><div className="fa fa-angle-double-up"></div></h1>
+ //    </ScrollUpButton>
+ // </MediaQuery>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
