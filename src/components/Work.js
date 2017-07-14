@@ -180,15 +180,42 @@ project(projectRef){
     // if(this.status === "slick-slide slick-active slick-center"){
       // console.log("approved");
       // console.log("Project Info", this.projectInfoString);
-      browserHistory.push({
-          pathname: '/work/' + projectRef,
-          query: {test: this.projectInfoString
 
-          }
-      })
+
+        this.isEmpty(this.projectInfoString, projectRef)
+
+        // if(this.isEmpty === true){
+        //   console.log("true");
+        // }
+        //
+        // else {
+        //   console.log(false);
+        // }
+    // console.log("important", this.projectInfoString);
+
     // }
   }
 //    obj[projectContainer] = 'coverHoverContainer animated pulse'
+
+isEmpty(obj, projectRef) {
+  const parsedObj = JSON.parse(obj)
+    console.log("testing if empty", parsedObj);
+    for(var key in parsedObj) {
+        if(parsedObj.hasOwnProperty(key)){
+            // return false;
+            //push
+            console.log("false");
+            browserHistory.push({
+                pathname: '/work/' + projectRef,
+                query: {test: obj
+                }
+            })
+          }
+    }
+    // return true;
+    //dont push
+    console.log("true");
+}
 
   projectHover (projectRef){
     this.setState({titleTest: 'visible'})
