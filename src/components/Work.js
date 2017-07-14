@@ -199,21 +199,27 @@ project(projectRef){
 
 isEmpty(obj, projectRef) {
   const parsedObj = JSON.parse(obj)
-    console.log("testing if empty", parsedObj);
-    for(var key in parsedObj) {
-        if(parsedObj.hasOwnProperty(key)){
-            // return false;
-            //push
-            console.log("false");
-            browserHistory.push({
-                pathname: '/work/' + projectRef,
-                query: {test: obj
-                }
-            })
+  const imgSrcArray = parsedObj.imgSrc
+  console.log(imgSrcArray.length);
+    if(imgSrcArray.length > 1){
+      console.log("push");
+      browserHistory.push({
+          pathname: '/work/' + projectRef,
+          query: {test: obj
           }
+      })
     }
+    else {
+      console.log("dont push");
+    }
+
+    // for(var key in parsedObj) {
+    //     if(parsedObj.hasOwnProperty(key))
+    //         // return false;
+    //         //push
+    //         console.log("false");
+    // }
     // return true;
-    //dont push
     console.log("true");
 }
 
