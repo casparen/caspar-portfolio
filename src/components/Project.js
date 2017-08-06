@@ -18,7 +18,7 @@ export default class TeakBench extends Component {
     super();
     this.state = {
       gdStatus: "hidden",
-      spinnerStatus: 'logoImg',
+      spinnerStatus: '',
       slideShowStatus:"",
       information: null,
       currentPositionProcess: 0,
@@ -29,7 +29,10 @@ export default class TeakBench extends Component {
       projectNum: '',
       description: '',
       imgSrc: '',
-      imgSrcProcess: ''
+      imgSrcProcess: '',
+      process: '',
+      projectFadeOut: '',
+      projectFadeOutAll: ''
 
 
     }
@@ -96,12 +99,12 @@ previous() {
     this.updateWindowDimensions(event);
       window.addEventListener('scroll', this.updateWindowDimensions);
 
-      this.setState({spinnerStatus:'logoImgSpinning'})
+      // this.setState({spinnerStatus:'logoImgSpinning'})
         const cc = this
-        setTimeout(function(){
+        // setTimeout(function(){
         cc.setState({spinnerStatus:'logoImg', pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
         console.log("spinner will be deactivated");
-      }, 1500);
+      // }, 1500);
   }
 
   // componentWillUnmount() {
@@ -117,7 +120,6 @@ previous() {
 
 slideShowRender(){
 
-        const infromation1 = JSON.parse(this.props.location.query.test)
         // console.log("process phototoosososos");
         // const settings = {
         //   dots: false,
@@ -132,20 +134,18 @@ slideShowRender(){
 
         const fadeInProcess = {
           // transform: 'translate(' +  this.state.scrollStatus + 'px' + ', 0px)'
-          opacity: this.state.currentPositionProcess
+          // opacity: this.state.currentPositionProcess
           // filter:'blur(' + this.state.currentPositionProcess + ')'
         }
 
 
-        if (infromation1.process === "yes"){
-          // console.log("process yes");
-          // this.slideShowRender()
+        if (this.state.process === "yes"){
           return (
                   <div className="slideTestWrapper" style={fadeInProcess}>
                     <div className="slideTestContainer" >
                       {  this.state.imgSrcProcess.map(function(y, num) {
                           return (
-                            <div key={num} ><img className="slideTest " src={y}  alt='loading'></img></div>
+                            <div key={num} ><img className="slideTest hvr-bounce-in" src={y}  alt='loading'></img></div>
                           )
                          })
                        }
@@ -196,8 +196,37 @@ componentWillMount(){
                     projectNum: projectInfo.projectNum,
                     description: projectInfo.description,
                     imgSrc: projectInfo.imgSrc,
-                    imgSrcProcess: projectInfo.imgSrcProcess
+                    imgSrcProcess: projectInfo.imgSrcProcess,
+                    process: projectInfo.process
                 })
+}
+
+navStatus(status) {
+
+  if(status === 'logo'){
+console.log("logooooooo");
+    // console.log(status);
+    console.log("slide down now");
+    this.setState({projectFadeOutAll: 'animated fadeOut'})
+  }
+
+  else if(status === 'work'){
+    console.log("workkkkkkk");
+    this.setState({projectFadeOut: 'animated fadeOut'})
+// console.log(status);
+    // console.log("slide down now");
+    // this.setState({workFadeOutAll: 'animated fadeOut'})
+  }
+
+  else if(status === 'about'){
+    console.log('aboutttt',status);
+      this.setState({projectFadeOut: 'animated fadeOut'})
+
+    // console.log("slide down now");
+    // this.setState({workFadeOutAll: 'animated fadeOut'})
+  }
+
+
 }
 
 
@@ -250,11 +279,9 @@ render(){
 
     return (
 <div>
-  <NavBar  loaderStatus={this.state.spinnerStatus}/>
-
-      <div style={pageLoadingStatus}>
-
-        <MediaQuery query='(min-device-width: 800px)' className="MediaQueryProject" ref='content'>
+  <NavBar  loaderStatus={this.state.spinnerStatus} navLogoStatus={this.navStatus.bind(this)}/>
+      <div style={pageLoadingStatus} className={this.state.projectFadeOut}>
+        <div query='(min-device-width: 800px)' className="MediaQueryProject" ref='content'>
           <div className="projectWrapper">
             <div className="projectContainer">
                   <div className={"descriptionContainer" + ' ' + this.state.coverFadeInLeft}>
@@ -285,22 +312,7 @@ render(){
                     TransitionClassName='ScrollUpButton__Toggled'>
                 <h1><div className="fa fa-angle-double-up"></div></h1>
               </ScrollUpButton>
-       </MediaQuery>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       </div>
       </div>
 
       </div>

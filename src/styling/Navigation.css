@@ -34,6 +34,9 @@
 }
 
 
+
+
+
 /*@keyframes hvr-wobble-vertical {
   16.65% {
     -webkit-transform: translateY(-8px);
@@ -85,6 +88,7 @@
 }
 
 .MediaQueryNav {
+  /*position: absolute;*/
   display: flex;
   padding-top: 1.2cm;
   margin: 0 auto;
@@ -116,10 +120,10 @@
   margin: 0 auto;
   z-index: -3;
   /*animation-name: logoSpin;*/
-    animation-duration: 1500ms;
+    animation-duration: 700ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-        -webkit-animation-duration: 1500ms;
+        -webkit-animation-duration: 700ms;
         -webkit-animation-iteration-count: infinite;
         -webkit-animation-timing-function: linear;
 
@@ -133,10 +137,44 @@
   margin: 0 auto;
   z-index: -3;
   animation-name: logoSpin;
-  -webkit-animation-name: logoSpin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+        -webkit-animation-duration: 1000ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+}
 
-    animation-duration: 1500ms;
-    -webkit-animation-duration: 1500ms;
+.logoImgSpinningLeft {
+  /*border: solid black 1px;*/
+  /*position: fixed;*/
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  z-index: -3;
+  animation-name: logoSpinLeft;
+  -webkit-animation-name: logoSpinLeft;
+
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    transform-origin: center;
+
+    /*animation-iteration-count: infinite;
+    animation-timing-function: linear;*/
+
+}
+.logoImgSpinningRight {
+  /*border: solid black 1px;*/
+  /*position: fixed;*/
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  z-index: -3;
+  animation-name: logoSpinRight;
+  -webkit-animation-name: logoSpinRight;
+
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
     transform-origin: center;
 
     /*animation-iteration-count: infinite;
@@ -181,7 +219,6 @@
 
   }
 }*/
-
 @keyframes logoSpin {
   from {
     transform: rotate(0deg) ;
@@ -200,6 +237,50 @@
   }
   to {
     transform: rotate(-360deg) ;
+
+  }
+}
+
+@keyframes logoSpinLeft {
+  from {
+    transform: rotate(0deg) ;
+
+  }
+  to {
+    transform: rotate(-360deg) ;
+
+  }
+}
+
+@-webkit-keyframes logoSpinLeft {
+  from {
+    transform: rotate(0deg) ;
+
+  }
+  to {
+    transform: rotate(-360deg) ;
+
+  }
+}
+
+@keyframes logoSpinRight {
+  from {
+    transform: rotate(0deg) ;
+
+  }
+  to {
+    transform: rotate(360deg) ;
+
+  }
+}
+
+@-webkit-keyframes logoSpinRight {
+  from {
+    transform: rotate(0deg) ;
+
+  }
+  to {
+    transform: rotate(360deg) ;
 
   }
 }
@@ -231,11 +312,11 @@ scale(2, 2)*/
 
 
 #workNav {
-  /*border: solid black 1px;*/
+
 
   display: flex;
   flex-direction: row;
-  color: black;
+
   letter-spacing: 7px;
    text-transform: uppercase;;
   text-decoration: none;
@@ -261,6 +342,8 @@ scale(2, 2)*/
 
 
 #aboutNav {
+  transition-duration: 2s;
+
   text-decoration: none;
 
   color: #1c1c1c;
@@ -290,6 +373,7 @@ scale(2, 2)*/
 
 .redO {
   /*border: solid blue 1px;*/
+  /*transition-duration: 2s;*/
   margin: 0 auto;
   color: #1c1c1c;
 }
@@ -313,4 +397,34 @@ scale(2, 2)*/
 .logoContainer {
   width: 2cm;
   /*background-color: pink;*/
+}
+
+
+.activeWork {
+    display: flex;
+    flex-direction: row;
+    color: red;
+    letter-spacing: 7px;
+     text-transform: uppercase;;
+    text-decoration: none;
+    padding-left: 27%;
+    margin: 0 auto;
+    font-size: 11pt;
+    font-family: "Avenir Next";
+}
+
+.activeAbout{
+  transition-duration: 2s;
+
+  text-decoration: none;
+
+  color: #1c1c1c;
+  letter-spacing: 7px;
+ text-transform: uppercase;
+  /*border: solid black 1px;*/
+  padding-right: 27%;
+  margin: 0 auto;
+    font-size: 11pt;
+    font-family: "Avenir Next";
+    color: red;
 }

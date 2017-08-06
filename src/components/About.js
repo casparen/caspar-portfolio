@@ -32,6 +32,8 @@ export default class About extends Component {
                 spinnerStatus: 'logoImg',
                 pageStatus: 'hidden',
                 horizontal: true,
+                aboutFadeOut: '',
+                aboutFadeOutAll: '',
                 swipe: true,
                 factor: 0.3,
                 loop: true,
@@ -39,7 +41,10 @@ export default class About extends Component {
                 currentPosition: 0,
                 slideShowStatus:'',
                 socialStatus: '',
-                aboutFadeIn: ''
+                aboutFadeIn: '',
+                slideShowVisibility: 'hidden',
+                socialVisibility: 'hidden'
+
   };
   this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 }
@@ -81,12 +86,12 @@ updateWindowDimensions() {
       console.log('scroll position', scrollPosition);
       if (scrollPosition > 650){
         console.log("now fade in");
-        this.setState({slideShowStatus:'animated fadeInUp'})
+        this.setState({slideShowStatus:'animated fadeIn', slideShowVisibility: 'visible'})
       }
 
-      if (scrollPosition > 1100){
+      if (scrollPosition > 1200){
         console.log("now fade in");
-        this.setState({socialStatus:'animated fadeInUp'})
+        this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
       }
       // else {
       //   this.setState({slideShowStatus: ''})
@@ -97,21 +102,39 @@ updateWindowDimensions() {
 
 componentDidMount() {
   // console.log("about mounting, and spinner will be activated");
-  this.setState({spinnerStatus:'logoImgSpinning'})
+  // this.setState({spinnerStatus:'logoImgSpinning'})
   this.updateWindowDimensions();
   // window.addEventListener('resize', this.updateWindowDimensions);
     window.addEventListener('scroll', this.updateWindowDimensions);
 
     const cc = this
-    setTimeout(function(){
+    // setTimeout(function(){
     cc.setState({spinnerStatus:'logoImg', aboutFadeIn: 'animated fadeIn', pageStatus: 'visible'})
     // console.log("spinner will be deactivated");
-  }, 1500);
+  // }, 700);
 }
 
 componentWillUnmount() {
   window.removeEventListener('resize', this.updateWindowDimensions);
   window.removeEventListener('scroll', this.updateWindowDimensions);
+}
+
+navStatus(status) {
+
+  if(status === 'logo'){
+console.log("logooooooo");
+    // console.log(status);
+    console.log("slide down now");
+    this.setState({aboutFadeOutAll: 'animated fadeOut'})
+  }
+
+  else if(status === 'work'){
+    console.log("workkkkkkk");
+    this.setState({aboutFadeOut: 'animated fadeOut'})
+// console.log(status);
+    // console.log("slide down now");
+    // this.setState({workFadeOutAll: 'animated fadeOut'})
+  }
 }
 
 
@@ -171,13 +194,22 @@ const fadeInAbout = {
     }
 
 
+  const  socialStyle = {
+    visibility: this.state.socialVisibility
+  }
+  const slideShowStyle = {
+    visibility: this.state.slideShowVisibility
+  }
+
+
     //PUL IMAGEA FROM MY ACTUAL INSTAGRAM AND SELCT RANDOM ONNESSSSSSSSSS!!!!!!!!
     //animate it so it keeps changing while lookng at the screen
 
     return (
-      <div >
-        <NavBar  loaderStatus={this.state.spinnerStatus}/>
-        <MediaQuery query='(min-device-width: 700px)' className="MediaQueryAbout" style={pageLoadingStatus}>
+      <div className={this.state.aboutFadeOutAll}>
+        <NavBar loaderStatus={this.state.spinnerStatus} navLogoStatus={this.navStatus.bind(this)}/>
+
+        <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryAbout" + ' ' + this.state.aboutFadeOut} style={pageLoadingStatus}>
 
           <div className="wrapper">
               <img className={"profileCss" + ' ' + this.state.aboutFadeIn} alt="reload" src={profile}></img>
@@ -187,7 +219,7 @@ const fadeInAbout = {
                 </div>
               </div>
 
-                  <div className={"slideShowWrapper" + ' ' + this.state.slideShowStatus}>
+                  <div className={"slideShowWrapper" + ' ' + this.state.slideShowStatus} style={slideShowStyle}>
                       <div className="slideShow">
                         <img  className="slideShowPic" alt="reload" src={slide1}></img>
                         <img  className="slideShowPic" alt="reload" src={slide2}></img>
@@ -203,7 +235,7 @@ const fadeInAbout = {
 
 
 
-            <div className={"socialContainer" + ' ' + this.state.socialStatus}>
+            <div className={"socialContainer" + ' ' + this.state.socialStatus} style={socialStyle}>
                 <a href="https://www.instagram.com/enno_nagel/" className="link hvr-bounce-in"><div href="#" className="fa fa-instagram circleAbout"></div></a>
                 <a href="https://www.linkedin.com/in/casparnagel" className="link hvr-bounce-in"><div href="#" className="fa fa-linkedin circleAbout"></div></a>
                 <a href="https://github.com/casparen" className="link hvr-bounce-in "><div href="#" className="fa fa-github"></div></a>

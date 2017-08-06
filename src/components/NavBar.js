@@ -51,7 +51,7 @@ export default class NavBar extends Component {
 
 
   componentDidMount(nextProps) {
-    console.log(this.props.loaderStatus);
+    console.log("loading status", this.props.loaderStatus);
     // console.log(typeof(this.props.loaderStatus));
     console.log("start loader now Nav Bar");
     // console.log("hiiiii");
@@ -94,26 +94,53 @@ export default class NavBar extends Component {
 
 
 
-    onClickNav (){
-      console.log("click nav");
-      console.log(this.props);
+    onClickNav (path, e){
+      console.log("hiiiiiiiiiii");
+      e.preventDefault()
+      // console.log("click nav");
+      console.log('on click nav', this.props.navLogoStatus);
       // this.setState({
       //     navStatus: 'hidden',
       //     coverStatus: 'visible'})
           // this.props.navLogoStatus('HIiiiiiii');
 
-        this.props.navLogoStatus(this.logoClick());
-        // this.setState({navSlideOut: 'animated slideOutDown'})
+        if(path === "logo"){
+          this.props.navLogoStatus(this.logoClick('logo'));
+          const cc = this
+          setTimeout(function(){
+            browserHistory.push({
+                pathname: '/'
+            })
+          }, 1000);
+        }
 
-        //needs a time out
+      else  if(path === "about"){
+        this.setState({navStatusAbout: "hvr-shrink", logoSpinningStatus: 'logoImgSpinningRight'})
 
-        const cc = this
-        setTimeout(function(){
-          browserHistory.push({
-              pathname: '/'
-          })
+          this.props.navLogoStatus(this.logoClick('about'));
+          const cc = this
+          setTimeout(function(){
+            cc.setState({logoSpinningStatus: 'logoImg'})
+            browserHistory.push({
+                pathname: '/about'
+            })
+          }, 1000);
+        }
+     //else (path === "work"){
+       else {
+         this.setState({navStatusWork: "hvr-shrink", logoSpinningStatus: 'logoImgSpinningLeft'})
+          this.props.navLogoStatus(this.logoClick('work'));
+          const cc = this
+          setTimeout(function(){
+            cc.setState({logoSpinningStatus: 'logoImg'})
+            browserHistory.push({
+                pathname: '/work'
+            })
+          }, 1000);
+        }
 
-      }, 1000);
+
+// this.setState({navStatusWork:"hvr-shrink"})
 
 
 
@@ -128,9 +155,21 @@ export default class NavBar extends Component {
     }
 
 
-    logoClick() {
-    // console.log(ss);
-      return "now"
+    logoClick(path) {
+    console.log("logoclick", path);
+    if(path === "logo"){
+            return "logo"
+    }
+
+ else if(path === "about"){
+    return "about"
+
+    }
+ else if(path === "work"){
+    return "work"
+
+    }
+
     }
 
     // loadingStatus(){
@@ -181,6 +220,7 @@ export default class NavBar extends Component {
 // }
 
 componentWillUpdate(){
+      console.log("loading status", this.props.loaderStatus);
   // console.log(this.props);
 // this.props.navLogoStatus(this.appColor(weatherData));
   // console.log("THis is nav", this.props.props);
@@ -193,6 +233,8 @@ componentWillUpdate(){
   //
   // }
 }
+
+
 
 
 //if prop + 1 is not = to nrxt prop them....
@@ -224,9 +266,9 @@ componentWillUpdate(){
       <div>
         <div className="navConatiner">
           <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryNav" + ' ' + this.state.navSlideOut}>
-            <Link onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')} id="workNav" to='/work' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
-            <div onClick={this.onClickNav.bind(this)} className="logoContainer" ><img alt="reload" src={Logo}  className={this.props.loaderStatus} style={logoRoatate}></img></div>
-            <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
+            <Link onClick={this.onClickNav.bind(this, "work")} onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')}   to='/work' id="workNav" activeClassName="activeWork"><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
+            <div onClick={this.onClickNav.bind(this, "logo")} className="logoContainer" ><img alt="reload" src={Logo}  className={this.state.logoSpinningStatus + ' ' + this.props.loaderStatus} style={logoRoatate}></img></div>
+            <Link onClick={this.onClickNav.bind(this, "about")}  onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
           </MediaQuery>
 
 
