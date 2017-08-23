@@ -36,8 +36,12 @@ export default class Work extends Component {
     // this.next = this.next.bind(this)
     // this.previous = this.previous.bind(this)
     this.state = {
-      pageHeight: '',
-      pageWidth: '',
+      coverWrapper: 'coverWrapper',
+      titleContainer: "titleContainer",
+      hoverTitle: "hoverTitle",
+      pageHeight: 0,
+      pageWidth: 0,
+      device: '',
       coverStatus: "",
       coverSize: "",
       spinnerStatus: '',
@@ -95,16 +99,7 @@ export default class Work extends Component {
       p12: 'coverStatus',
         p12Container: 'coverContainerNoHover',
         p12titleContainer:'',
-        titleStatusp12: 'titelHiddenp12',
-
-        pageWrapper: 'pageWrapper',
-        projectsWrapper: 'projectsWrapper',
-        coverContainer: 'coverContainer',
-        projectWrapper: 'projectWrapper',
-        coverWrapper: 'coverWrapper',
-        titleWrapper: 'titleWrapper',
-        titleContainer: "titleContainer",
-        hoverTitle: "hoverTitle"
+        titleStatusp12: 'titelHiddenp12'
     }
 
   }
@@ -120,19 +115,67 @@ export default class Work extends Component {
           console.log("spinner will be deactivated");
         // }, 100);
         console.log("hiiiii");
-        window.addEventListener('resize', this.updateWindowDimensions);
+        // window.addEventListener('resize', this.updateWindowDimensions);
         // this.updateWindowDimensions();
-    }
 
-    updateWindowDimensions() {
-      console.log('hi in update window dimension');
-      const winWidth = window.innerWidth
-      const winHeight = window.innerHeight
-      // console.log("inner width",window.innerWidth);
-      // console.log("inner height",window.innerHeight);
-      this.setState({pageWidth: winWidth, pageHeight: winWidth})
 
     }
+
+
+componentWillMount(){
+
+          const winWidth = window.innerWidth
+          const winHeight = window.innerHeight
+
+          console.log("initial inner width",winWidth);
+          console.log("initial inner height",winHeight);
+
+          if(winWidth > 430){
+            console.log("initial, make laptopsize size");
+            this.setState({device: "laptop", coverWrapper: "coverWrapper", titleContainer: "titleContainer", hoverTitle: "hoverTitle"})
+            // this.setState({device: "laptop"})
+
+          }
+          // else if(winWidth > 1500){
+          //   console.log("initial, make laptopsize size");
+          //   this.setState({device: "laptop", coverWrapper: "coverWrapper"})
+          //   // this.setState({device: "laptop"})
+          //
+          // }
+
+          else {
+            console.log("initial, make iphone size");
+            this.setState({device: "iphone",  coverWrapper: "coverWrapperSmall", titleContainer: "titleContainerSmall", hoverTitle: "hoverTitleSmall"})
+            // this.setState({device: "iphone"})
+
+          }
+}
+
+
+
+
+    // updateWindowDimensions() {
+    //   // console.log("hiiiiii");
+    //   // console.log('hi in update window dimension');
+    //   const winWidth = window.innerWidth
+    //   const winHeight = window.innerHeight
+    //   // console.log("inner width",window.innerWidth);
+    //   // console.log("inner height",window.innerHeight);
+    //   console.log("inner width",winWidth);
+    //   console.log("inner height",winHeight);
+    //   //
+    //   if(winWidth > 400){
+    //     console.log("make laptopsize size");
+    //     // this.setState({device: "laptop"})
+    //   }
+    //
+    //   else {
+    //     console.log("make iphone size");
+    //     // this.setState({device: "iphone"})
+    //   }
+    //   // this.setState({pageWidth: width, pageHeight: height})
+    //
+    // }
 
 
 
@@ -254,7 +297,10 @@ isEmpty(obj, projectRef) {
 }
 
   projectHover (projectRef){
-    console.log(this.state.pageWidth, this.state.pageHeight);
+console.log("from hover", this.state.device);
+    // console.log("project hover", this.state.pageWidth, this.state.pageHeight);
+
+
     this.setState({titleTest: 'visible'})
     //    obj[projectRef] = "animated fadeOut" + ' ' + projectRef;
     console.log('in');
@@ -265,7 +311,7 @@ isEmpty(obj, projectRef) {
     var obj = {};
     obj[projectRef] = projectRef;
     obj[projectContainer] = 'coverHoverContainer'
-    // obj[titleContainer] = 'hoverTitleContainer animated fadeIn'
+    obj[titleContainer] = 'animated fadeIn'
     obj[titleStatus]  = 'titelVisible' + projectRef
     // obj[projectTitleStatusState] = 'visible'
 
@@ -439,6 +485,16 @@ const coverStylingP10 = {
 //coverStyling
 //          <MediaQuery query='(min-device-width: 700px)' className={"MediaQuery" + ' ' + this.state.coverFadeIn}>
 
+        // pageWrapper: 'pageWrapper',
+        // projectsWrapper: 'projectsWrapper',
+        // coverContainer: 'coverContainer',
+        // projectWrapper: 'projectWrapper',
+        // coverWrapper: 'coverWrapper',
+        // titleWrapper: 'titleWrapper',
+        // titleContainer: "titleContainer",
+        // hoverTitle: "hoverTitle"
+
+
     return (
       <div className={this.state.workFadeOutAll}>
 
@@ -447,44 +503,45 @@ const coverStylingP10 = {
           <div className="projectsWrapper">
             <div className="coverContainer">
               <div className={"projectWrapper" + ' ' + this.state.coverFadeIn + ' ' + this.state.workFadeOut} style={workLoadingStatus}>
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p10')} onMouseOver={this.projectHover.bind(this, 'p10')} onClick={this.project.bind(this,"p10")}>
-                      <div className={this.state.p10Container} ><div className="titleWrapper"  ><div className={"titleContainer" + ' ' + this.state.p10titleContainer + ' ' + this.state.titleStatusp10} ><h1 className="hoverTitle">soft chair</h1></div></div><img alt="reload" style={coverStyling} ref="p10" className={this.state.p10}  src={cover10}></img><div></div></div>
+
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p10')} onMouseOver={this.projectHover.bind(this, 'p10')} onClick={this.project.bind(this,"p10")}>
+                      <div className={this.state.p10Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p10titleContainer + ' ' + this.state.titleStatusp10} ><h1 className={this.state.hoverTitle}>soft chair</h1></div></div><img alt="reload" style={coverStyling} ref="p10" className={this.state.p10}  src={cover10}></img><div></div></div>
                     </div>
 
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p11')} onMouseOver={this.projectHover.bind(this, 'p11')} onClick={this.project.bind(this,"p11")}>
-                      <div className={this.state.p11Container}><div className="titleWrapper" ><div className={"titleContainer" + ' ' + this.state.p11titleContainer + ' ' + this.state.titleStatusp11} ><h1 className="hoverTitle">rigit chair</h1></div></div><img alt="reload" style={coverStyling} ref="p11" className={this.state.p11}   src={cover11}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p11')} onMouseOver={this.projectHover.bind(this, 'p11')} onClick={this.project.bind(this,"p11")}>
+                      <div className={this.state.p11Container}><div className="titleWrapper" ><div className={this.state.titleContainer + ' ' + this.state.p11titleContainer + ' ' + this.state.titleStatusp11} ><h1 className={this.state.hoverTitle}>rigit chair</h1></div></div><img alt="reload" style={coverStyling} ref="p11" className={this.state.p11}   src={cover11}></img><div className="projDescription"></div></div>
                     </div>
 
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p9')} onMouseOver={this.projectHover.bind(this, 'p9')} onClick={this.project.bind(this,"p9")}>
-                      <div className={this.state.p9Container}><div className="titleWrapper"   ><div className={"titleContainer" + ' ' + this.state.p9titleContainer + ' ' + this.state.titleStatusp9}><h1 className="hoverTitle">CSP motorbike</h1></div></div><img alt="reload" style={coverStyling} ref="p9" className={this.state.p9} src={cover9}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p9')} onMouseOver={this.projectHover.bind(this, 'p9')} onClick={this.project.bind(this,"p9")}>
+                      <div className={this.state.p9Container}><div className="titleWrapper"   ><div className={this.state.titleContainer + ' ' + this.state.p9titleContainer + ' ' + this.state.titleStatusp9}><h1 className={this.state.hoverTitle}>CSP MB</h1></div></div><img alt="reload" style={coverStyling} ref="p9" className={this.state.p9} src={cover9}></img><div className="projDescription"></div></div>
                     </div>
 
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p1')} onMouseOver={this.projectHover.bind(this, 'p1')} onClick={this.project.bind(this,"p1")}>
-                      <div className={this.state.p1Container}><div className="titleWrapper" ><div className={"titleContainer" + ' ' + this.state.p1titleContainer + ' ' + this.state.titleStatusp1}><h1 className="hoverTitle">teak bench</h1></div></div><img alt="reload" style={coverStyling} ref="p1" className={this.state.p1}   src={cover1}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p1')} onMouseOver={this.projectHover.bind(this, 'p1')} onClick={this.project.bind(this,"p1")}>
+                      <div className={this.state.p1Container}><div className="titleWrapper" ><div className={this.state.titleContainer + ' ' + this.state.p1titleContainer + ' ' + this.state.titleStatusp1}><h1 className={this.state.hoverTitle}>teak bench</h1></div></div><img alt="reload" style={coverStyling} ref="p1" className={this.state.p1}   src={cover1}></img><div className="projDescription"></div></div>
                     </div>
 
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p2')} onMouseOver={this.projectHover.bind(this, 'p2')} onClick={this.project.bind(this,"p2")}>
-                      <div className={this.state.p2Container}><div className="titleWrapper"  ><div className={"titleContainer" + ' ' + this.state.p2titleContainer + ' ' + this.state.titleStatusp2}><h1 className="hoverTitle">cartò</h1></div></div><img alt="reload" style={coverStyling} ref="p2" className={this.state.p2}  src={cover2}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p2')} onMouseOver={this.projectHover.bind(this, 'p2')} onClick={this.project.bind(this,"p2")}>
+                      <div className={this.state.p2Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p2titleContainer + ' ' + this.state.titleStatusp2}><h1 className={this.state.hoverTitle}>cartò</h1></div></div><img alt="reload" style={coverStyling} ref="p2" className={this.state.p2}  src={cover2}></img><div className="projDescription"></div></div>
                     </div>
 
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p7')} onMouseOver={this.projectHover.bind(this, 'p7')} onClick={this.project.bind(this,"p7")}>
-                      <div className={this.state.p7Container}><div className="titleWrapper"  ><div className={"titleContainer" + ' ' + this.state.p7titleContainer + ' ' + this.state.titleStatusp7}><h1 className="hoverTitle">enno</h1></div></div><img alt="reload" style={coverStyling} ref="p7" className={this.state.p7}  src={cover7}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p7')} onMouseOver={this.projectHover.bind(this, 'p7')} onClick={this.project.bind(this,"p7")}>
+                      <div className={this.state.p7Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p7titleContainer + ' ' + this.state.titleStatusp7}><h1 className={this.state.hoverTitle}>enno</h1></div></div><img alt="reload" style={coverStyling} ref="p7" className={this.state.p7}  src={cover7}></img><div className="projDescription"></div></div>
                     </div>
 
-                    <div className="coverWrapper"  onMouseOut={this.mouseOut.bind(this, 'p6')} onMouseOver={this.projectHover.bind(this, 'p6')} onClick={this.project.bind(this,"p6")}>
-                      <div className={this.state.p6Container}><div className="titleWrapper"  ><div className={"titleContainer" + ' ' + this.state.p6titleContainer + ' ' + this.state.titleStatusp6}><h1 className="hoverTitle">bobo</h1></div></div><img alt="reload" style={coverStyling} ref="p6" className={this.state.p6} src={cover6}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper}  onMouseOut={this.mouseOut.bind(this, 'p6')} onMouseOver={this.projectHover.bind(this, 'p6')} onClick={this.project.bind(this,"p6")}>
+                      <div className={this.state.p6Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p6titleContainer + ' ' + this.state.titleStatusp6}><h1 className={this.state.hoverTitle}>bobo</h1></div></div><img alt="reload" style={coverStyling} ref="p6" className={this.state.p6} src={cover6}></img><div className="projDescription"></div></div>
                     </div>
 
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p8')} onMouseOver={this.projectHover.bind(this, 'p8')} onClick={this.project.bind(this,"p8")}>
-                      <div className={this.state.p8Container}><div className="titleWrapper"  ><div className={"titleContainer" + ' ' + this.state.p8titleContainer + ' ' + this.state.titleStatusp8}><h1 className="hoverTitle">ride on</h1></div></div><img alt="reload"  ref="p8" className={this.state.p8}  src={cover8}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p8')} onMouseOver={this.projectHover.bind(this, 'p8')} onClick={this.project.bind(this,"p8")}>
+                      <div className={this.state.p8Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p8titleContainer + ' ' + this.state.titleStatusp8}><h1 className={this.state.hoverTitle}>ride on</h1></div></div><img alt="reload"  ref="p8" className={this.state.p8}  src={cover8}></img><div className="projDescription"></div></div>
                     </div>
 
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p4')} onMouseOver={this.projectHover.bind(this, 'p4')} onClick={this.project.bind(this,"p4")}>
-                      <div className={this.state.p4Container}><div className="titleWrapper"  ><div className={"titleContainer" + ' ' + this.state.p4titleContainer + ' ' + this.state.titleStatusp4}><h1 className="hoverTitle">fine arts</h1></div></div><img alt="reload"  ref="p4" className={this.state.p4} src={cover4}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p4')} onMouseOver={this.projectHover.bind(this, 'p4')} onClick={this.project.bind(this,"p4")}>
+                      <div className={this.state.p4Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p4titleContainer + ' ' + this.state.titleStatusp4}><h1 className={this.state.hoverTitle}>fine arts</h1></div></div><img alt="reload"  ref="p4" className={this.state.p4} src={cover4}></img><div className="projDescription"></div></div>
                     </div>
 
-                    <div className="coverWrapper" onMouseOut={this.mouseOut.bind(this, 'p5')} onMouseOver={this.projectHover.bind(this, 'p5')} onClick={this.project.bind(this,"p5")}>
-                      <div className={this.state.p5Container}><div className="titleWrapper" > <div className={"titleContainer" + ' ' + this.state.p5titleContainer + ' ' + this.state.titleStatusp5}><h1 className="hoverTitle">processing on paper</h1></div></div><img alt="reload" style={coverStyling} ref="p5" className={this.state.p5}  src={cover5}></img><div className="projDescription"></div></div>
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p5')} onMouseOver={this.projectHover.bind(this, 'p5')} onClick={this.project.bind(this,"p5")}>
+                      <div className={this.state.p5Container}><div className="titleWrapper" > <div className={this.state.titleContainer + ' ' + this.state.p5titleContainer + ' ' + this.state.titleStatusp5}><h1 className={this.state.hoverTitle}>on paper</h1></div></div><img alt="reload" style={coverStyling} ref="p5" className={this.state.p5}  src={cover5}></img><div className="projDescription"></div></div>
                     </div>
               </div>
             </div>

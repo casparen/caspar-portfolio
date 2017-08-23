@@ -265,18 +265,14 @@ componentWillUpdate(){
     return (
       <div>
         <div className="navConatiner">
-          <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryNav" + ' ' + this.state.navSlideOut}>
+          <div className={"MediaQueryNav" + ' ' + this.state.navSlideOut}>
             <Link onClick={this.onClickNav.bind(this, "work")} onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')}   to='/work' id="workNav" activeClassName="activeWork"><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
             <div onClick={this.onClickNav.bind(this, "logo")} className="logoContainer" ><img alt="reload" src={Logo}  className={this.state.logoSpinningStatus + ' ' + this.props.loaderStatus} style={logoRoatate}></img></div>
             <Link onClick={this.onClickNav.bind(this, "about")}  onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
-          </MediaQuery>
+          </div>
 
 
-          <MediaQuery query='(max-width: 700px)' className="MediaQueryNav">
-            <Link onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')} id="workNavSmall" to='/work' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
-            <Link onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo} className="logoImgSmall"></img></Link>
-            <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNavSmall" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
-          </MediaQuery>
+
         </div>
       </div>
 
@@ -284,5 +280,11 @@ componentWillUpdate(){
     )
   }
 }
+
+// <MediaQuery query='(max-width: 700px)' className="MediaQueryNav">
+//   <Link onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')} id="workNavSmall" to='/work' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
+//   <Link onClick={this.onClickNav.bind(this)} className="logoContainer"><img alt="reload" src={Logo} className="logoImgSmall"></img></Link>
+//   <Link onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNavSmall" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
+// </MediaQuery>
 //className="hvr-grow"
 // <Link id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div className="hvr-grow"><span className="redO">ab</span>o<span className="redO">ut</span></div></Link>

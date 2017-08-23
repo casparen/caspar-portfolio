@@ -82,8 +82,12 @@ updateWindowDimensions() {
     const scrollPositionDivided = scrollPosition / 800
       this.setState({currentPosition: scrollPositionDivided})
 
-
       console.log('scroll position', scrollPosition);
+
+      if (scrollPosition >= 20){
+        this.setState({arrowState: "animated fadeOut"})
+      }
+
       if (scrollPosition > 650){
         console.log("now fade in");
         this.setState({slideShowStatus:'animated fadeIn', slideShowVisibility: 'visible'})
@@ -213,6 +217,7 @@ const fadeInAbout = {
 
           <div className="wrapper">
               <img className={"profileCss" + ' ' + this.state.aboutFadeIn} alt="reload" src={profile}></img>
+              <div className={"fa fa-angle-down arrow" + ' ' + this.state.arrowState}></div>
               <div className="infoWrapper">
                 <div id='infoContainer' style={fadeInAbout}>
                     <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>

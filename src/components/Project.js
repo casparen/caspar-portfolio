@@ -17,7 +17,10 @@ export default class TeakBench extends Component {
   constructor(props){
     super();
     this.state = {
+      photo: 'photo',
+      projectContainer: "",
       gdStatus: "hidden",
+      device: '',
       spinnerStatus: '',
       slideShowStatus:"",
       information: null,
@@ -38,7 +41,7 @@ export default class TeakBench extends Component {
     }
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
-this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+// this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 // console.log("window height - 750", document.body.scrollHeight - 750);
 // console.log("window height", document.body.scrollHeight);
 
@@ -97,20 +100,25 @@ previous() {
 
   componentDidMount() {
     this.updateWindowDimensions(event);
-      window.addEventListener('scroll', this.updateWindowDimensions);
+      // window.addEventListener('scroll', this.updateWindowDimensions);
 
-      // this.setState({spinnerStatus:'logoImgSpinning'})
+
         const cc = this
-        // setTimeout(function(){
+
         cc.setState({spinnerStatus:'logoImg', pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
         console.log("spinner will be deactivated");
-      // }, 1500);
+
   }
 
-  // componentWillUnmount() {
-  //   window.removeEventListener('resize', this.updateWindowDimensions);
-  //   window.removeEventListener('scroll', this.updateWindowDimensions);
-  // }
+
+
+
+
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+    window.removeEventListener('scroll', this.updateWindowDimensions);
+  }
 
 
 
@@ -157,6 +165,8 @@ slideShowRender(){
 
 imgRender(){
 
+if(this.state.device === 'laptop'){
+  console.log('Make laptop  sieze');
   return (
     <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
       { this.state.imgSrc.map(function(x, number) {
@@ -167,6 +177,22 @@ imgRender(){
       }
     </div>
   )
+}
+
+else {
+  console.log("make iphone sizeeee");
+  return (
+    <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
+      { this.state.imgSrc.map(function(x, number) {
+         return (
+           <div key={number} className="photoSmallContainer"><img alt="reload" className="photoSmall" src={x}></img></div>
+         )
+        })
+      }
+    </div>
+  )
+}
+
 
 }
 
@@ -199,6 +225,33 @@ componentWillMount(){
                     imgSrcProcess: projectInfo.imgSrcProcess,
                     process: projectInfo.process
                 })
+
+
+
+                const winWidth = window.innerWidth
+                const winHeight = window.innerHeight
+
+                console.log("initial inner width",winWidth);
+                console.log("initial inner height",winHeight);
+
+                if(winWidth > 430){
+                  console.log("initial, make laptopsize size");
+                  this.setState({device: "laptop", projectContainer: "projectContainer"})
+                  // this.setState({device: "laptop"})
+
+                }
+                // else if(winWidth > 1500){
+                //   console.log("initial, make laptopsize size");
+                //   this.setState({device: "laptop", coverWrapper: "coverWrapper"})
+                //   // this.setState({device: "laptop"})
+                //
+                // }
+
+                else {
+                  console.log("initial, make iphone size");
+                  this.setState({device: "iphone", projectContainer: "projectContainerSmall"})
+
+                }
 }
 
 navStatus(status) {
@@ -281,9 +334,9 @@ render(){
 <div>
   <NavBar  loaderStatus={this.state.spinnerStatus} navLogoStatus={this.navStatus.bind(this)}/>
       <div style={pageLoadingStatus} className={this.state.projectFadeOut}>
-        <div query='(min-device-width: 800px)' className="MediaQueryProject" ref='content'>
+        <div className="MediaQueryProject" ref='content'>
           <div className="projectWrapper">
-            <div className="projectContainer">
+            <div className={this.state.projectContainer}>
                   <div className={"descriptionContainer" + ' ' + this.state.coverFadeInLeft}>
                         <div className="projectTitle">
                             <div className="projectName">

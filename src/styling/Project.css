@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+    /*border: solid pink 1px;*/
   /*border: solid pink 1px;
   background-size: 1080px auto;
   background-position: center top;*/
@@ -84,6 +85,8 @@
   padding-top: 2cm;
 
 }
+
+
 .projectContainer {
   padding-top: 11%;
   padding-left: 5%;
@@ -94,6 +97,8 @@
 
   /*border: solid pink 2px;*/
 }
+
+
 
 
 .projectContainerSmall {
@@ -263,6 +268,26 @@ padding-top: 0.4cm;
   margin: 0 auto;
 
 }
+
+.photoSmall {
+  transition: all 1s;
+  /*padding-bottom: 2cm;*/
+  /*padding-top: 2cm;*/
+  /*border: solid pink 5px;*/
+  padding-top: 0.4cm;
+    /*width: 16.5cm;
+    margin: 0 auto;*/
+
+    width: 110%;
+    margin: 0 auto;
+
+}
+
+.photoSmallContainer {
+  padding-top: 50px;
+}
+
+
 
 
 
