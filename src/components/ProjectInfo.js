@@ -225,6 +225,7 @@ const ProjectInfo = {
     Project10: [{
       title: "soft chair",
       projectNum:"10",
+      status: "comming soon",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       imgSrc: [project10pic1, project10pic2, project10pic3],
       process: "yes",
@@ -235,6 +236,7 @@ const ProjectInfo = {
     Project11: [{
       title: "rigit chair",
       projectNum:"11",
+      status: "comming soon",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       imgSrc: [project11pic1, project11pic2, project11pic3, project11pic4, project11pic5],
       process: "yes",
@@ -246,6 +248,7 @@ const ProjectInfo = {
 
 
 
+// rigit chair imgSrc: [project11pic1, project11pic2, project11pic3, project11pic4, project11pic5],
 
 
 

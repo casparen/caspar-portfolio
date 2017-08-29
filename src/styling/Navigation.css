@@ -16,24 +16,78 @@
   /*color: pink;*/
   /*transform: font-size(20px);*/
   /*transition: font-size 20px;*/
-  transform: translateX(-0.01%) translateY(-70%);
-  -webkit-transform: translateX(-0.01%) translateY(-70%);
+  transform: translateX(0%) translateY(-70%);
+  -webkit-transform: translateX(0%) translateY(-70%);
+
 
   /*transform-origin: 50% 50%;*/
   /*transform: scale(2);*/
   transition-duration: 0.5s;
     -webkit-transition-duration: 0.5s;
+-webkit-animation-duration: 1s;
 
 }
+
+@keyframes oUp {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(-14px);
+  }
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(0px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(-4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(-1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+}
+
+
+
+
+
+.oBounce {
+    /*animation-name: oDown;*/
+  /*transform: translateX(-0%) translateY(-0%);*/
+  /*transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;*/
+  animation: oUp;
+transition-duration: 0.75;
+  animation-duration: 0.75s;
+  /*-webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;*/
+}
+
 
 .hvr-shrink {
-  /*transform: translateX(-0%) translateY(-0%);*/
+    /*animation-name: oDown;*/
+  transform: translateX(-0%) translateY(-0%);
   transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
+  /*animation: oUp;
 
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;*/
 }
-
-
 
 
 
@@ -95,6 +149,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  /*border:solid blue solid 2px;*/
 }
 
 
@@ -120,6 +175,23 @@
   margin: 0 auto;
   z-index: -3;
   /*animation-name: logoSpin;*/
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+        -webkit-animation-duration: 1000ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
+}
+
+.logoImgSmall {
+  /*border: solid pink 1px;*/
+  /*position: absolute;*/
+  width: 40%;
+  height: 40%;
+  margin: 0 auto;
+  z-index: -3;
+  /*animation-name: logoSpin;*/
     animation-duration: 700ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -128,6 +200,8 @@
         -webkit-animation-timing-function: linear;
 
 }
+
+
 
 .logoImgSpinning {
   /*border: solid black 1px;*/
@@ -303,12 +377,7 @@ scale(2, 2)*/
 
 
 
-.logoImgSmall {
-  width: 25%;
-  height: 25%;
-  margin: 0 auto;
-  margin: 0 auto;
-}
+
 
 
 #workNav {
@@ -335,7 +404,7 @@ scale(2, 2)*/
   text-decoration: none;
   padding-left:12%;
   margin: 0 auto;
-  font-size: 6pt;
+  font-size: 11pt;
   font-family: "Avenir Next";
 }
 
@@ -365,7 +434,7 @@ scale(2, 2)*/
   /*border: solid black 1px;*/
   padding-right: 12%;
   margin: 0 auto;
-    font-size: 6pt;
+    font-size: 11pt;
     font-family: "Avenir Next";
 }
 

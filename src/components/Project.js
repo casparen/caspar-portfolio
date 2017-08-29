@@ -18,7 +18,14 @@ export default class TeakBench extends Component {
     super();
     this.state = {
       photo: 'photo',
+      descriptionContainer: 'descriptionContainer',
+      projectTitle: 'projectTitle',
+      projectName: "projectName",
+      projectNumber: "projectNumber",
+      aboutProject: 'aboutProject',
+      paddingTop: '15',
       projectContainer: "",
+      slidesProcess: 'slidesProcess',
       gdStatus: "hidden",
       device: '',
       spinnerStatus: '',
@@ -30,6 +37,7 @@ export default class TeakBench extends Component {
       pageStatus: 'hidden',
       title: '',
       projectNum: '',
+      status:'',
       description: '',
       imgSrc: '',
       imgSrcProcess: '',
@@ -39,6 +47,7 @@ export default class TeakBench extends Component {
 
 
     }
+      this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
 // this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -74,17 +83,25 @@ previous() {
     // console.log(this.refs);
   }
 
+
+
+
   updateWindowDimensions(event) {
-    const infromation3 = JSON.parse(this.props.location.query.test)
+
+    // const infromation3 = JSON.parse(this.props.location.query.test)
     // console.log('scroll offset form porject', infromation3.scrollOffset);
     // console.log("parse", parseInt(infromation3.scrollOffset));
 //infromation3.scrollOffset
-
+console.log(event);
+// console.log(event.srcElement.defaultView.innerHeight);
   const offSet = window.scrollY
-  const offSetDevided = offSet / parseInt(infromation3.scrollOffset)
-    this.setState({currentPositionProcess: offSetDevided})
+  // const offSetDevided = offSet / parseInt(infromation3.scrollOffset)
+    this.setState({paddingTop: offSet.toString()})
 
 
+
+
+console.log(offSet.toString());
 //1500 soft chair
 //3200 csp
 // 2400 rigit chair
@@ -101,6 +118,7 @@ previous() {
   componentDidMount() {
     this.updateWindowDimensions(event);
       // window.addEventListener('scroll', this.updateWindowDimensions);
+        window.addEventListener('scroll', this.updateWindowDimensions);
 
 
         const cc = this
@@ -116,8 +134,8 @@ previous() {
 
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-    window.removeEventListener('scroll', this.updateWindowDimensions);
+    // // window.removeEventListener('resize', this.updateWindowDimensions);
+    // window.removeEventListener('scroll', this.updateWindowDimensions);
   }
 
 
@@ -148,12 +166,14 @@ slideShowRender(){
 
 
         if (this.state.process === "yes"){
+          const cc = this
           return (
                   <div className="slideTestWrapper" style={fadeInProcess}>
                     <div className="slideTestContainer" >
                       {  this.state.imgSrcProcess.map(function(y, num) {
+
                           return (
-                            <div key={num} ><img className="slideTest hvr-bounce-in" src={y}  alt='loading'></img></div>
+                            <div key={num} ><img className={"hvr-bounce-in" + ' ' + cc.state.slidesProcess} src={y}  alt='loading'></img></div>
                           )
                          })
                        }
@@ -167,25 +187,44 @@ imgRender(){
 
 if(this.state.device === 'laptop'){
   console.log('Make laptop  sieze');
-  return (
-    <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
-      { this.state.imgSrc.map(function(x, number) {
-         return (
-           <div key={number}><img alt="reload" className="photo" src={x}></img></div>
-         )
-        })
-      }
-    </div>
-  )
+
+  if(this.state.status === 'comming soon'){
+    console.log("coming soooooon");
+    return (
+      <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
+        {
+
+             <div className="commingSoon"><h1 className="commingSoonText">comming soon</h1><div key={1}><img alt="reload" className="photoCommingSoon" src={this.state.imgSrc[1]}></img></div></div>
+
+
+        }
+      </div>
+    )
+  }
+  else {
+    return (
+      <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
+        { this.state.imgSrc.map(function(x, number) {
+           return (
+             <div key={number}><img alt="reload" className="photo" src={x}></img></div>
+           )
+          })
+        }
+      </div>
+    )
+  }
+
 }
 
 else {
+  
+
   console.log("make iphone sizeeee");
   return (
-    <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
+    <div className={"slideshowContainerSmall" + ' ' + this.state.coverFadeInRight}>
       { this.state.imgSrc.map(function(x, number) {
          return (
-           <div key={number} className="photoSmallContainer"><img alt="reload" className="photoSmall" src={x}></img></div>
+           <div key={number} className="photoContainerSmall"><img alt="reload" className="photoSmall" src={x}></img></div>
          )
         })
       }
@@ -220,6 +259,7 @@ componentWillMount(){
   console.log("this is in project", projectInfo);
   this.setState({  title: projectInfo.title,
                     projectNum: projectInfo.projectNum,
+                    status: projectInfo.status,
                     description: projectInfo.description,
                     imgSrc: projectInfo.imgSrc,
                     imgSrcProcess: projectInfo.imgSrcProcess,
@@ -236,7 +276,7 @@ componentWillMount(){
 
                 if(winWidth > 430){
                   console.log("initial, make laptopsize size");
-                  this.setState({device: "laptop", projectContainer: "projectContainer"})
+                  this.setState({device: "laptop", projectContainer: "projectContainer", descriptionContainer: "descriptionContainer", projectTitle: "projectTitle", projectName: "projectName", projectNumber: "projectNumber", aboutProject: "aboutProject", slidesProcess: 'slidesProcess'})
                   // this.setState({device: "laptop"})
 
                 }
@@ -249,7 +289,7 @@ componentWillMount(){
 
                 else {
                   console.log("initial, make iphone size");
-                  this.setState({device: "iphone", projectContainer: "projectContainerSmall"})
+                  this.setState({device: "iphone", projectContainer: "projectContainerSmall", descriptionContainer: "descriptionContainerSmall", projectTitle: "projectTitleSmall", projectName: "projectNameSmall", projectNumber: "projectNumberSmall", aboutProject: "aboutProjectSmall", slidesProcess: "slidesProcessSmall"})
 
                 }
 }
@@ -328,7 +368,10 @@ render(){
 
 //FOR THE GD BOOK, use a slide show to show the digital book
 
-
+const fixedDescription = {
+  // transform: "translateY(3in)"
+  // paddingTop: this.state.paddingTop + 'px'
+}
 
     return (
 <div>
@@ -337,19 +380,20 @@ render(){
         <div className="MediaQueryProject" ref='content'>
           <div className="projectWrapper">
             <div className={this.state.projectContainer}>
-                  <div className={"descriptionContainer" + ' ' + this.state.coverFadeInLeft}>
-                        <div className="projectTitle">
-                            <div className="projectName">
+                  <div className={this.state.descriptionContainer + ' ' + this.state.coverFadeInLeft}>
+                        <div className={this.state.projectTitle}>
+                            <div className={this.state.projectName}>
                               {this.state.title} <br></br>
                             </div>
-                            <div className="projectNumber">
+                            <div className={this.state.projectNumber}>
                               {this.state.projectNum}
                             </div>
                         </div>
-                        <div className="aboutProject">
+                        <div className={this.state.aboutProject}>
                           {this.state.description}
                         </div>
                   </div>
+
 
               </div>
                 {this.imgRender()}

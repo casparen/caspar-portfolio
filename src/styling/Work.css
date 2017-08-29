@@ -362,6 +362,26 @@ z-index: -1;
 }
 
 
+/*devided by 1.2*/
+.coverWrapperTiny {
+    /*overflow:visible;*/
+  width: 117.5px;
+  height:117.5px;
+  /*width: 100%;*/
+  /*display: flex;*/
+
+  /*transition: transform 5.2s;*/
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  /*padding-top: 12px;*/
+  padding: 5px;
+  margin: 0 auto;
+  display: flex;
+  /*z-index:1;*/
+  /*border: solid blue 2px;*/
+}
+
+
 
 .coverStatus:hover {
   /*border: solid pink 1px;*/
@@ -452,6 +472,27 @@ margin: 0 auto;
 
 }
 
+/*1.2*/
+.titleContainerTiny {
+  position: absolute;
+  /*margin: 0 auto;*/
+  /*color: white;*/
+  /*width: 210px;
+  height: 210px;*/
+  width: 60px;
+  height: 117.5px;
+  display: flex;
+  /*width:100%;*/
+
+  /*z-index: -1;*/
+  background: white;
+  /*border: solid pink 2px;*/
+/*background:  #e62535;*/
+/*opacity: 0.9;*/
+  /*display: flex;*/
+
+}
+
 
 /*KEY rezigin*/
 .hoverTitleContainer {
@@ -501,6 +542,25 @@ width: 100%;
 
   letter-spacing: 3px;
   font-size: 7pt;
+  font-family: "Avenir Next";
+  /*font-family: "bauhaus93";*/
+
+   text-transform: uppercase;;
+   color: black;
+   font-weight: 400;
+   /*line-height: 2;*/
+  display: flex;
+  align-items: center;
+  /*border: solid pink 2px;*/
+  margin: 0 auto;
+  padding: 2px;
+  /*opacity: 0.3;*/
+}
+
+.hoverTitleTiny {
+
+  letter-spacing: 2px;
+  font-size: 4pt;
   font-family: "Avenir Next";
   /*font-family: "bauhaus93";*/
 

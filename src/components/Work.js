@@ -131,7 +131,7 @@ componentWillMount(){
           console.log("initial inner height",winHeight);
 
           if(winWidth > 430){
-            console.log("initial, make laptopsize size");
+            // console.log("initial, make laptopsize size");
             this.setState({device: "laptop", coverWrapper: "coverWrapper", titleContainer: "titleContainer", hoverTitle: "hoverTitle"})
             // this.setState({device: "laptop"})
 
@@ -143,10 +143,16 @@ componentWillMount(){
           //
           // }
 
-          else {
-            console.log("initial, make iphone size");
+          else if (winWidth < 429 && winWidth > 351){
+            // console.log("initial, make iphone size");
             this.setState({device: "iphone",  coverWrapper: "coverWrapperSmall", titleContainer: "titleContainerSmall", hoverTitle: "hoverTitleSmall"})
             // this.setState({device: "iphone"})
+          }
+
+
+          else {
+              // console.log("initial, make  Iphone 44444444");
+              this.setState({device: "iphone4",  coverWrapper: "coverWrapperTiny", titleContainer: "titleContainerTiny", hoverTitle: "hoverTitleTiny"})
 
           }
 }
@@ -266,6 +272,7 @@ console.log('clickkkk');
 //    obj[projectContainer] = 'coverHoverContainer animated pulse'
 
 isEmpty(obj, projectRef) {
+
   const parsedObj = JSON.parse(obj)
   const imgSrcArray = parsedObj.imgSrc
   console.log(imgSrcArray.length);
@@ -478,7 +485,6 @@ const coverStylingP10 = {
 
 
 
-//IIMPORT REARANGE THE COVERS ON BOTH MEDIA QUESRIES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //                      <div><img alt="reload" style={coverStyling} ref="p3" className={'coverStatus'} onMouseOut={this.mouseOut.bind(this)} onMouseOver={this.projectHover.bind(this, 'p3')} onClick={this.project.bind(this,"p3")} src={cover3}></img><div className="projDescription"></div></div>
 //className={'coverStatus'}
@@ -505,7 +511,7 @@ const coverStylingP10 = {
               <div className={"projectWrapper" + ' ' + this.state.coverFadeIn + ' ' + this.state.workFadeOut} style={workLoadingStatus}>
 
                     <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p10')} onMouseOver={this.projectHover.bind(this, 'p10')} onClick={this.project.bind(this,"p10")}>
-                      <div className={this.state.p10Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p10titleContainer + ' ' + this.state.titleStatusp10} ><h1 className={this.state.hoverTitle}>soft chair</h1></div></div><img alt="reload" style={coverStyling} ref="p10" className={this.state.p10}  src={cover10}></img><div></div></div>
+                      <div className={this.state.p10Container}><div className="titleWrapper"><div className={this.state.titleContainer + ' ' + this.state.p10titleContainer + ' ' + this.state.titleStatusp10} ><h1 className={this.state.hoverTitle}>soft chair</h1></div></div><img alt="reload" style={coverStyling} ref="p10" className={this.state.p10}  src={cover10}></img><div></div></div>
                     </div>
 
                     <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p11')} onMouseOver={this.projectHover.bind(this, 'p11')} onClick={this.project.bind(this,"p11")}>

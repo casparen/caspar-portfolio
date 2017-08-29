@@ -25,6 +25,9 @@ export default class NavBar extends Component {
   constructor(){
     super();
     this.state = {
+      workNav:'',
+      aboutNav:'',
+      device: '',
       navSlideOut: '',
       aboutStatus: false,
       workStatus: false,
@@ -35,7 +38,7 @@ export default class NavBar extends Component {
       coverStatus: 'visible',
         currentPosition: 0,
         nextPropsState: 0,
-        logoSpinningStatus: 'logoImg'
+        logoSpinningStatus: ''
     }
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
@@ -83,11 +86,11 @@ export default class NavBar extends Component {
 
   onOut(linkChoice){
     if(linkChoice === 'work'){
-      this.setState({navStatusWork: "hvr-shrink"})
+      this.setState({navStatusWork: "oBounce"})
 
     }
     else {
-      this.setState({navStatusAbout: "hvr-shrink"})
+      this.setState({navStatusAbout: "oBounce"})
 
     }
   }
@@ -104,6 +107,7 @@ export default class NavBar extends Component {
       //     coverStatus: 'visible'})
           // this.props.navLogoStatus('HIiiiiiii');
 
+// console.log("hiiiiiiiii", this.state.device);
         if(path === "logo"){
           this.props.navLogoStatus(this.logoClick('logo'));
           const cc = this
@@ -115,12 +119,18 @@ export default class NavBar extends Component {
         }
 
       else  if(path === "about"){
-        this.setState({navStatusAbout: "hvr-shrink", logoSpinningStatus: 'logoImgSpinningRight'})
+        this.setState({navStatusAbout: "oBounce", logoSpinningStatus: 'logoImgSpinningRight'})
 
           this.props.navLogoStatus(this.logoClick('about'));
           const cc = this
           setTimeout(function(){
-            cc.setState({logoSpinningStatus: 'logoImg'})
+            if(cc.state.device === 'laptop') {
+                cc.setState({logoSpinningStatus: 'logoImg'})
+            }
+
+            else {
+                cc.setState({logoSpinningStatus: 'logoImgSmall'})
+            }
             browserHistory.push({
                 pathname: '/about'
             })
@@ -128,12 +138,17 @@ export default class NavBar extends Component {
         }
      //else (path === "work"){
        else {
-         this.setState({navStatusWork: "hvr-shrink", logoSpinningStatus: 'logoImgSpinningLeft'})
+         this.setState({navStatusWork: "oBounce", logoSpinningStatus: 'logoImgSpinningLeft'})
           this.props.navLogoStatus(this.logoClick('work'));
           const cc = this
           setTimeout(function(){
-            cc.setState({logoSpinningStatus: 'logoImg'})
-            browserHistory.push({
+            if(cc.state.device === 'laptop') {
+                cc.setState({logoSpinningStatus: 'logoImg'})
+            }
+            else {
+                cc.setState({logoSpinningStatus: 'logoImgSmall'})
+            }
+              browserHistory.push({
                 pathname: '/work'
             })
           }, 1000);
@@ -165,10 +180,11 @@ export default class NavBar extends Component {
     return "about"
 
     }
- else if(path === "work"){
+ else {
     return "work"
-
     }
+
+    //if(path === "work")
 
     }
 
@@ -233,6 +249,44 @@ componentWillUpdate(){
   //
   // }
 }
+componentWillMount(){
+
+          const winWidth = window.innerWidth
+          const winHeight = window.innerHeight
+
+          // console.log("initial inner width",winWidth);
+          // console.log("initial inner height",winHeight);
+
+          if(winWidth > 430){
+            console.log("navbar, make laptopsize size");
+            this.setState({device: "laptop", workNav: 'workNav', aboutNav: 'aboutNav', logoSpinningStatus:"logoImg"})
+            // this.setState({device: "laptop"})
+
+          }
+          // else if(winWidth > 1500){
+          //   console.log("initial, make laptopsize size");
+          //   this.setState({device: "laptop", coverWrapper: "coverWrapper"})
+          //   // this.setState({device: "laptop"})
+          //
+          // }
+
+          // else if (winWidth < 429 && winWidth > 351){
+          //   console.log("navbar, make iphone size");
+          //   this.setState({device: "laptop", workNav: 'workNavSmall'})
+          //
+          //   // this.setState({device: "iphone"})
+          // }
+
+
+          else {
+              console.log("navbar, make  Iphone 44444444");
+              this.setState({device: "iphone", workNav: 'workNavSmall', aboutNav: 'aboutNavSmall', logoSpinningStatus:"logoImgSmall"})
+
+              // this.setState({device: "iphone4",  coverWrapper: "coverWrapperTiny", titleContainer: "titleContainerTiny", hoverTitle: "hoverTitleTiny"})
+
+          }
+          // console.log(this.state.logoSpinningStatus);
+}
 
 
 
@@ -266,9 +320,9 @@ componentWillUpdate(){
       <div>
         <div className="navConatiner">
           <div className={"MediaQueryNav" + ' ' + this.state.navSlideOut}>
-            <Link onClick={this.onClickNav.bind(this, "work")} onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')}   to='/work' id="workNav" activeClassName="activeWork"><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
+            <Link onClick={this.onClickNav.bind(this, "work")} onMouseOut={this.onOut.bind(this, 'work')} onMouseOver={this.onHover.bind(this, 'work')}  to='/work' id={this.state.workNav} activeClassName="activeWork"><div id="deactiveO"><span className="redO">w</span><span id="testoo" className={this.state.navStatusWork}>o</span><span className="redO">rk</span></div></Link>
             <div onClick={this.onClickNav.bind(this, "logo")} className="logoContainer" ><img alt="reload" src={Logo}  className={this.state.logoSpinningStatus + ' ' + this.props.loaderStatus} style={logoRoatate}></img></div>
-            <Link onClick={this.onClickNav.bind(this, "about")}  onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id="aboutNav" to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
+            <Link onClick={this.onClickNav.bind(this, "about")}  onMouseOut={this.onOut.bind(this, 'about')} onMouseOver={this.onHover.bind(this, 'about')} id={this.state.aboutNav} to='/about' activeStyle={{color: 'red'}}><div id="deactiveO"><span className="redO">ab</span><span  id="testoo" className={this.state.navStatusAbout}>o</span><span className="redO">ut</span></div></Link>
           </div>
 
 

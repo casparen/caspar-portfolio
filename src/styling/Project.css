@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  padding-top: 100px;
     /*border: solid pink 1px;*/
   /*border: solid pink 1px;
   background-size: 1080px auto;
@@ -32,9 +33,14 @@
   /*width: 100%;
   height: 100%;*/
   margin: 0 auto;
-  /*display: flex;
-  flex-direction: column;*/
-  /*border: solid blue 2px;*/
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+
+  /*border: solid pink 2px;*/
 
 }
 
@@ -88,22 +94,22 @@
 
 
 .projectContainer {
-  padding-top: 11%;
-  padding-left: 5%;
-  display: flex;
-  flex-direction: row;
+  /*padding-top: 11%;
+  padding-left: 5%;*/
+  /*display: flex;
+  flex-direction: column;*/
   margin: 0 auto;
-  justify-content: center;
+  /*justify-content: center;*/
 
   /*border: solid pink 2px;*/
+  padding-bottom: 50px;
 }
 
 
 
 
-.projectContainerSmall {
-  /*padding-top: 11%;
-  padding-left: 5%;*/
+/*.projectContainerSmall {
+
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -111,18 +117,20 @@
   justify-content: center;
 
   align-items: center;
-    /*border: solid green 4px;*/
+
       padding-top: 1.5cm;
-}
+}*/
 
 
 .descriptionContainer {
-  position: fixed;
-  padding-right: 50%;
+
+  /*position: fixed;*/
+  /*padding-right: 50%;*/
   z-index: -3;
       /*padding-left: 10%;*/
 margin: 0 auto;
-
+padding-top: 15px;
+width: 600px;
 
 display: flex;
 flex-direction: row;
@@ -131,26 +139,24 @@ flex-direction: row;
 }
 
 .descriptionContainerSmall {
+  padding-bottom: 30px;
   /*position: fixed;*/
+  /*padding-top: 15px;*/
+  width: 340px;
   margin: 0 auto;
-
-
-/*margin: 0 auto;*/
-
-
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-content: center;
   font-family: "Avenir Next";
+    /*border: solid blue 1px;*/
   /*border: solid blue 4px;*/
-  width: 87%;
 }
 
 .projectTitle {
   margin: 0 auto;
   text-align: left;
-  width: 3cm;
+  width: 3.5cm;
   /*border: solid green 1px;*/
 
 }
@@ -158,7 +164,7 @@ align-content: center;
 .projectTitleSmall {
   margin: 0 auto;
   text-align: left;
-  /*width: 1cm;*/
+  width: 1.5cm;
   /*border: solid green 1px;*/
 
 }
@@ -166,33 +172,34 @@ align-content: center;
 .projectName{
   font-weight:500;
 
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .projectNameSmall{
-    font-weight:400;
-  font-size: 8px;
+    font-weight:500;
+  font-size: 10.5px;
 }
 
 .projectNumber{
-    font-weight:210;
+    font-weight:410;
 }
 
 
 
 .projectNumberSmall{
-    font-weight:105;
-      font-size: 9px;
+    font-weight:360;
+      font-size: 10.5px;
+      /*border: solid blue 2px;*/
 }
 
 
 .aboutProject {
   /*border: solid pink 1px;*/
   margin: 0 auto;
-  width: 8cm;
+  width: 500px;
   font-weight:200;
     line-height: 2;
-    font-size: 10px;
+    font-size: 12px;
       text-align:justify;
       padding-left: 1cm;
 }
@@ -201,10 +208,10 @@ align-content: center;
 .aboutProjectSmall {
   /*border: solid pink 1px;*/
   margin: 0 auto;
-  width: 3.5cm;
+  width: 5.5cm;
   font-weight:200;
     line-height: 2;
-    font-size: 5px;
+    font-size: 7px;
       text-align:justify;
       /*padding-left: 0.2cm;*/
 }
@@ -219,20 +226,24 @@ align-content: center;
   /*flex-wrap: wrap;*/
 
 
-  /*width: 16.5cm;*/
+  width: 600px;
   /*height: 16.5cm;*/
   margin: 0 auto;
-  padding-left: 40%;
+  /*padding-left: 40%;*/
   padding-bottom: 1.2%;
-  /*border: solid blue 1px;*/
+  /*border: solid grey 1px;*/
      /*-webkit-animation: fadein 2s;*/
 
 }
 
 .slideshowContainerSmall {
+  width: 300px;
+  /*height: 16.5cm;*/
   margin: 0 auto;
-  padding-top: 1cm;
-  padding-bottom: 0.4cm;
+  /*padding-left: 40%;*/
+  padding-bottom: 0.5%;
+  /*border: solid grey 1px;*/
+     /*-webkit-animation: fadein 2s;*/
 }
 
 
@@ -256,6 +267,21 @@ align-content: center;
 }
 
 .photo {
+  z-index: -10;
+transition: all 1s;
+/*padding-bottom: 2cm;*/
+/*padding-top: 2cm;*/
+/*border: solid pink 5px;*/
+padding-top: 15px;
+  /*width: 16.5cm;
+  margin: 0 auto;*/
+
+  width: 100%;
+  margin: 0 auto;
+
+}
+.photoCommingSoon {
+  z-index: -10;
 transition: all 1s;
 /*padding-bottom: 2cm;*/
 /*padding-top: 2cm;*/
@@ -266,7 +292,32 @@ padding-top: 0.4cm;
 
   width: 70%;
   margin: 0 auto;
+  /*filter: blur(30px);*/
+filter:  contrast(50%) brightness(20%);
+  opacity: 0.5;
 
+
+}
+
+.commingSoon {
+  /*width: 800px;*/
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /*border: solid blue 2px;*/
+  /*background: blue;*/
+  /*z-index: 10;*/
+}
+
+.commingSoonText {
+  font-family: "Avenir Next";
+  color: white;
+        font-size: 40px;
+  font-weight:200;
+  z-index: 10;
+  padding-top: 10%;
+  position: absolute;
+  /*margin: 0 auto;*/
 }
 
 .photoSmall {
@@ -274,17 +325,18 @@ padding-top: 0.4cm;
   /*padding-bottom: 2cm;*/
   /*padding-top: 2cm;*/
   /*border: solid pink 5px;*/
-  padding-top: 0.4cm;
+  /*padding-top: 0.2cm;*/
     /*width: 16.5cm;
     margin: 0 auto;*/
 
-    width: 110%;
+    width: 100%;
     margin: 0 auto;
 
 }
 
-.photoSmallContainer {
-  padding-top: 50px;
+.photoContainerSmall {
+  padding-top: 30px;
+
 }
 
 
@@ -363,12 +415,35 @@ width: 1.1%;
 }*/
 
 
-.slideTest {
+.slidesProcess {
 
 /*opacity: 2;*/
   padding: 12px;
   margin: 0 auto;
   width: 180px;
+  /*border: solid green 2px;*/
+  /*filter: blur(3px);*/
+  /*filter:grayscale(1);*/
+  /*background: #ff1919;*/
+
+
+  /*vertical-align: middle;*/
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+
+}
+
+.slidesProcessSmall {
+
+/*opacity: 2;*/
+  padding: 12px;
+  margin: 0 auto;
+  width: 80px;
   /*border: solid green 2px;*/
   /*filter: blur(3px);*/
   /*filter:grayscale(1);*/
@@ -453,11 +528,12 @@ background-color: 	white;
   /*background: white;*/
   /*opacity: 0.2;*/
 
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 70px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  /*flex-wrap: nowrap;*/
   justify-content: center;
   align-items: center;
 }
