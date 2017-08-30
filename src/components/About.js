@@ -43,12 +43,48 @@ export default class About extends Component {
                 socialStatus: '',
                 aboutFadeIn: '',
                 slideShowVisibility: 'hidden',
-                socialVisibility: 'hidden'
+                socialVisibility: 'hidden',
+                device: "",
+
+                MediaQueryAbout: 'MediaQueryAbout',
+                profileCss: 'profileCss',
+                infoContainer: 'infoContainer',
+                infoWrapper: "infoWrapper",
+                slideShowWrapper: "slideShowWrapper",
+                slideShowPic: "slideShowPic",
+                socialContainer: "socialContainer"
 
   };
   this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 }
 
+componentWillMount(){
+  const winWidth = window.innerWidth
+  const winHeight = window.innerHeight
+
+  console.log("initial inner width",winWidth);
+  console.log("initial inner height",winHeight);
+
+  if(winWidth > 430){
+    console.log("initial, make laptopsize size");
+    this.setState({device: "laptop", MediaQueryAbout: "MediaQueryAbout", profileCss: "profileCss", infoContainer: "infoContainer", infoWrapper: "infoWrapper", slideShowWrapper: "slideShowWrapper", slideShowPic: "slideShowPic", socialContainer: "socialContainer"})
+    // this.setState({device: "laptop"})
+
+  }
+  // else if(winWidth > 1500){
+  //   console.log("initial, make laptopsize size");
+  //   this.setState({device: "laptop", coverWrapper: "coverWrapper"})
+  //   // this.setState({device: "laptop"})
+  //
+  // }
+
+  else {
+    console.log("initial, make iphone size");
+    this.setState({device: "iphone", MediaQueryAbout: "MediaQueryAboutSmall", profileCss: "profileCssSmall", infoContainer: "infoContainerSmall", infoWrapper: "infoWrapperSmall", slideShowWrapper: "slideShowWrapperSmall", slideShowPic:"slideShowPicSmall", socialContainer: "socialContainerSmall"})
+
+
+  }
+}
 
 // componentDidUpdate(){
 //
@@ -84,19 +120,39 @@ updateWindowDimensions() {
 
       console.log('scroll position', scrollPosition);
 
-      if (scrollPosition >= 20){
-        this.setState({arrowState: "animated fadeOut"})
+      if(this.state.device === "laptop"){
+        if (scrollPosition >= 20){
+          this.setState({arrowState: "animated fadeOut"})
+        }
+
+        if (scrollPosition > 650){
+          console.log("now fade in");
+          this.setState({slideShowStatus:'animated fadeIn', slideShowVisibility: 'visible'})
+        }
+
+        if (scrollPosition > 1200){
+          console.log("now fade in");
+          this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
+        }
       }
 
-      if (scrollPosition > 650){
-        console.log("now fade in");
-        this.setState({slideShowStatus:'animated fadeIn', slideShowVisibility: 'visible'})
+      else {
+        if (scrollPosition >= 20){
+          this.setState({arrowState: "animated fadeOut"})
+        }
+
+        if (scrollPosition > 450){
+          console.log("now fade in");
+          this.setState({slideShowStatus:'animated fadeIn', slideShowVisibility: 'visible'})
+        }
+
+        if (scrollPosition > 740){
+          console.log("now fade in");
+          this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
+        }
       }
 
-      if (scrollPosition > 1200){
-        console.log("now fade in");
-        this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
-      }
+
       // else {
       //   this.setState({slideShowStatus: ''})
       // }
@@ -117,6 +173,8 @@ componentDidMount() {
     // console.log("spinner will be deactivated");
   // }, 700);
 }
+
+
 
 componentWillUnmount() {
   window.removeEventListener('resize', this.updateWindowDimensions);
@@ -213,34 +271,37 @@ const fadeInAbout = {
       <div className={this.state.aboutFadeOutAll}>
         <NavBar loaderStatus={this.state.spinnerStatus} navLogoStatus={this.navStatus.bind(this)}/>
 
-        <MediaQuery query='(min-device-width: 700px)' className={"MediaQueryAbout" + ' ' + this.state.aboutFadeOut} style={pageLoadingStatus}>
+        <div className={this.state.MediaQueryAbout + ' ' + this.state.aboutFadeOut} style={pageLoadingStatus}>
 
           <div className="wrapper">
-              <img className={"profileCss" + ' ' + this.state.aboutFadeIn} alt="reload" src={profile}></img>
+            <div className="imageContainer">
+              <img className={this.state.profileCss + ' ' + this.state.aboutFadeIn} alt="reload" src={profile}></img>
               <div className={"fa fa-angle-down arrow" + ' ' + this.state.arrowState}></div>
-              <div className="infoWrapper">
-                <div id='infoContainer' style={fadeInAbout}>
+            </div>
+
+          <div className={this.state.infoWrapper}>
+                <div id={this.state.infoContainer} style={fadeInAbout}>
                     <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
                 </div>
               </div>
 
-                  <div className={"slideShowWrapper" + ' ' + this.state.slideShowStatus} style={slideShowStyle}>
+                  <div className={this.state.slideShowWrapper + ' ' + this.state.slideShowStatus} style={slideShowStyle}>
                       <div className="slideShow">
-                        <img  className="slideShowPic" alt="reload" src={slide1}></img>
-                        <img  className="slideShowPic" alt="reload" src={slide2}></img>
-                        <img  className="slideShowPic" alt="reload" src={slide3}></img>
-                        <img  className="slideShowPic" alt="reload" src={slide4}></img>
-                        <img  className="slideShowPic" alt="reload" src={slide5}></img>
-                        <img  className="slideShowPic" alt="reload" src={slide6}></img>
-                        <img  className="slideShowPic" alt="reload" src={slide7}></img>
-                        <img  className="slideShowPic" alt="reload" src={slide8}></img>
+                        <img  className={this.state.slideShowPic} alt="reload" src={slide1}></img>
+                        <img  className={this.state.slideShowPic} alt="reload" src={slide2}></img>
+                        <img  className={this.state.slideShowPic} alt="reload" src={slide3}></img>
+                        <img  className={this.state.slideShowPic} alt="reload" src={slide4}></img>
+                        <img  className={this.state.slideShowPic} alt="reload" src={slide5}></img>
+                        <img  className={this.state.slideShowPic} alt="reload" src={slide6}></img>
+                        <img  className={this.state.slideShowPic} alt="reload" src={slide7}></img>
+                        <img  className={this.state.slideShowPic} alt="reload" src={slide8}></img>
                       </div>
                   </div>
 
 
 
 
-            <div className={"socialContainer" + ' ' + this.state.socialStatus} style={socialStyle}>
+            <div className={this.state.socialContainer + ' ' + this.state.socialStatus} style={socialStyle}>
                 <a href="https://www.instagram.com/enno_nagel/" className="link hvr-bounce-in"><div href="#" className="fa fa-instagram circleAbout"></div></a>
                 <a href="https://www.linkedin.com/in/casparnagel" className="link hvr-bounce-in"><div href="#" className="fa fa-linkedin circleAbout"></div></a>
                 <a href="https://github.com/casparen" className="link hvr-bounce-in "><div href="#" className="fa fa-github"></div></a>
@@ -249,51 +310,54 @@ const fadeInAbout = {
 
             </div>
           </div>
-        </MediaQuery>
-
-        <MediaQuery query='(max-width: 700px)' className="MediaQueryAboutSmall">
-          <div className="wrapper animated fadeIn">
-              <img className="profileCssSmall" alt="reload" src={profile}></img>
-                <div className="infoContainerSmall">
-                <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
-                </div>
-
-
-                <div className="slideShowSmall">
-                  <img  className="slideShowPicSmall" alt="reload" src={slide1}></img>
-                  <img  className="slideShowPicSmall" alt="reload" src={slide2}></img>
-                  <img  className="slideShowPicSmall" alt="reload" src={slide3}></img>
-                  <img  className="slideShowPicSmall" alt="reload" src={slide4}></img>
-                  <img  className="slideShowPicSmall" alt="reload" src={slide5}></img>
-                  <img  className="slideShowPicSmall" alt="reload" src={slide6}></img>
-                  <img  className="slideShowPicSmall" alt="reload" src={slide7}></img>
-                  <img  className="slideShowPicSmall" alt="reload" src={slide8}></img>
-                </div>
-
-                <div className="socialContainerSmall">
-                    <a href="https://www.instagram.com/enno_nagel/" className="linkSmall hvr-bounce-in"><div href="#" className="fa fa-instagram circleAbout" style={iconSmall}></div></a>
-                    <a href="https://www.linkedin.com/in/casparnagel" className="linkSmall hvr-bounce-in"><div href="#" className="fa fa-linkedin circleAbout"></div></a>
-                    <a href="https://github.com/casparen" className="linkSmall hvr-bounce-in"><div href="#" className="fa fa-github circleAbout"></div></a>
-                    <a href="mailto:casparen@me.com" className="contact linkSmall hvr-bounce-in" id="email"><div href="#" className="fa fa-envelope circleAbout"></div></a>
-
-
-                </div>
-          </div>
-        </MediaQuery>
-
-
-
-
-
-
-
-
-
-
+        </div>
       </div>
     )
   }
 }
+
+
+// <MediaQuery query='(max-width: 700px)' className="MediaQueryAboutSmall">
+//   <div className="wrapper animated fadeIn">
+//       <img className="profileCssSmall" alt="reload" src={profile}></img>
+//         <div className="infoContainerSmall">
+//         <p id="about">caspar <span id="enno">enno</span> nagel is a German industrial designer currently attending the Rhode Island School of Design. Caspar specializes in product and furniture design, bringing a minimalist yet playful attitude to his design practice. Combining traditional craftsmanship with modern computer based modeling techniques, he is able to create unique products that are not void of the human touch. With a constantly growing knowledge base, he is delving into the world of hardware tech, developing skills in arduino and coding. He seeks to create products that can impact people on both a local and global scale with his design language constantly developing towards the tech of the future while maintaining traditional methodologies.</p>
+//         </div>
+//
+//
+//         <div className="slideShowSmall">
+//           <img  className="slideShowPicSmall" alt="reload" src={slide1}></img>
+//           <img  className="slideShowPicSmall" alt="reload" src={slide2}></img>
+//           <img  className="slideShowPicSmall" alt="reload" src={slide3}></img>
+//           <img  className="slideShowPicSmall" alt="reload" src={slide4}></img>
+//           <img  className="slideShowPicSmall" alt="reload" src={slide5}></img>
+//           <img  className="slideShowPicSmall" alt="reload" src={slide6}></img>
+//           <img  className="slideShowPicSmall" alt="reload" src={slide7}></img>
+//           <img  className="slideShowPicSmall" alt="reload" src={slide8}></img>
+//         </div>
+//
+//         <div className="socialContainerSmall">
+//             <a href="https://www.instagram.com/enno_nagel/" className="linkSmall hvr-bounce-in"><div href="#" className="fa fa-instagram circleAbout" style={iconSmall}></div></a>
+//             <a href="https://www.linkedin.com/in/casparnagel" className="linkSmall hvr-bounce-in"><div href="#" className="fa fa-linkedin circleAbout"></div></a>
+//             <a href="https://github.com/casparen" className="linkSmall hvr-bounce-in"><div href="#" className="fa fa-github circleAbout"></div></a>
+//             <a href="mailto:casparen@me.com" className="contact linkSmall hvr-bounce-in" id="email"><div href="#" className="fa fa-envelope circleAbout"></div></a>
+//
+//
+//         </div>
+//   </div>
+// </MediaQuery>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
