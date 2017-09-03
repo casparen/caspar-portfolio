@@ -535,7 +535,7 @@ const coverStylingP10 = {
                     </div>
 
                     <div className={this.state.coverWrapper}  onMouseOut={this.mouseOut.bind(this, 'p6')} onMouseOver={this.projectHover.bind(this, 'p6')} onClick={this.project.bind(this,"p6")}>
-                      <div className={this.state.p6Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p6titleContainer + ' ' + this.state.titleStatusp6}><h1 className={this.state.hoverTitle}>bobo</h1></div></div><img alt="reload" style={coverStyling} ref="p6" className={this.state.p6} src={cover6}></img><div className="projDescription"></div></div>
+                      <div className={this.state.p6Container}><div className="titleWrapper"  ><div className={this.state.titleContainer + ' ' + this.state.p6titleContainer + ' ' + this.state.titleStatusp6}><h1 className={this.state.hoverTitle}>portable seat</h1></div></div><img alt="reload" style={coverStyling} ref="p6" className={this.state.p6} src={cover6}></img><div className="projDescription"></div></div>
                     </div>
 
                     <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p8')} onMouseOver={this.projectHover.bind(this, 'p8')} onClick={this.project.bind(this,"p8")}>

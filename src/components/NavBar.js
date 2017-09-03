@@ -5,6 +5,7 @@ import { browserHistory } from 'react-router';
 import '../styling/Navigation.css'
 // import Coverpage from './Coverpage.js'
 import Logo from '../GD/logo.png'
+
 import shallowCompare from 'react-addons-shallow-compare';
 
 //Plug ins

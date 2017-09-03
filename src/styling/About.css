@@ -152,7 +152,7 @@ color: black;
 
 
 .infoWrapper {
-  margin-top: 200px;
+  /*margin-top: 200px;*/
   padding-top:100px;
   padding-bottom:100px;
   /*height: 500px;*/
@@ -491,7 +491,7 @@ opacity: 0.7;
 }
 .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
   -webkit-transform: scale(1.5);
-  transform: scale(1.5);
+  transform: scale(1.7);
   -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }

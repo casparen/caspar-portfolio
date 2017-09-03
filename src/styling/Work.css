@@ -320,7 +320,7 @@ z-index: -1;
   margin: 0 auto;
   /*z-index: 99;*/
   /*border: solid black 2px;*/
-  background: red;
+  /*background: red;*/
 }
 
 
@@ -541,7 +541,7 @@ width: 100%;
 .hoverTitleSmall {
 
   letter-spacing: 3px;
-  font-size: 7pt;
+  font-size: 8pt;
   font-family: "Avenir Next";
   /*font-family: "bauhaus93";*/
 
@@ -560,7 +560,7 @@ width: 100%;
 .hoverTitleTiny {
 
   letter-spacing: 2px;
-  font-size: 4pt;
+  font-size: 6pt;
   font-family: "Avenir Next";
   /*font-family: "bauhaus93";*/
 

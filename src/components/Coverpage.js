@@ -18,6 +18,8 @@ import eins from '../GD/Covertest/1.png'
 import zwei from '../GD/Covertest/2.png'
 import drei from '../GD/Covertest/3.png'
 
+import logoAnimation from '../GD/logoAnimation.gif'
+
 export default class CoverPage extends Component {
 constructor(){
   super();
@@ -44,8 +46,32 @@ onClickCoverpage (){
     })
 }, 1000);
 
-
 }
+
+sendIt(){
+  setTimeout(function(){
+      browserHistory.push({
+        pathname: '/work'
+      })
+    }, 1000);
+}
+
+componentDidMount (){
+    const cc = this
+  setTimeout(function(){
+      cc.setState({pageFade: 'animated fadeOut'})
+      cc.sendIt()
+    }, 7000);
+
+
+
+console.log(this.state.pageFade);
+    // setTimeout(function(){
+    //     browserHistory.push({
+    //       pathname: '/work'
+    //     })
+    //   }, 3000);
+    }
 
 componentWillMount(){
 
@@ -112,22 +138,36 @@ componentWillMount(){
 
     return (
           <div>
-            <div className={"MediaQueryCover animated fadeIn"  + ' ' + this.state.pageFade}>
-              <div  >
-                <div className="wrap">
-                  <div className="shapeContainer">
-                    <div  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className={this.state.symbol} alt="reload" id="k1" src={key2}></img></div>
-
-
-                </div>
-                </div>
-              </div>
+            <div className={"coverpageWrapper animated fadeIn"  + ' ' + this.state.pageFade}>
+              <img alt="reload" onClick={this.onClickCoverpage.bind(this)} className="logoAnimation" src={logoAnimation}></img>
             </div>
           </div>
 
     )
   }
 }
+
+
+
+
+
+  // <div className={"MediaQueryCover animated fadeIn"  + ' ' + this.state.pageFade}>
+    // <div>
+    //   <div className="wrap">
+    //     <div className="shapeContainer">
+    //       <div  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className={this.state.symbol} alt="reload" id="k1" src={key2}></img></div>
+    //   </div>
+    //   </div>
+    // </div>
+  // </div>
+
+
+
+
+
+
+
+
 
 // <div  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className={this.state.symbol} alt="reload" id="k2" src={key2}></img></div>
 //   <div  className="symbolContainer" onClick={this.onClickCoverpage.bind(this)}><img className={this.state.symbol} alt="reload" id="k3" src={key2}></img></div>

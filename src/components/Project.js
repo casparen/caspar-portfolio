@@ -9,7 +9,13 @@ import NavBar from './NavBar'
 import ScrollUpButton from "react-scroll-up-button";
 import  MediaQuery from 'react-responsive';
 // import ScrollAnimation from 'react-animate-on-scroll';
-// import Slider from 'react-slick'
+import Slider from 'react-slick'
+import logoAnimation from '../GD/logoAnimation.gif'
+
+
+import one from '../GD/Projects/enno/1.jpg'
+import two from '../GD/Projects/enno/2.jpg'
+import three from '../GD/Projects/enno/3.jpg'
 
 
 
@@ -41,13 +47,16 @@ export default class TeakBench extends Component {
       description: '',
       imgSrc: '',
       imgSrcProcess: '',
+      manual: '',
       process: '',
       projectFadeOut: '',
-      projectFadeOutAll: ''
+      projectFadeOutAll: '',
+      slideTestContainer: "slideTestContainer"
 
 
     }
       this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
 //     this.next = this.next.bind(this)
 // this.previous = this.previous.bind(this)
 // this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -65,13 +74,13 @@ export default class TeakBench extends Component {
 //   }, 3000);
 //   }
 
-
-  next() {
+next() {
   this.slider.slickNext()
 }
 previous() {
   this.slider.slickPrev()
 }
+
 
   mouseOff(){
     // console.log("out");
@@ -92,7 +101,7 @@ previous() {
     // console.log('scroll offset form porject', infromation3.scrollOffset);
     // console.log("parse", parseInt(infromation3.scrollOffset));
 //infromation3.scrollOffset
-console.log(event);
+//console.log(event);
 // console.log(event.srcElement.defaultView.innerHeight);
   const offSet = window.scrollY
   // const offSetDevided = offSet / parseInt(infromation3.scrollOffset)
@@ -101,7 +110,7 @@ console.log(event);
 
 
 
-console.log(offSet.toString());
+//console.log(offSet.toString());
 //1500 soft chair
 //3200 csp
 // 2400 rigit chair
@@ -124,7 +133,7 @@ console.log(offSet.toString());
         const cc = this
 
         cc.setState({spinnerStatus:'logoImg', pageStatus: 'visible', coverFadeInLeft: 'animated fadeInLeft', coverFadeInRight: "animated fadeInRight"})
-        console.log("spinner will be deactivated");
+        //console.log("spinner will be deactivated");
 
   }
 
@@ -139,25 +148,45 @@ console.log(offSet.toString());
   }
 
 
+slideRender(){
+  var settings = {
+    // dots: true,
+    slidesToShow: 1,
+     slidesToScroll: 1,
+      fade: true
+  }
+  console.log("this is slide render");
+  if(this.state.title === "enno") {
+    return (
+      <div className='containerSlideshow'>
+          <Slider ref={c => this.slider = c } {...settings}>
+            {
+            this.state.manual.map(function(y, num) {
+                return (
+                  <div><img className="imgSlideshow" src={y} /></div>
+                )
+               })
+            }
+              <img alt="reload" className="" src={logoAnimation}></img>
 
+          </Slider>
+          <div className="nextPrevContainer">
+            <div className="fa fa-angle-left" onClick={this.previous.bind(this)}></div>
+            <div  className="fa fa-angle-right" onClick={this.next.bind(this)}></div>
+          </div>
+      </div>
+
+    )
+  }
+  else {
+    console.log("not enno");
+  }
+}
 
 
 
 
 slideShowRender(){
-
-        // console.log("process phototoosososos");
-        // const settings = {
-        //   dots: false,
-        //   infinite: true,
-        //   speed: 500,
-        //   slidesToShow: 1,
-        //   lazyLoad: true,
-        //   // fade: true,
-        //   slidesToScroll: 1,
-        //   currentPosition: 0
-        // };
-
         const fadeInProcess = {
           // transform: 'translate(' +  this.state.scrollStatus + 'px' + ', 0px)'
           // opacity: this.state.currentPositionProcess
@@ -169,11 +198,11 @@ slideShowRender(){
           const cc = this
           return (
                   <div className="slideTestWrapper" style={fadeInProcess}>
-                    <div className="slideTestContainer" >
+                    <div className={this.state.slideTestContainer} >
                       {  this.state.imgSrcProcess.map(function(y, num) {
 
                           return (
-                            <div key={num} ><img className={"hvr-bounce-in" + ' ' + cc.state.slidesProcess} src={y}  alt='loading'></img></div>
+                            <div key={num} ><img className={cc.state.slidesProcess} src={y}  alt='loading'></img></div>
                           )
                          })
                        }
@@ -184,20 +213,24 @@ slideShowRender(){
 }
 
 imgRender(){
+  // var settings = {
+  //   dots: true,
+  //   slidesToShow: 1,
+  //    slidesToScroll: 1
+  // }
 
 if(this.state.device === 'laptop'){
-  console.log('Make laptop  sieze');
+//  console.log('Make laptop  sieze');
 
   if(this.state.status === 'comming soon'){
-    console.log("coming soooooon");
+  //  console.log("coming soooooon");
     return (
       <div className={"slideshowContainer" + ' ' + this.state.coverFadeInRight}>
         {
-
              <div className="commingSoon"><h1 className="commingSoonText">comming soon</h1><div key={1}><img alt="reload" className="photoCommingSoon" src={this.state.imgSrc[1]}></img></div></div>
-
-
         }
+
+
       </div>
     )
   }
@@ -210,6 +243,9 @@ if(this.state.device === 'laptop'){
            )
           })
         }
+
+
+
       </div>
     )
   }
@@ -217,9 +253,7 @@ if(this.state.device === 'laptop'){
 }
 
 else {
-  
-
-  console.log("make iphone sizeeee");
+//  console.log("make iphone sizeeee");
   return (
     <div className={"slideshowContainerSmall" + ' ' + this.state.coverFadeInRight}>
       { this.state.imgSrc.map(function(x, number) {
@@ -263,20 +297,29 @@ componentWillMount(){
                     description: projectInfo.description,
                     imgSrc: projectInfo.imgSrc,
                     imgSrcProcess: projectInfo.imgSrcProcess,
+                    manual: projectInfo.manual,
                     process: projectInfo.process
                 })
-
 
 
                 const winWidth = window.innerWidth
                 const winHeight = window.innerHeight
 
-                console.log("initial inner width",winWidth);
-                console.log("initial inner height",winHeight);
+            //    console.log("initial inner width",winWidth);
+              //  console.log("initial inner height",winHeight);
 
                 if(winWidth > 430){
-                  console.log("initial, make laptopsize size");
-                  this.setState({device: "laptop", projectContainer: "projectContainer", descriptionContainer: "descriptionContainer", projectTitle: "projectTitle", projectName: "projectName", projectNumber: "projectNumber", aboutProject: "aboutProject", slidesProcess: 'slidesProcess'})
+              //    console.log("initial, make laptopsize size");
+                  this.setState({
+                      device: "laptop",
+                      projectContainer: "projectContainer",
+                      descriptionContainer: "descriptionContainer",
+                      projectTitle: "projectTitle",
+                      projectName: "projectName",
+                      projectNumber: "projectNumber",
+                      aboutProject: "aboutProject",
+                      slidesProcess: 'slidesProcess',
+                      slideTestContainer: "slideTestContainer"})
                   // this.setState({device: "laptop"})
 
                 }
@@ -288,8 +331,17 @@ componentWillMount(){
                 // }
 
                 else {
-                  console.log("initial, make iphone size");
-                  this.setState({device: "iphone", projectContainer: "projectContainerSmall", descriptionContainer: "descriptionContainerSmall", projectTitle: "projectTitleSmall", projectName: "projectNameSmall", projectNumber: "projectNumberSmall", aboutProject: "aboutProjectSmall", slidesProcess: "slidesProcessSmall"})
+              //    console.log("initial, make iphone size");
+                  this.setState({
+                    device: "iphone",
+                    projectContainer: "projectContainerSmall",
+                    descriptionContainer: "descriptionContainerSmall",
+                    projectTitle: "projectTitleSmall",
+                    projectName: "projectNameSmall",
+                    projectNumber: "projectNumberSmall",
+                    aboutProject: "aboutProjectSmall",
+                    slidesProcess: "slidesProcessSmall",
+                    slideTestContainer: "slideTestContainerSmall"})
 
                 }
 }
@@ -297,7 +349,7 @@ componentWillMount(){
 navStatus(status) {
 
   if(status === 'logo'){
-console.log("logooooooo");
+//console.log("logooooooo");
     // console.log(status);
     console.log("slide down now");
     this.setState({projectFadeOutAll: 'animated fadeOut'})
@@ -312,7 +364,7 @@ console.log("logooooooo");
   }
 
   else if(status === 'about'){
-    console.log('aboutttt',status);
+  //  console.log('aboutttt',status);
       this.setState({projectFadeOut: 'animated fadeOut'})
 
     // console.log("slide down now");
@@ -329,7 +381,6 @@ render(){
   // console.log(this.state.imgSrc);
 
 
-    // console.log("in project",this.props.location.query);
 
 
 
@@ -368,6 +419,16 @@ render(){
 
 //FOR THE GD BOOK, use a slide show to show the digital book
 
+
+// var settings = {
+//   // dots: true,
+//   slidesToShow: 1,
+//    slidesToScroll: 1,
+//     fade: true
+// }
+
+
+
 const fixedDescription = {
   // transform: "translateY(3in)"
   // paddingTop: this.state.paddingTop + 'px'
@@ -397,9 +458,10 @@ const fixedDescription = {
 
               </div>
                 {this.imgRender()}
+
+                {this.slideRender()}
             </div>
             {this.slideShowRender()}
-
 
               <ScrollUpButton StopPosition={0}
                     TransitionBtnPosition={150}
@@ -646,7 +708,6 @@ const fixedDescription = {
 //     autoplaySpeed: 3000,
 //     nextArrow: <SampleNextArrow />,
 // prevArrow: <SamplePrevArrow />
-//
 // };
 
 // import queryString from 'query-string';

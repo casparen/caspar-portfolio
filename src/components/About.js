@@ -130,7 +130,7 @@ updateWindowDimensions() {
           this.setState({slideShowStatus:'animated fadeIn', slideShowVisibility: 'visible'})
         }
 
-        if (scrollPosition > 1200){
+        if (scrollPosition > 651){
           console.log("now fade in");
           this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
         }
