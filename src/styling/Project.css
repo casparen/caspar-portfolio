@@ -1,8 +1,11 @@
 .containerSlideshow {
 padding-top: 10%;
   margin: 0 auto;
+  align-content: center;
+  /*padding: 0.1px;*/
 /*padding: 5px;*/
-width: 80%;
+width: 85%;
+
 /*color: #333;*/
 /*color: pink;*/
 /*background: #f0f0f0;*/
@@ -15,7 +18,7 @@ flex-direction: row;*/
 }
 
 .fa-angle-left {
-  padding-right: 80%;
+  padding-right: 45%;
 
 }
 
@@ -29,8 +32,19 @@ flex-direction: row;*/
 .imgSlideshow {
   margin: 0 auto;
   width: 100%;
-  padding: 2px;
+  /*padding: 1%;*/
+  /*border: solid black 2px;*/
   /*border: solid #f0f0f0 2px;*/
+
+}
+
+.imgSlideshowContainer {
+  margin: 0 auto;
+/*overflow: hidden;*/
+/*width: 600px;*/
+/*padding: 2%;*/
+/*border: solid pink 2px;*/
+/*border: solid #f0f0f0 2px;*/
 }
 
 /*.hvr-bounce-in {
@@ -168,14 +182,16 @@ flex-direction: row;*/
 }
 
 
-.projectWrapper {
+.projectWrapper2 {
   /*width: 100%;
   height: 100%;*/
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
   align-items: flex-start;
   flex-wrap: wrap;
+  width: 70%;
+  padding-top: 5%;
   /*display: flex;*/
   /*flex-direction: row;*/
 
@@ -244,9 +260,11 @@ flex-direction: row;*/
   flex-direction: column;*/
   margin: 0 auto;
   /*justify-content: center;*/
-
+width: 100%;
+padding-bottom: 4%;
   /*border: solid pink 2px;*/
-  padding-bottom: 50px;
+  /*padding-bottom: 50px;
+  padding-right: 5%;*/
 }
 
 
@@ -273,8 +291,8 @@ flex-direction: row;*/
   z-index: -3;
       /*padding-left: 10%;*/
 margin: 0 auto;
-padding-top: 15px;
-width: 600px;
+/*padding-top: 15px;*/
+width: 100%;
 
 display: flex;
 flex-direction: row;
@@ -300,7 +318,7 @@ align-content: center;
 .projectTitle {
   margin: 0 auto;
   text-align: left;
-  width: 3.5cm;
+  width: 15%;
   /*border: solid green 1px;*/
 
 }
@@ -340,7 +358,7 @@ align-content: center;
 .aboutProject {
   /*border: solid pink 1px;*/
   margin: 0 auto;
-  width: 500px;
+  width: 60%;
   font-weight:200;
     line-height: 2;
     font-size: 12px;
@@ -370,7 +388,7 @@ align-content: center;
   /*flex-wrap: wrap;*/
 
 
-  width: 600px;
+  width: 100%;
   /*height: 16.5cm;*/
   margin: 0 auto;
   /*padding-left: 40%;*/
@@ -416,11 +434,11 @@ transition: all 1s;
 /*padding-bottom: 2cm;*/
 /*padding-top: 2cm;*/
 /*border: solid pink 5px;*/
-padding-top: 15px;
+padding-top: 5%;
   /*width: 16.5cm;
   margin: 0 auto;*/
 
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 
 }

@@ -43,7 +43,7 @@ export default class About extends Component {
                 socialStatus: '',
                 aboutFadeIn: '',
                 slideShowVisibility: 'hidden',
-                socialVisibility: 'hidden',
+                socialVisibility: 'visible',
                 device: "",
 
                 MediaQueryAbout: 'MediaQueryAbout',
@@ -132,7 +132,8 @@ updateWindowDimensions() {
 
         if (scrollPosition > 651){
           console.log("now fade in");
-          this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
+        //  this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
+            this.setState({socialStatus:'', socialVisibility: 'visible'})
         }
       }
 
@@ -148,7 +149,8 @@ updateWindowDimensions() {
 
         if (scrollPosition > 740){
           console.log("now fade in");
-          this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
+          // this.setState({socialStatus:'animated fadeIn', socialVisibility: 'visible'})
+            this.setState({socialStatus:'', socialVisibility: 'visible'})
         }
       }
 
@@ -285,18 +287,7 @@ const fadeInAbout = {
                 </div>
               </div>
 
-                  <div className={this.state.slideShowWrapper + ' ' + this.state.slideShowStatus} style={slideShowStyle}>
-                      <div className="slideShow">
-                        <img  className={this.state.slideShowPic} alt="reload" src={slide1}></img>
-                        <img  className={this.state.slideShowPic} alt="reload" src={slide2}></img>
-                        <img  className={this.state.slideShowPic} alt="reload" src={slide3}></img>
-                        <img  className={this.state.slideShowPic} alt="reload" src={slide4}></img>
-                        <img  className={this.state.slideShowPic} alt="reload" src={slide5}></img>
-                        <img  className={this.state.slideShowPic} alt="reload" src={slide6}></img>
-                        <img  className={this.state.slideShowPic} alt="reload" src={slide7}></img>
-                        <img  className={this.state.slideShowPic} alt="reload" src={slide8}></img>
-                      </div>
-                  </div>
+
 
 
 
@@ -315,6 +306,42 @@ const fadeInAbout = {
     )
   }
 }
+
+
+
+// <div className={this.state.slideShowWrapper + ' ' + this.state.slideShowStatus} style={slideShowStyle}>
+//     <div className="slideShow">
+//       <img  className={this.state.slideShowPic} alt="reload" src={slide1}></img>
+//       <img  className={this.state.slideShowPic} alt="reload" src={slide2}></img>
+//       <img  className={this.state.slideShowPic} alt="reload" src={slide3}></img>
+//       <img  className={this.state.slideShowPic} alt="reload" src={slide4}></img>
+//       <img  className={this.state.slideShowPic} alt="reload" src={slide5}></img>
+//       <img  className={this.state.slideShowPic} alt="reload" src={slide6}></img>
+//       <img  className={this.state.slideShowPic} alt="reload" src={slide7}></img>
+//       <img  className={this.state.slideShowPic} alt="reload" src={slide8}></img>
+//     </div>
+// </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // <MediaQuery query='(max-width: 700px)' className="MediaQueryAboutSmall">

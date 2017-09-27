@@ -1,4 +1,6 @@
 
+
+
 //teakbench
 import project1pic1 from '../GD/Projects/teakBench/1.png'
 import project1pic2 from '../GD/Projects/teakBench/2.png'
@@ -155,7 +157,7 @@ import project11pic1 from '../GD/Projects/rigitChair/1.png';
 import project11pic2 from '../GD/Projects/rigitChair/2.png';
 import project11pic3 from '../GD/Projects/rigitChair/3.png';
 import project11pic4 from '../GD/Projects/rigitChair/4.png';
-import project11pic5 from '../GD/Projects/rigitChair/5.png';
+// import project11pic5 from '../GD/Projects/rigitChair/5.png';
 
       //process
       import project11Processpic1 from '../GD/Projects/rigitChair/process/1.png';
@@ -249,9 +251,9 @@ const ProjectInfo = {
     }],
 
     Project10: [{
-      title: "soft chair",
+      title: "cushioned sling chair",
       projectNum:"10",
-      status: "comming soon",
+      status: "coming soon",
       description: "Soft chair made during  a chair design advanced studio. I began this process by making many test models and sketches. I familiarized myself with sewing and upholstery and explored different forms of attachment between metal and fabric. My finished design was a sling upholstery chair, made from heavy duty canvas and filled with polyester filling. The frame is made from steal tubing and contains slots that allow for the fabric to slide into it. My reasoning behind this was so that the seat could be interchangeable and the chair could be easy to take apart.",
       imgSrc: [project10pic1, project10pic2, project10pic3],
       process: "yes",
@@ -262,9 +264,9 @@ const ProjectInfo = {
     Project11: [{
       title: "rigid chair",
       projectNum:"11",
-      status: "comming soon",
+      // status: "coming soon",
       description: "Rigid chair made of steel tubing and sheet metal. I began my process by first making a comfort model out of wood to figure out things like dimensions and angles. I then moved onto making many smaller scale models, exploring sheet metal, tubular bending, and welding (both Tig and Mig), and making digital iterations in Rhinoceros. After deciding on a final design, I began work on my last model.",
-      imgSrc: [project11pic1, project11pic2, project11pic3, project11pic4, project11pic5],
+      imgSrc: [project11pic1, project11pic2, project11pic3, project11pic4],
       process: "yes",
       scrollOffset: '2000',
       imgSrcProcess: [project11Processpic1, project11Processpic2, project11Processpic3, project11Processpic4, project11Processpic5, project11Processpic6, project11Processpic7, project11Processpic8, project11Processpic9, project11Processpic10, project11Processpic11, project11Processpic12]

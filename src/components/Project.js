@@ -149,6 +149,7 @@ previous() {
 
 
 slideRender(){
+  //enno project
   var settings = {
     // dots: true,
     slidesToShow: 1,
@@ -163,7 +164,7 @@ slideRender(){
             {
             this.state.manual.map(function(y, num) {
                 return (
-                  <div><img className="imgSlideshow" src={y} /></div>
+                  <div className="imgSlideshowContainer"><img className="imgSlideshow" src={y} /></div>
                 )
                })
             }
@@ -439,7 +440,7 @@ const fixedDescription = {
   <NavBar  loaderStatus={this.state.spinnerStatus} navLogoStatus={this.navStatus.bind(this)}/>
       <div style={pageLoadingStatus} className={this.state.projectFadeOut}>
         <div className="MediaQueryProject" ref='content'>
-          <div className="projectWrapper">
+          <div className="projectWrapper2">
             <div className={this.state.projectContainer}>
                   <div className={this.state.descriptionContainer + ' ' + this.state.coverFadeInLeft}>
                         <div className={this.state.projectTitle}>
