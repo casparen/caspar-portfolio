@@ -243,7 +243,7 @@ const ProjectInfo = {
     Project9: [{
       title: "CSP motorbike",
       projectNum:"09",
-      description: "During my Junior, I partnered with a classmate, Kalil Grinberg, to design and fabricate a 70cc campus commuter bike as an independent project. With no prior bike-building experience, we began our project with 5 weeks of research regarding bike building, frame geometry, and familiarizing ourselves with the language of motorcycles. We then proceeded to sketch out ideas, and then turned those ideas into rough mock-ups to get an idea for the overall look of the bike.  We chose a 70cc engine, which made it easy to work on without an engine hoist, and made the finished bike light and compact. We considered the design of the fuel tank, and realized that it would add visual clutter to bike.  Realizing we could simplify our design by building the fuel tank into the frame, we created a tank underneath the seat. The finished bike incorporates a playful color palette, that speaks to the DIY nature of the project and unconventional design elements.",
+      description: "During my Junior year, I partnered with a classmate, Kalil Grinberg, to design and fabricate a 70cc campus commuter bike. With no prior bike-building experience, we began our project with 5 weeks of research in bike building, frame geometry, and familiarizing ourselves with the language of motorcycles. We then proceeded to sketch ideas and turn them into rough mock-ups to get an idea for the overall look of the bike. We chose a 70cc engine, which made it easy to work on without an engine hoist, and made the finished bike light and compact. When designing the fuel tank, we ntoiced that it would add significant visual clutter to bike. We realized we could simplify our design by incorporating the fuel tank into the frame, so we placed the tank directly underneath the seat. The finished bike utilizes a playful color palette, that speaks to the DIY nature of the project and unconventional design elements.",
       imgSrc: [project9pic1, project9pic2, project9pic3, project9pic4, project9pic5, project9pic6, project9pic7],
       process: "yes",
       scrollOffset: '2750',
@@ -254,7 +254,7 @@ const ProjectInfo = {
       title: "cushioned sling chair",
       projectNum:"10",
       status: "coming soon",
-      description: "Soft chair made during  a chair design advanced studio. I began this process by making many test models and sketches. I familiarized myself with sewing and upholstery and explored different forms of attachment between metal and fabric. My finished design was a sling upholstery chair, made from heavy duty canvas and filled with polyester filling. The frame is made from steal tubing and contains slots that allow for the fabric to slide into it. My reasoning behind this was so that the seat could be interchangeable and the chair could be easy to take apart.",
+      description: "A cushioned sling chair utilizing metal welding and upholstery techniques. I began this process by making many test models and sketches. I familiarized myself with sewing and upholstery and explored different forms of attachment between metal and fabric. My finished design uses heavy duty canvas and filled with polyester filling. The frame is made from steal tubing and contains slots that allow for the fabric to slide into it. The slots allow the seat cushions to be interchangeable and easily removed.",
       imgSrc: [project10pic1, project10pic2, project10pic3],
       process: "yes",
       scrollOffset: '1400',

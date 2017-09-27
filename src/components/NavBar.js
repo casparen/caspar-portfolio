@@ -110,13 +110,15 @@ export default class NavBar extends Component {
 
 // console.log("hiiiiiiiii", this.state.device);
         if(path === "logo"){
+          console.log("logogogogogo");
           this.props.navLogoStatus(this.logoClick('logo'));
           const cc = this
           setTimeout(function(){
             browserHistory.push({
-                pathname: '/'
+                pathname: '/work'
             })
           }, 1000);
+
         }
 
       else  if(path === "about"){

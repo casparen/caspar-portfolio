@@ -140,7 +140,8 @@ componentWillMount(){
           <div>
             <div className={"coverpageWrapper animated fadeIn"  + ' ' + this.state.pageFade}>
               <img alt="reload" onClick={this.onClickCoverpage.bind(this)} className="logoAnimation" src={logoAnimation}></img>
-            </div>
+              <h1 className="click" >click to enter</h1>
+          </div>
           </div>
 
     )

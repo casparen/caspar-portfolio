@@ -51,14 +51,22 @@ position: absolute;
   height: 100%;
   display: flex;
   align-items:center;
-  /*flex-direction: column;*/
+
+  flex-direction: column;
   justify-content: center;
   position: absolute;
   /*border: solid blue 2px;*/
 }
+.click {
+  font-family: "Avenir Next";
+  font-weight: 300;
+  line-height: 2;
+        font-size: 20px;
+}
 
 .logoAnimation {
-  width: 100%;
+
+  width: 90%;
   /*border: solid pink 2px;*/
 }
 

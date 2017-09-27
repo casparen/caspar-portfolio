@@ -150,6 +150,7 @@ previous() {
 
 slideRender(){
   //enno project
+  //make it not draggable
   var settings = {
     // dots: true,
     slidesToShow: 1,
@@ -353,7 +354,7 @@ navStatus(status) {
 //console.log("logooooooo");
     // console.log(status);
     console.log("slide down now");
-    this.setState({projectFadeOutAll: 'animated fadeOut'})
+    this.setState({projectFadeOut: 'animated fadeOut'})
   }
 
   else if(status === 'work'){
