@@ -411,7 +411,7 @@ navStatus(status) {
 console.log("logooooooo");
     // console.log(status);
     console.log("slide down now");
-    this.setState({workFadeOutAll: 'animated fadeOut'})
+    // this.setState({workFadeOutAll: 'animated fadeOut'})
   }
 
   else if(status === 'about'){

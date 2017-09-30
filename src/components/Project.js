@@ -155,7 +155,10 @@ slideRender(){
     // dots: true,
     slidesToShow: 1,
      slidesToScroll: 1,
-      fade: true
+      // fade: true,
+      lazyLoad:true,
+      swipeToSlide: false,
+      touchMove:false
   }
   console.log("this is slide render");
   if(this.state.title === "enno") {

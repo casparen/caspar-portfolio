@@ -26,7 +26,8 @@ constructor(){
   this.state = {
     visibility:"",
     pageFade: '',
-    symbol:''
+    symbol:'',
+    clickToEnter: 'hidden'
 
   }
 }
@@ -108,8 +109,21 @@ componentWillMount(){
           }
 }
 
+onHoverLogo(){
+  this.setState({clickToEnter: "visible"})
+}
+
+hoverLogoOut(){
+    this.setState({clickToEnter: "hidden"})
+}
+
+
+
   render(){
 
+    const clickToEnterState = {
+      visibility: this.state.clickToEnter
+    }
 
     // const settings = {
     //   accessibility: true,
@@ -139,8 +153,8 @@ componentWillMount(){
     return (
           <div>
             <div className={"coverpageWrapper animated fadeIn"  + ' ' + this.state.pageFade}>
-              <img alt="reload" onClick={this.onClickCoverpage.bind(this)} className="logoAnimation" src={logoAnimation}></img>
-              <h1 className="click" >click to enter</h1>
+              <img alt="reload" onMouseOver={this.onHoverLogo.bind(this)} onMouseOut={this.hoverLogoOut.bind(this)} onClick={this.onClickCoverpage.bind(this)} className="logoAnimation" src={logoAnimation}></img>
+              <h1 style={clickToEnterState} className="click">click to enter</h1>
           </div>
           </div>
 
