@@ -117,6 +117,9 @@ import project9pic4 from '../GD/Projects/cspBike/4.png'
 import project9pic5 from '../GD/Projects/cspBike/5.png'
 import project9pic6 from '../GD/Projects/cspBike/6.png'
 import project9pic7 from '../GD/Projects/cspBike/7.png'
+import project9pic8 from '../GD/Projects/cspBike/8.png'
+import project9pic9 from '../GD/Projects/cspBike/9.png'
+import project9pic10 from '../GD/Projects/cspBike/10.png'
 
       //process
       import project9Processpic1 from '../GD/Projects/cspBike/process/1.png';
@@ -136,6 +139,14 @@ import project9pic7 from '../GD/Projects/cspBike/7.png'
 import project10pic1 from '../GD/Projects/softChair/1.png';
 import project10pic2 from '../GD/Projects/softChair/2.png';
 import project10pic3 from '../GD/Projects/softChair/3.png';
+import project10pic4 from '../GD/Projects/softChair/4.png';
+import project10pic5 from '../GD/Projects/softChair/5.png';
+import project10pic6 from '../GD/Projects/softChair/6.png';
+import project10pic7 from '../GD/Projects/softChair/7.png';
+import project10pic8 from '../GD/Projects/softChair/8.png';
+import project10pic9 from '../GD/Projects/softChair/9.png';
+import project10pic10 from '../GD/Projects/softChair/10.png';
+import project10pic11 from '../GD/Projects/softChair/11.png';
 
       //process
       import project10Processpic1 from '../GD/Projects/softChair/process/1.png';
@@ -157,6 +168,9 @@ import project11pic1 from '../GD/Projects/rigitChair/1.png';
 import project11pic2 from '../GD/Projects/rigitChair/2.png';
 import project11pic3 from '../GD/Projects/rigitChair/3.png';
 import project11pic4 from '../GD/Projects/rigitChair/4.png';
+import project11pic5 from '../GD/Projects/rigitChair/5.png';
+import project11pic6 from '../GD/Projects/rigitChair/6.png';
+import project11pic7 from '../GD/Projects/rigitChair/7.png';
 // import project11pic5 from '../GD/Projects/rigitChair/5.png';
 
       //process
@@ -173,6 +187,32 @@ import project11pic4 from '../GD/Projects/rigitChair/4.png';
       import project11Processpic11 from '../GD/Projects/rigitChair/process/11.png';
       import project11Processpic12 from '../GD/Projects/rigitChair/process/12.png';
 
+
+//bagel package
+import project12pic1 from '../GD/Projects/bagel/1.jpg';
+import project12pic2 from '../GD/Projects/bagel/2.jpg';
+import project12pic3 from '../GD/Projects/bagel/3.gif';
+import project12pic4 from '../GD/Projects/bagel/4.jpg';
+import project12pic5 from '../GD/Projects/bagel/5.jpg';
+import project12pic6 from '../GD/Projects/bagel/6.jpg';
+import project12pic7 from '../GD/Projects/bagel/7.jpg';
+import project12pic8 from '../GD/Projects/bagel/8.jpg';
+import project12pic9 from '../GD/Projects/bagel/9.jpg';
+import project12pic10 from '../GD/Projects/bagel/10.jpg';
+import project12pic11 from '../GD/Projects/bagel/11.png';
+
+
+
+//puzzle package
+import project13pic1 from '../GD/Projects/puzzlePackage/1.png';
+import project13pic2 from '../GD/Projects/puzzlePackage/2.png';
+import project13pic3 from '../GD/Projects/puzzlePackage/3.png';
+import project13pic4 from '../GD/Projects/puzzlePackage/4.png';
+import project13pic5 from '../GD/Projects/puzzlePackage/5.png';
+import project13pic6 from '../GD/Projects/puzzlePackage/6.png';
+import project13pic7 from '../GD/Projects/puzzlePackage/7.png';
+import project13pic8 from '../GD/Projects/puzzlePackage/8.png';
+import project13pic9 from '../GD/Projects/puzzlePackage/9.png';
 
 
 
@@ -244,7 +284,7 @@ const ProjectInfo = {
       title: "CSP motorbike",
       projectNum:"09",
       description: "During my Junior year, I partnered with a classmate, Kalil Grinberg, to design and fabricate a 70cc campus commuter bike. With no prior bike-building experience, we began our project with 5 weeks of research in bike building, frame geometry, and familiarizing ourselves with the language of motorcycles. We then proceeded to sketch ideas and turn them into rough mock-ups to get an idea for the overall look of the bike. We chose a 70cc engine, which made it easy to work on without an engine hoist, and made the finished bike light and compact. When designing the fuel tank, we ntoiced that it would add significant visual clutter to bike. We realized we could simplify our design by incorporating the fuel tank into the frame, so we placed the tank directly underneath the seat. The finished bike utilizes a playful color palette, that speaks to the DIY nature of the project and unconventional design elements.",
-      imgSrc: [project9pic1, project9pic2, project9pic3, project9pic4, project9pic5, project9pic6, project9pic7],
+      imgSrc: [project9pic1, project9pic2, project9pic3, project9pic4, project9pic5, project9pic6, project9pic7, project9pic8, project9pic9, project9pic10],
       process: "yes",
       scrollOffset: '2750',
       imgSrcProcess: [project9Processpic1, project9Processpic2, project9Processpic3, project9Processpic4, project9Processpic5, project9Processpic6, project9Processpic7, project9Processpic8, project9Processpic9, project9Processpic10, project9Processpic11, project9Processpic12]
@@ -254,8 +294,8 @@ const ProjectInfo = {
       title: "cushioned sling chair",
       projectNum:"10",
       status: "coming soon",
-      description: "A cushioned sling chair utilizing metal welding and upholstery techniques. I began this process by making many test models and sketches. I familiarized myself with sewing and upholstery and explored different forms of attachment between metal and fabric. My finished design uses heavy duty canvas and filled with polyester filling. The frame is made from steal tubing and contains slots that allow for the fabric to slide into it. The slots allow the seat cushions to be interchangeable and easily removed.",
-      imgSrc: [project10pic1, project10pic2, project10pic3],
+      description: "A cushioned sling chair utilizing metal welding and upholstery techniques. I began this process by making many test models and sketches. I familiarized myself with sewing and upholstery and explored different forms of attachment between metal and fabric. My finished design uses heavy duty canvas and filled with polyester filling. The frame is made from steal tubing and contains slots that allow for the fabric to slide into it. At the connection points, I incorporated rubber to allow the pieces to slide into place and create friction. This mechanism allows the seat cushions to be interchanged and easily removed.",
+      imgSrc: [project10pic1, project10pic2, project10pic3, project10pic4, project10pic5, project10pic6, project10pic7, project10pic8, project10pic9, project10pic10, project10pic11],
       process: "yes",
       scrollOffset: '1400',
       imgSrcProcess: [project10Processpic1, project10Processpic2, project10Processpic3, project10Processpic4, project10Processpic5, project10Processpic6, project10Processpic7, project10Processpic8, project10Processpic9, project10Processpic10, project10Processpic11, project10Processpic12]
@@ -266,10 +306,26 @@ const ProjectInfo = {
       projectNum:"11",
       // status: "coming soon",
       description: "Rigid chair made of steel tubing and sheet metal. I began my process by first making a comfort model out of wood to figure out things like dimensions and angles. I then moved onto making many smaller scale models, exploring sheet metal, tubular bending, and welding (both Tig and Mig), and making digital iterations in Rhinoceros. After deciding on a final design, I began work on my last model.",
-      imgSrc: [project11pic1, project11pic2, project11pic3, project11pic4],
+      imgSrc: [project11pic1, project11pic2, project11pic3, project11pic4, project11pic5, project11pic6, project11pic7],
       process: "yes",
       scrollOffset: '2000',
       imgSrcProcess: [project11Processpic1, project11Processpic2, project11Processpic3, project11Processpic4, project11Processpic5, project11Processpic6, project11Processpic7, project11Processpic8, project11Processpic9, project11Processpic10, project11Processpic11, project11Processpic12]
+    }],
+
+    Project12: [{
+      title: "bagel package",
+      projectNum:"12",
+      // status: "coming soon",
+      description: "This is a flatpack bagel package design. It was created with the intention of being used in small shops or food trucks where they need to quickly put together a package. There are many problems this bagle packaging solves, such keeping the bagel together and preventing it from becoming messy. It also allows easy takeaway and protects the bagel while being transported. The package design creates many opportunities for graphics as well as gives a higher quality look.",
+      imgSrc: [project12pic1, project12pic2, project12pic3, project12pic4, project12pic5, project12pic6, project12pic7, project12pic8, project12pic9, project12pic10,project12pic11 ],
+    }],
+
+    Project13: [{
+      title: "puzzle package",
+      projectNum:"13",
+      // status: "coming soon",
+      description: "5 initial concepts for a “Package Design” advanced studio. The assignment was to create packaging for the puzzle “Heads and Tails Tetrominoes” for Brainwright, a brainteaser and puzzle company. Each design was modeled in Rhinoceros and rendered in Keyshot.",
+      imgSrc: [project13pic1, project13pic2, project13pic3, project13pic4, project13pic5, project13pic6, project13pic7, project13pic8, project13pic9],
     }]
 
 }

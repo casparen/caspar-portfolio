@@ -168,12 +168,16 @@ slideRender(){
             {
             this.state.manual.map(function(y, num) {
                 return (
-                  <div className="imgSlideshowContainer"><img className="imgSlideshow" src={y} /></div>
+                  <div className="imgSlideshowContainer">
+                    <img className="imgSlideshow" src={y}></img>
+
+                  </div>
                 )
                })
             }
-              <img alt="reload" className="" src={logoAnimation}></img>
 
+            <img alt="reload" className="logoAnimationPreview" src={logoAnimation}></img>
+9
           </Slider>
           <div className="nextPrevContainer">
             <div className="fa fa-angle-left" onClick={this.previous.bind(this)}></div>

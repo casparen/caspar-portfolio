@@ -25,6 +25,9 @@ import cover8 from '../GD/covers/8.jpg'
 import cover9 from '../GD/covers/9.jpg'
 import cover10 from '../GD/covers/10.jpg'
 import cover11 from '../GD/covers/11.jpg'
+import cover12 from '../GD/covers/12.jpg'
+import cover13 from '../GD/covers/13.jpg'
+
 
 
 //make object a string and then sent it through query
@@ -99,7 +102,11 @@ export default class Work extends Component {
       p12: 'coverStatus',
         p12Container: 'coverContainerNoHover',
         p12titleContainer:'',
-        titleStatusp12: 'titelHiddenp12'
+        titleStatusp12: 'titelHiddenp12',
+      p13: 'coverStatus',
+        p13Container: 'coverContainerNoHover',
+        p13titleContainer:'',
+        titleStatusp13: 'titelHiddenp13'
     }
 
   }
@@ -189,10 +196,10 @@ componentWillMount(){
 next(projectRef){
 // console.log("fire");
 // console.log(this.refs.p2.parentNode.className);
-  if(projectRef === "p2" && this.refs.p2.parentNode.className === 'slick-slide slick-active') {
-  // console.log("next");
-  this.Slider.slickNext()
-}
+//   if(projectRef === "p2" && this.refs.p2.parentNode.className === 'slick-slide slick-active') {
+//   // console.log("next");
+//   this.Slider.slickNext()
+// }
 }
 
 project(projectRef){
@@ -249,6 +256,14 @@ console.log('clickkkk');
   else if(projectRef === "p11"){
     this.status =  this.refs.p11.parentNode.className
     this.projectInfoString = JSON.stringify(ProjectInfo.Project11[0]);
+  }
+  else if(projectRef === "p12"){
+    this.status =  this.refs.p12.parentNode.className
+    this.projectInfoString = JSON.stringify(ProjectInfo.Project12[0]);
+  }
+  else if(projectRef === "p13"){
+    this.status =  this.refs.p13.parentNode.className
+    this.projectInfoString = JSON.stringify(ProjectInfo.Project13[0]);
   }
   //
   //
@@ -308,7 +323,7 @@ isEmpty(obj, projectRef) {
 console.log("from hover", this.state.device);
     // console.log("project hover", this.state.pageWidth, this.state.pageHeight);
 
-
+console.log("projectRef");
     this.setState({titleTest: 'visible'})
     //    obj[projectRef] = "animated fadeOut" + ' ' + projectRef;
     console.log('in');
@@ -325,7 +340,7 @@ console.log("from hover", this.state.device);
 
     this.setState(obj)
     //
-    // console.log(obj);
+    console.log(obj);
 
 
 
@@ -550,6 +565,19 @@ const coverStylingP10 = {
                     <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p5')} onMouseOver={this.projectHover.bind(this, 'p5')} onClick={this.project.bind(this,"p5")}>
                       <div className={this.state.p5Container}><div className="titleWrapper" > <div className={this.state.titleContainer + ' ' + this.state.p5titleContainer + ' ' + this.state.titleStatusp5}><h1 className={this.state.hoverTitle}>on paper</h1></div></div><img alt="reload" style={coverStyling} ref="p5" className={this.state.p5}  src={cover5}></img><div className="projDescription"></div></div>
                     </div>
+
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p12')} onMouseOver={this.projectHover.bind(this, 'p12')} onClick={this.project.bind(this,"p12")}>
+                      <div className={this.state.p12Container}><div className="titleWrapper" > <div className={this.state.titleContainer + ' ' + this.state.p12titleContainer + ' ' + this.state.titleStatusp12}><h1 className={this.state.hoverTitle}>bagel package</h1></div></div><img alt="reload" style={coverStyling} ref="p12" className={this.state.p12}  src={cover12}></img><div className="projDescription"></div></div>
+                    </div>
+
+                    <div className={this.state.coverWrapper} onMouseOut={this.mouseOut.bind(this, 'p13')} onMouseOver={this.projectHover.bind(this, 'p13')} onClick={this.project.bind(this,"p13")}>
+                      <div className={this.state.p13Container}><div className="titleWrapper" > <div className={this.state.titleContainer + ' ' + this.state.p13titleContainer + ' ' + this.state.titleStatusp13}><h1 className={this.state.hoverTitle}>puzzle package</h1></div></div><img alt="reload" style={coverStyling} ref="p13" className={this.state.p13}  src={cover13}></img><div className="projDescription"></div></div>
+                    </div>
+
+
+
+
+
               </div>
             </div>
           </div>

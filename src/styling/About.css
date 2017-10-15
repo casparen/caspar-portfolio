@@ -218,17 +218,19 @@ color: black;
   flex-direction: column;
   /*width: 80%;*/
   /*border: solid blue 2px;*/
+  padding-top: 5%;
+    padding-bottom: 13%;
 }
 
 .profileCss {
   margin: 0 auto;
 
-  width: 25%;
-  padding-bottom: 70px;
-  /*border: solid blue 5px;*/
+  width: 30%;
+
+  /*border: solid blue 1px;*/
   /*height: 300px;*/
-  /*border-radius: px;*/
-  filter: grayscale(100%);
+  /*border-radius: 400px;*/
+  /*filter: grayscale(100%);*/
 }
 
 .profileCssSmall {
